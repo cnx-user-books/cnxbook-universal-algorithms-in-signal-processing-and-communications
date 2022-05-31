@@ -1,0 +1,105 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:bib="http://bibtexml.sf.net/">
+  <title>Notation</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m46237</md:content-id>
+  <md:title>Notation</md:title>
+  <md:abstract/>
+  <md:uuid>a621bef4-2699-4c7c-91d6-ae14bb4479c1</md:uuid>
+</metadata>
+
+<content>
+    <list id="id62159" display="block" list-type="bulleted"><item id="uid1"><m:math overflow="scroll"><m:mi>x</m:mi></m:math> - input sequence
+</item>
+      <item id="uid2"><m:math overflow="scroll"><m:mi>n</m:mi></m:math> - length of <m:math overflow="scroll"><m:mi>x</m:mi></m:math></item>
+      <item id="uid3"><m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:msub><m:mi>x</m:mi><m:mn>2</m:mn></m:msub><m:mo>...</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:msubsup><m:mi>x</m:mi><m:mi>i</m:mi><m:mi>j</m:mi></m:msubsup><m:mo>=</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>x</m:mi><m:mrow><m:mi>i</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:msub><m:mo>...</m:mo><m:msub><m:mi>x</m:mi><m:mi>j</m:mi></m:msub></m:mrow></m:math></item>
+      <item id="uid4"><m:math overflow="scroll"><m:mi>α</m:mi></m:math> - discrete alphabet
+</item>
+      <item id="uid5"><m:math overflow="scroll"><m:mi>r</m:mi></m:math> - cardinality of <m:math overflow="scroll"><m:mi>α</m:mi></m:math></item>
+      <item id="uid6"><m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> - the number of times that <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>∈</m:mo><m:mi>α</m:mi></m:mrow></m:math> appears in <m:math overflow="scroll"><m:mi>x</m:mi></m:math></item>
+      <item id="uid7"><m:math overflow="scroll"><m:mrow><m:msub><m:mi>P</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> - empirical probability
+</item>
+      <item id="uid8"><m:math overflow="scroll"><m:mi>Q</m:mi></m:math> - the true i.i.d. distribution of <m:math overflow="scroll"><m:mi>x</m:mi></m:math></item>
+      <item id="uid9"><m:math overflow="scroll"><m:mi>H</m:mi></m:math> - entropy
+</item>
+      <item id="uid10"><m:math overflow="scroll"><m:mrow><m:mi>D</m:mi><m:mo>(</m:mo><m:mo>·</m:mo><m:mo>∥</m:mo><m:mo>·</m:mo><m:mo>)</m:mo></m:mrow></m:math> - divergence
+</item>
+      <item id="uid11"><m:math overflow="scroll"><m:mrow><m:mo>⌈</m:mo><m:mo>·</m:mo><m:mo>⌉</m:mo></m:mrow></m:math> - rounding up
+</item>
+      <item id="uid12"><m:math overflow="scroll"><m:mi>R</m:mi></m:math> - rate of source code
+</item>
+      <item id="uid13"><m:math overflow="scroll"><m:mrow><m:msub><m:mi>T</m:mi><m:mi>Q</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>δ</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> - set of inputs that are <m:math overflow="scroll"><m:mi>δ</m:mi></m:math>-typical with respect to (w.r.t.) <m:math overflow="scroll"><m:mi>Q</m:mi></m:math></item>
+      <item id="uid14"><m:math overflow="scroll"><m:mi mathvariant="script">C</m:mi></m:math> - a code
+</item>
+      <item id="uid15"><m:math overflow="scroll"><m:msup><m:mrow><m:mo>(</m:mo><m:mo>·</m:mo><m:mo>)</m:mo></m:mrow><m:mi>C</m:mi></m:msup></m:math> - complement of set
+</item>
+      <item id="uid16"><m:math overflow="scroll"><m:msup><m:mo>·</m:mo><m:mi>T</m:mi></m:msup></m:math> - transpose of vector or matrix
+</item>
+      <item id="uid17"><m:math overflow="scroll"><m:mrow><m:mi>l</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> - length of code in bits
+</item>
+      <item id="uid18"><m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mo>'</m:mo></m:msup><m:mo>=</m:mo><m:msub><m:mi>S</m:mi><m:mi>x</m:mi></m:msub></m:mrow></m:math> - step <m:math overflow="scroll"><m:mrow><m:mo>∀</m:mo><m:mi>n</m:mi><m:mo>∈</m:mo><m:mi mathvariant="double-struck">Z</m:mi></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:msubsup><m:mi>x</m:mi><m:mi>n</m:mi><m:mo>'</m:mo></m:msubsup><m:mo>=</m:mo><m:msub><m:mi>x</m:mi><m:mrow><m:mi>n</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:msub></m:mrow></m:math></item>
+      <item id="uid19"><m:math overflow="scroll"><m:mi>θ</m:mi></m:math> - parameters of parametric source (can contain multiple scalar parameters)
+</item>
+      <item id="uid20"><m:math overflow="scroll"><m:mi>M</m:mi></m:math> - number of states of unifilar source
+</item>
+      <item id="uid21"><m:math overflow="scroll"><m:mrow><m:mi>S</m:mi><m:mo>=</m:mo><m:mo>{</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:mi>M</m:mi><m:mo>}</m:mo></m:mrow></m:math> - states of unifilar source
+</item>
+      <item id="uid22"><m:math overflow="scroll"><m:mrow><m:msub><m:mi>s</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>s</m:mi><m:mi>n</m:mi></m:msub></m:mrow></m:math>, - state sequence
+</item>
+      <item id="uid23"><m:math overflow="scroll"><m:mrow><m:mi>q</m:mi><m:mo>(</m:mo><m:mi>s</m:mi><m:mo>|</m:mo><m:msup><m:mi>s</m:mi><m:mo>'</m:mo></m:msup><m:mo>)</m:mo></m:mrow></m:math> - transition probability
+</item>
+      <item id="uid24"><m:math overflow="scroll"><m:mrow><m:msub><m:mi>S</m:mi><m:mi>t</m:mi></m:msub><m:mo>=</m:mo><m:mi>g</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>S</m:mi><m:mrow><m:mi>t</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msub><m:mo>,</m:mo><m:msub><m:mi>X</m:mi><m:mrow><m:mi>t</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math> - next state function
+</item>
+      <item id="uid25"><m:math overflow="scroll"><m:mo>Λ</m:mo></m:math> - class of parametric models
+</item>
+      <item id="uid26"><m:math overflow="scroll"><m:msub><m:mi>c</m:mi><m:mi>n</m:mi></m:msub></m:math> - collection of lossless codes for length-<m:math overflow="scroll"><m:mi>n</m:mi></m:math> inputs
+</item>
+      <item id="uid27"><m:math overflow="scroll"><m:mrow><m:mi>I</m:mi><m:mo>(</m:mo><m:mo>·</m:mo><m:mo>;</m:mo><m:mo>·</m:mo><m:mo>)</m:mo></m:mrow></m:math> - mutual information
+</item>
+      <item id="uid28"><m:math overflow="scroll"><m:mrow><m:msub><m:mi>r</m:mi><m:mi>n</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>l</m:mi><m:mo>,</m:mo><m:mi>θ</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> - how far a coding length function <m:math overflow="scroll"><m:mi>l</m:mi></m:math> is from the entropy
+</item>
+      <item id="uid29"><m:math overflow="scroll"><m:mrow><m:msub><m:mi>h</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mo>·</m:mo><m:mo>)</m:mo></m:mrow></m:mrow></m:math> - binary entropy
+</item>
+      <item id="uid30"><m:math overflow="scroll"><m:mrow><m:mi>I</m:mi><m:mo>(</m:mo><m:mo>·</m:mo><m:mo>)</m:mo></m:mrow></m:math> - Fisher information
+</item>
+      <item id="uid31"><m:math overflow="scroll"><m:mrow><m:mi>J</m:mi><m:mo>(</m:mo><m:mo>·</m:mo><m:mo>)</m:mo></m:mrow></m:math> - Jeffreys' prior
+</item>
+      <item id="uid32"><m:math overflow="scroll"><m:msub><m:mi>θ</m:mi><m:mrow><m:mi>M</m:mi><m:mi>L</m:mi></m:mrow></m:msub></m:math> - maximum likelihood parameter
+</item>
+      <item id="uid33"><m:math overflow="scroll"><m:msubsup><m:mi>R</m:mi><m:mi>n</m:mi><m:mo>-</m:mo></m:msubsup></m:math>, <m:math overflow="scroll"><m:msubsup><m:mi>R</m:mi><m:mi>n</m:mi><m:mo>+</m:mo></m:msubsup></m:math> - min-max and max-min redundancy
+</item>
+      <item id="uid34"><m:math overflow="scroll"><m:mi>T</m:mi></m:math> - set of leaves of a context tree source
+</item>
+      <item id="uid35"><m:math overflow="scroll"><m:mi>s</m:mi></m:math> - state of context tree
+</item>
+      <item id="uid36"><m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>s</m:mi><m:mo>,</m:mo><m:mi>a</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> - number of times that <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>∈</m:mo><m:mi>α</m:mi></m:mrow></m:math> appears in context <m:math overflow="scroll"><m:mi>s</m:mi></m:math> in <m:math overflow="scroll"><m:mi>x</m:mi></m:math></item>
+      <item id="uid37"><m:math overflow="scroll"><m:msup><m:mi>T</m:mi><m:mo>*</m:mo></m:msup></m:math> - optimal context tree source
+</item>
+      <item id="uid38"><m:math overflow="scroll"><m:mi>D</m:mi></m:math> - maximal depth of tree source
+</item>
+      <item id="uid39"><m:math overflow="scroll"><m:msubsup><m:mi>T</m:mi><m:mi>s</m:mi><m:mo>*</m:mo></m:msubsup></m:math> - optimal tree structure to encode symbols whose context ends with <m:math overflow="scroll"><m:mi>s</m:mi></m:math></item>
+      <item id="uid40"><m:math overflow="scroll"><m:mrow><m:mtext>MDL</m:mtext><m:mo>(</m:mo><m:mi>s</m:mi><m:mo>)</m:mo></m:mrow></m:math> - minimum description length required for encoding these symbols
+</item>
+      <item id="uid41"><m:math overflow="scroll"><m:mrow><m:mtext>KT</m:mtext><m:mo>(</m:mo><m:mo>·</m:mo><m:mo>,</m:mo><m:mo>·</m:mo><m:mo>)</m:mo></m:mrow></m:math> - Krichevsky-Trofimov coding length
+</item>
+      <item id="uid42"><m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>i</m:mi><m:mo>)</m:mo></m:mrow></m:math> - BWT output consisting the permuted sequence and index
+</item>
+      <item id="uid43"><m:math overflow="scroll"><m:mover accent="true"><m:mi>x</m:mi><m:mo>ˆ</m:mo></m:mover></m:math> - approximate version of <m:math overflow="scroll"><m:mi>x</m:mi></m:math></item>
+      <item id="uid44"><m:math overflow="scroll"><m:mover accent="true"><m:mi>α</m:mi><m:mo>ˆ</m:mo></m:mover></m:math> - reproduction alphabet
+</item>
+      <item id="uid45"><m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mo>·</m:mo><m:mo>,</m:mo><m:mo>·</m:mo><m:mo>)</m:mo></m:mrow></m:math> - distortion metric
+</item>
+      <item id="uid46"><m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>d</m:mi><m:mo>¯</m:mo></m:mover><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mover accent="true"><m:mi>x</m:mi><m:mo>ˆ</m:mo></m:mover><m:mo>)</m:mo></m:mrow></m:mrow></m:math> - distortion between sequences
+</item>
+      <item id="uid47"><m:math overflow="scroll"><m:mi>D</m:mi></m:math> - distortion level
+</item>
+      <item id="uid48"><m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mo>(</m:mo><m:mi>D</m:mi><m:mo>)</m:mo></m:mrow></m:math> - minimal rate such that <m:math overflow="scroll"><m:mover accent="true"><m:mi>x</m:mi><m:mo>ˆ</m:mo></m:mover></m:math> can be described
+</item>
+      <item id="uid49"><m:math overflow="scroll"><m:mi>t</m:mi></m:math> - temperature in simulated annealing
+</item>
+      <item id="uid50"><m:math overflow="scroll"><m:msub><m:mi>Z</m:mi><m:mi>t</m:mi></m:msub></m:math> - normalization factor in Boltzmann pmf
+</item>
+      <item id="uid51"><m:math overflow="scroll"><m:msub><m:mi>N</m:mi><m:mi>r</m:mi></m:msub></m:math> - recurrence time
+</item>
+    </list></content>
+  <bib:file/>
+</document>

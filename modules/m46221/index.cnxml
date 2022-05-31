@@ -1,0 +1,200 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:bib="http://bibtexml.sf.net/">
+  <title>Introduction</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m46221</md:content-id>
+  <md:title>Introduction</md:title>
+  <md:abstract/>
+  <md:uuid>7621b8db-47d7-45de-98c0-1754ce8fed30</md:uuid>
+</metadata>
+
+<content>
+    <section id="uid1">
+      <title>Motivation</title>
+      <para id="id331650">This course focuses on algorithms in signal processing and communications.
+When training data is available in such systems, we can process the data by first training on
+historical data and then running a Bayesian scheme, which relies on
+the statistics being known. A similar Bayesian approach can also be used when the
+statistics are approximately known.</para>
+      <para id="id331656">For example, consider lossy image compression. It is well known that wavelet coefficients of images have a distribution
+that resembles Laplace,</para>
+      <equation id="id331660">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>f</m:mi>
+              <m:mi>x</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msub>
+              <m:mi>c</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mi>x</m:mi>
+            <m:msup>
+              <m:mi>e</m:mi>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:msub>
+                  <m:mi>c</m:mi>
+                  <m:mn>2</m:mn>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:msup>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id332060">and the coefficients are approximately independent and identically distributed (i.i.d.).
+A well-known approach to lossy image compression is to first compute the wavelet coefficients and then
+compress them using a lossy compressor that is designed for Laplace i.i.d. coefficients <link target-id="bid0"/>.
+In this approach, the training
+consists of the body of art that realizes that wavelet coefficients are approximately Laplace i.i.d., and the Bayesan
+algorithm is a lossy compressor that is designed for this distribution.</para>
+      <para id="id332077">However, sometimes the statistics of the input (often called the <emphasis effect="italics">source</emphasis>)
+are completely unknown,
+there is no training data, or there is great uncertainty in the statistics.
+For example, in lossless data compression,
+we do not know whether a file is an executable, source code, a DNA sequence,
+contains financial transactions, is text, etc.
+And even if we know that the file contains text, it has been noted that even different chapters
+that appear in the same book that is written by the same author
+may contain different statistics.</para>
+      <para id="id332090">For this latter set of problems, the Bayesian approach is useless, because there is no training data.
+A good alternative approach to Bayesian algorithms is to use
+<emphasis effect="italics">universal algorithms</emphasis> <link target-id="bid1"/>, <link target-id="bid2"/>.
+These algorithms have good performance irrespective
+of statistics. In fact, in some cases, these algorithms can achieve (with equality) the theoretically optimum
+performance in an appropriate asymptotic framework.</para>
+      <para id="id332112">In <emphasis effect="italics">lossless compression</emphasis>, universal algorithms have had great impact. For example,
+the Lempel-Ziv family of algorithms <link target-id="bid1"/>, <link target-id="bid3"/>
+asymptotically achieve the entropy rate <link target-id="bid4"/>, <link target-id="bid5"/>,
+which is the best possible compression ratio achievable in lossless compression, despite not knowing the input statistics.
+Additionally, the Lempel-Ziv algorithms allow efficient implementation.</para>
+    </section>
+    <section id="uid2">
+      <title>Overview</title>
+      <para id="id332154">The goal of this course is to study universal algorithms, starting from the well-trodden material
+in lossless compression, and later discussing universal algorithms in other areas of communications
+and signal processing. Let us overview the material studied during the course. We begin in 
+<link document="m46240"/>
+with a review of some information theory material, including typical sequences and source coding, in order to provide sufficient background. Next, 
+<link document="m46231"/>
+statistical models for data will be described.
+<link document="m46228"/> 
+then presents techniques for universal lossless compression of parametric sources. One approach to universal compression of parametric sources is minimum description length, which compresses the data in order to minimize for the sum of the complexity of the model and the complexity of the data given the parameters of the model. Minimum description length has been used with context tree models to provide universal contextual prediction; context tree approaches are detailed in
+<link document="m46233"/>.
+We then switch gears in 
+<link document="m46233"/>
+and move beyond lossless compression; universal lossy compression and signal reconstruction are described in detail. Finally, 
+<link document="m46236"/> 
+describes Lempel-Ziv algorithms for universal lossless compression based on parsing an input sequence. For convenienve, notation is summarized in 
+<link document="m46237"/>.</para><para id="id332196">This manuscript is a work in progress, and we expect to expand and improve it
+during future teachings of the course.</para>
+    </section>
+  </content>
+  <bib:file>
+    <bib:entry id="bid5">
+      <bib:book>
+        <!--required fields-->
+        <bib:author>Cover, T. M. and Thomas, J. A.</bib:author>
+        <bib:title>Elements of Information Theory</bib:title>
+        <bib:publisher>Wiley-Interscience</bib:publisher>
+        <bib:year>2006</bib:year>
+        <!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address/>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note/>
+      </bib:book>
+    </bib:entry>
+    <bib:entry id="bid4">
+      <bib:book>
+        <!--required fields-->
+        <bib:author>Gallager, R. G.</bib:author>
+        <bib:title>Information Theory and Reliable Communications</bib:title>
+        <bib:publisher>Wiley</bib:publisher>
+        <bib:year>1968</bib:year>
+        <!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address/>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note/>
+      </bib:book>
+    </bib:entry>
+    <bib:entry id="bid0">
+      <bib:book>
+        <!--required fields-->
+        <bib:author>Mallat, S.G.</bib:author>
+        <bib:title>A wavelet tour of signal processing</bib:title>
+        <bib:publisher>Academic Press</bib:publisher>
+        <bib:year>1999</bib:year>
+        <!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address/>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note/>
+      </bib:book>
+    </bib:entry>
+    <bib:entry id="bid2">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Rissanen, J.</bib:author>
+        <bib:title>A universal data compression system</bib:title>
+        <bib:journal>IEEE Trans. Inf. theory</bib:journal>
+        <bib:year>1983</bib:year>
+        <!--optional fields-->
+        <bib:volume>29</bib:volume>
+        <bib:number>5</bib:number>
+        <bib:pages>656–664</bib:pages>
+        <bib:month/>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid1">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Ziv, J. and Lempel, A.</bib:author>
+        <bib:title>A universal algorithm for sequential data compression</bib:title>
+        <bib:journal>IEEE Trans. Inf. Theory</bib:journal>
+        <bib:year>1977</bib:year>
+        <!--optional fields-->
+        <bib:volume>23</bib:volume>
+        <bib:number>3</bib:number>
+        <bib:pages>337–343</bib:pages>
+        <bib:month/>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid3">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Ziv, J. and Lempel, A.</bib:author>
+        <bib:title>Compression of Individual Sequences via Variable-Rate Coding</bib:title>
+        <bib:journal>IEEE Trans. Inf. Theory</bib:journal>
+        <bib:year>1978</bib:year>
+        <!--optional fields-->
+        <bib:volume>24</bib:volume>
+        <bib:number>5</bib:number>
+        <bib:pages>530–536</bib:pages>
+        <bib:month>Sep.</bib:month>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+  </bib:file>
+</document>

@@ -1,0 +1,1805 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:bib="http://bibtexml.sf.net/">
+  <title>Compression of nonparametric sources</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m46236</md:content-id>
+  <md:title>Compression of nonparametric sources</md:title>
+  <md:abstract/>
+  <md:uuid>5ffc6291-f30e-4ebb-b4ab-b762f3472710</md:uuid>
+</metadata>
+
+<content>
+    <para id="id287025">Consider a stationary ergodic source, where we no longer assume that it is parametric.
+We need to define notions of probability that fit the universal framework. For this,
+we study Kac's lemma <link target-id="bid0"/>.</para>
+    <para id="id287041">We have a stationary source, <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:msub><m:mi>X</m:mi><m:mrow><m:mo>-</m:mo><m:mi>n</m:mi></m:mrow></m:msub><m:mo>,</m:mo><m:msub><m:mi>X</m:mi><m:mrow><m:mo>-</m:mo><m:mi>n</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:msub><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:msub><m:mi>X</m:mi><m:mn>0</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>X</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>}</m:mo></m:mrow></m:math>,
+<m:math overflow="scroll"><m:mrow><m:mi>z</m:mi><m:mo>=</m:mo><m:msubsup><m:mi>X</m:mi><m:mrow><m:mo>-</m:mo><m:mi>ℓ</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow><m:mn>0</m:mn></m:msubsup><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:msub><m:mi>X</m:mi><m:mrow><m:mo>-</m:mo><m:mi>ℓ</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:msub><m:mo>,</m:mo><m:msub><m:mi>X</m:mi><m:mrow><m:mo>-</m:mo><m:mi>ℓ</m:mi><m:mo>+</m:mo><m:mn>2</m:mn></m:mrow></m:msub><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:msub><m:mi>X</m:mi><m:mn>0</m:mn></m:msub><m:mo>}</m:mo></m:mrow></m:mrow></m:math>.
+Define <m:math overflow="scroll"><m:msub><m:mi>N</m:mi><m:mi>r</m:mi></m:msub></m:math> as the number of shifts forward of a window of length <m:math overflow="scroll"><m:mi>ℓ</m:mi></m:math> until we see <m:math overflow="scroll"><m:mi>z</m:mi></m:math> again;
+this is called recurrence time. Define</para>
+    <equation id="uid1">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:msub>
+            <m:mi>Y</m:mi>
+            <m:mi>k</m:mi>
+          </m:msub>
+          <m:mo>=</m:mo>
+          <m:mfenced separators="" open="{" close="">
+            <m:mtable>
+              <m:mtr>
+                <m:mtd columnalign="left">
+                  <m:mn>1</m:mn>
+                </m:mtd>
+                <m:mtd columnalign="left">
+                  <m:mrow>
+                    <m:msubsup>
+                      <m:mi>X</m:mi>
+                      <m:mrow>
+                        <m:mi>k</m:mi>
+                        <m:mo>-</m:mo>
+                        <m:mi>ℓ</m:mi>
+                        <m:mo>+</m:mo>
+                        <m:mn>1</m:mn>
+                      </m:mrow>
+                      <m:mi>k</m:mi>
+                    </m:msubsup>
+                    <m:mo>=</m:mo>
+                    <m:mi>z</m:mi>
+                  </m:mrow>
+                </m:mtd>
+              </m:mtr>
+              <m:mtr>
+                <m:mtd columnalign="left">
+                  <m:mn>0</m:mn>
+                </m:mtd>
+                <m:mtd columnalign="left">
+                  <m:mtext>else</m:mtext>
+                </m:mtd>
+              </m:mtr>
+            </m:mtable>
+          </m:mfenced>
+          <m:mo>,</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id287843">e.g., <m:math overflow="scroll"><m:mrow><m:msub><m:mi>Y</m:mi><m:mn>0</m:mn></m:msub><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:math>, then <m:math overflow="scroll"><m:msub><m:mi>N</m:mi><m:mi>r</m:mi></m:msub></m:math> is the smallest positive number for which <m:math overflow="scroll"><m:mrow><m:msub><m:mi>Y</m:mi><m:mi>k</m:mi></m:msub><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:math>. Note that <m:math overflow="scroll"><m:msubsup><m:mrow><m:mo>{</m:mo><m:msub><m:mi>Y</m:mi><m:mi>k</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mrow><m:mo>-</m:mo><m:mi>∞</m:mi></m:mrow><m:mrow><m:mo>+</m:mo><m:mi>∞</m:mi></m:mrow></m:msubsup></m:math> is a binary stationary ergodic source. Define <m:math overflow="scroll"><m:mrow><m:msub><m:mi>Q</m:mi><m:mi>k</m:mi></m:msub><m:mo>=</m:mo><m:mo form="prefix">Pr</m:mo><m:mrow><m:mo>{</m:mo><m:msub><m:mi>Y</m:mi><m:mi>k</m:mi></m:msub><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>;</m:mo><m:mn>1</m:mn><m:mo>≤</m:mo><m:mi>j</m:mi><m:mo>≤</m:mo><m:mi>k</m:mi><m:mo>-</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:msub><m:mi>Y</m:mi><m:mi>j</m:mi></m:msub><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>|</m:mo><m:msub><m:mi>Y</m:mi><m:mn>0</m:mn></m:msub><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>}</m:mo></m:mrow></m:mrow></m:math>.
+Then the average recurrence time can be computed, <m:math overflow="scroll"><m:mrow><m:mi>μ</m:mi><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>ℓ</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>∞</m:mi></m:msubsup><m:mi>ℓ</m:mi><m:msub><m:mi>Q</m:mi><m:mi>ℓ</m:mi></m:msub><m:mo>=</m:mo><m:mi>E</m:mi><m:mrow><m:mo>[</m:mo><m:msub><m:mi>N</m:mi><m:mi>r</m:mi></m:msub><m:mo>]</m:mo></m:mrow></m:mrow></m:math>.
+We can now present Kac's lemma.</para>
+    <para id="id288069"><emphasis effect="bold">Lemma 3 <link target-id="bid0"/></emphasis><m:math overflow="scroll"><m:mrow><m:mi>μ</m:mi><m:mo>=</m:mo><m:mfrac><m:mn>1</m:mn><m:mrow><m:mo form="prefix">Pr</m:mo><m:mo>(</m:mo><m:mi>Y</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow></m:mfrac></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>E</m:mi><m:mfenced separators="" open="[" close="]"><m:msub><m:mi>N</m:mi><m:mi>r</m:mi></m:msub><m:mrow><m:mo>=</m:mo><m:mi>μ</m:mi><m:mo>|</m:mo></m:mrow><m:msubsup><m:mi>X</m:mi><m:mrow><m:mo>-</m:mo><m:mi>ℓ</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow><m:mn>0</m:mn></m:msubsup><m:mo>=</m:mo><m:mi>z</m:mi></m:mfenced></m:mrow></m:math>=<m:math overflow="scroll"><m:mfrac><m:mn>1</m:mn><m:mrow><m:mo form="prefix">Pr</m:mo><m:mo>(</m:mo><m:mi>z</m:mi><m:mo>)</m:mo></m:mrow></m:mfrac></m:math>.</para><para id="id288199">Let <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>=</m:mo><m:mo>{</m:mo><m:msub><m:mi>Y</m:mi><m:mi>n</m:mi></m:msub><m:mo>=</m:mo><m:mn>1</m:mn><m:mspace width="4.pt"/><m:mtext>for</m:mtext><m:mspace width="4.pt"/><m:mtext>some</m:mtext><m:mspace width="4.pt"/><m:mo>-</m:mo><m:mi>∞</m:mi><m:mo>&lt;</m:mo><m:mi>n</m:mi><m:mo>&lt;</m:mo><m:mo>+</m:mo><m:mi>∞</m:mi><m:mo>}</m:mo></m:mrow></m:math>. Because <m:math overflow="scroll"><m:mi>z</m:mi></m:math> just appeared, then its probability is positive. We will prove that <m:math overflow="scroll"><m:mrow><m:mi>μ</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow><m:mo form="prefix">Pr</m:mo><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo form="prefix">Pr</m:mo><m:mo>(</m:mo><m:msub><m:mi>Y</m:mi><m:mn>0</m:mn></m:msub><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow></m:mfrac></m:mrow></m:math>.</para>
+    <para id="id288312">Define <m:math overflow="scroll"><m:mrow><m:msup><m:mi>B</m:mi><m:mo>+</m:mo></m:msup><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:msub><m:mi>Y</m:mi><m:mi>n</m:mi></m:msub><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mtext>for</m:mtext><m:mspace width="4.pt"/><m:mtext>some</m:mtext><m:mspace width="4.pt"/><m:mn>0</m:mn><m:mo>≤</m:mo><m:mi>n</m:mi><m:mo>&lt;</m:mo><m:mi>∞</m:mi><m:mo>}</m:mo></m:mrow></m:mrow></m:math>, and <m:math overflow="scroll"><m:mrow><m:msup><m:mi>B</m:mi><m:mo>-</m:mo></m:msup><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:msub><m:mi>Y</m:mi><m:mi>n</m:mi></m:msub><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mtext>for</m:mtext><m:mspace width="4.pt"/><m:mtext>some</m:mtext><m:mspace width="4.pt"/><m:mi>n</m:mi><m:mo>&lt;</m:mo><m:mn>0</m:mn><m:mo>}</m:mo></m:mrow></m:mrow></m:math>. Then <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>=</m:mo><m:msup><m:mi>B</m:mi><m:mo>+</m:mo></m:msup><m:mo>⋃</m:mo><m:msup><m:mi>B</m:mi><m:mo>-</m:mo></m:msup><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo><m:msup><m:mi>B</m:mi><m:mo>+</m:mo></m:msup><m:mo>⋂</m:mo><m:msup><m:mi>B</m:mi><m:mo>-</m:mo></m:msup><m:mo>)</m:mo></m:mrow><m:mo>⋃</m:mo><m:mfenced separators="" open="(" close=")"><m:msup><m:mi>B</m:mi><m:mo>+</m:mo></m:msup><m:mo>⋂</m:mo><m:msup><m:mrow><m:mo>(</m:mo><m:msup><m:mi>B</m:mi><m:mo>-</m:mo></m:msup><m:mo>)</m:mo></m:mrow><m:mi>C</m:mi></m:msup></m:mfenced><m:mo>⋃</m:mo><m:mfenced separators="" open="(" close=")"><m:msup><m:mrow><m:mo>(</m:mo><m:msup><m:mi>B</m:mi><m:mo>+</m:mo></m:msup><m:mo>)</m:mo></m:mrow><m:mi>C</m:mi></m:msup><m:mo>⋂</m:mo><m:msup><m:mi>B</m:mi><m:mo>-</m:mo></m:msup></m:mfenced></m:mrow></m:math>. We claim that <m:math overflow="scroll"><m:mrow><m:mo form="prefix">Pr</m:mo><m:mfenced separators="" open="(" close=")"><m:msup><m:mi>B</m:mi><m:mo>+</m:mo></m:msup><m:mo>⋂</m:mo><m:msup><m:mrow><m:mo>(</m:mo><m:msup><m:mi>B</m:mi><m:mo>-</m:mo></m:msup><m:mo>)</m:mo></m:mrow><m:mi>C</m:mi></m:msup></m:mfenced><m:mo>=</m:mo><m:mo form="prefix">Pr</m:mo><m:mfenced separators="" open="(" close=")"><m:msup><m:mrow><m:mo>(</m:mo><m:msup><m:mi>B</m:mi><m:mo>+</m:mo></m:msup><m:mo>)</m:mo></m:mrow><m:mi>C</m:mi></m:msup><m:mo>⋂</m:mo><m:msup><m:mi>B</m:mi><m:mo>-</m:mo></m:msup></m:mfenced><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. This can be shown formally, but is easily seen by realizing that if <m:math overflow="scroll"><m:mi>z</m:mi></m:math> appears at any time <m:math overflow="scroll"><m:mi>n</m:mi></m:math> (say, positive) then it must appear at some negative time <m:math overflow="scroll"><m:mi>n</m:mi></m:math> with probability 1, because its probability is positive.</para>
+    <para id="id288668">Therefore, we have</para>
+    <equation id="uid3">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:mo form="prefix">Pr</m:mo>
+                <m:mo>(</m:mo>
+                <m:mi>A</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mo form="prefix">Pr</m:mo>
+                <m:mfenced separators="" open="(" close=")">
+                  <m:msup>
+                    <m:mi>B</m:mi>
+                    <m:mo>+</m:mo>
+                  </m:msup>
+                  <m:mo>⋂</m:mo>
+                  <m:msup>
+                    <m:mi>B</m:mi>
+                    <m:mo>-</m:mo>
+                  </m:msup>
+                </m:mfenced>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>j</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>0</m:mn>
+                  </m:mrow>
+                  <m:mi>∞</m:mi>
+                </m:munderover>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>k</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>∞</m:mi>
+                </m:munderover>
+                <m:mo form="prefix">Pr</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>Y</m:mi>
+                    <m:mi>j</m:mi>
+                  </m:msub>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:msub>
+                    <m:mi>Y</m:mi>
+                    <m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mi>k</m:mi>
+                    </m:mrow>
+                  </m:msub>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:msub>
+                    <m:mi>Y</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>=</m:mo>
+                  <m:mn>0</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:mo>-</m:mo>
+                  <m:mi>k</m:mi>
+                  <m:mo>&lt;</m:mo>
+                  <m:mi>n</m:mi>
+                  <m:mo>&lt;</m:mo>
+                  <m:mi>j</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>j</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>0</m:mn>
+                  </m:mrow>
+                  <m:mi>∞</m:mi>
+                </m:munderover>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>k</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>∞</m:mi>
+                </m:munderover>
+                <m:mo form="prefix">Pr</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>Y</m:mi>
+                    <m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mi>k</m:mi>
+                    </m:mrow>
+                  </m:msub>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo form="prefix">Pr</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>Y</m:mi>
+                    <m:mi>j</m:mi>
+                  </m:msub>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:msub>
+                    <m:mi>Y</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>=</m:mo>
+                  <m:mn>0</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:mo>-</m:mo>
+                  <m:mi>k</m:mi>
+                  <m:mo>&lt;</m:mo>
+                  <m:mi>n</m:mi>
+                  <m:mo>&lt;</m:mo>
+                  <m:mi>j</m:mi>
+                  <m:mo>|</m:mo>
+                  <m:msub>
+                    <m:mi>Y</m:mi>
+                    <m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mi>k</m:mi>
+                    </m:mrow>
+                  </m:msub>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>j</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>0</m:mn>
+                  </m:mrow>
+                  <m:mi>∞</m:mi>
+                </m:munderover>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>k</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>∞</m:mi>
+                </m:munderover>
+                <m:mo form="prefix">Pr</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>Y</m:mi>
+                    <m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mi>k</m:mi>
+                    </m:mrow>
+                  </m:msub>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:msub>
+                  <m:mi>Q</m:mi>
+                  <m:mrow>
+                    <m:mi>j</m:mi>
+                    <m:mo>+</m:mo>
+                    <m:mi>k</m:mi>
+                  </m:mrow>
+                </m:msub>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>j</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>0</m:mn>
+                  </m:mrow>
+                  <m:mi>∞</m:mi>
+                </m:munderover>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>k</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>∞</m:mi>
+                </m:munderover>
+                <m:mo form="prefix">Pr</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>Y</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:msub>
+                  <m:mi>Q</m:mi>
+                  <m:mrow>
+                    <m:mi>j</m:mi>
+                    <m:mo>+</m:mo>
+                    <m:mi>k</m:mi>
+                  </m:mrow>
+                </m:msub>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mo form="prefix">Pr</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>Y</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>i</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>∞</m:mi>
+                </m:munderover>
+                <m:mi>i</m:mi>
+                <m:msub>
+                  <m:mi>Q</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mo form="prefix">Pr</m:mo>
+                <m:mo>(</m:mo>
+                <m:msub>
+                  <m:mi>Y</m:mi>
+                  <m:mn>0</m:mn>
+                </m:msub>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+                <m:mo>)</m:mo>
+                <m:mi>μ</m:mi>
+                <m:mo>.</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id289215">
+Therefore, <m:math overflow="scroll"><m:mrow><m:mi>μ</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow><m:mo form="prefix">Pr</m:mo><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo form="prefix">Pr</m:mo><m:mo>(</m:mo><m:msub><m:mi>Y</m:mi><m:mn>0</m:mn></m:msub><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow></m:mfrac><m:mo>.</m:mo></m:mrow></m:math>
+We conclude the proof by noting that <m:math overflow="scroll"><m:mrow><m:mo form="prefix">Pr</m:mo><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.</para>
+    <para id="id289290">Let us now develop a universal coding technique for stationary sources. Recall <m:math overflow="scroll"><m:mrow><m:msub><m:mi>H</m:mi><m:mi>ℓ</m:mi></m:msub><m:mo>=</m:mo><m:mfrac><m:mn>1</m:mn><m:mi>ℓ</m:mi></m:mfrac><m:mi>E</m:mi><m:mrow><m:mo>[</m:mo><m:mo>-</m:mo><m:mo form="prefix">log</m:mo><m:mrow><m:mo>(</m:mo><m:mo form="prefix">Pr</m:mo><m:mrow><m:mo>(</m:mo><m:msubsup><m:mi>X</m:mi><m:mn>1</m:mn><m:mi>ℓ</m:mi></m:msubsup><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mo>]</m:mo></m:mrow></m:mrow></m:math>. The asymptotic equipartition property (AEP) of information
+theory <link target-id="bid1"/> gives</para>
+    <equation id="uid4">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mo form="prefix">Pr</m:mo>
+          <m:mfenced separators="" open="(" close=")">
+            <m:msubsup>
+              <m:mi>X</m:mi>
+              <m:mn>1</m:mn>
+              <m:mi>ℓ</m:mi>
+            </m:msubsup>
+            <m:mo>:</m:mo>
+            <m:mfenced separators="" open="|" close="|">
+              <m:mo>-</m:mo>
+              <m:mfrac>
+                <m:mn>1</m:mn>
+                <m:mi>ℓ</m:mi>
+              </m:mfrac>
+              <m:mo form="prefix">log</m:mo>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mo form="prefix">Pr</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msubsup>
+                    <m:mi>X</m:mi>
+                    <m:mn>1</m:mn>
+                    <m:mi>ℓ</m:mi>
+                  </m:msubsup>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>-</m:mo>
+              <m:msub>
+                <m:mi>H</m:mi>
+                <m:mi>ℓ</m:mi>
+              </m:msub>
+            </m:mfenced>
+            <m:mo>&gt;</m:mo>
+            <m:mi>δ</m:mi>
+          </m:mfenced>
+          <m:mo>&lt;</m:mo>
+          <m:mi>ϵ</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mi>δ</m:mi>
+            <m:mo>,</m:mo>
+            <m:mi>ℓ</m:mi>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>,</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id289478">where <m:math overflow="scroll"><m:mrow><m:msub><m:mo movablelimits="true" form="prefix">lim</m:mo><m:mrow><m:mi>ℓ</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:msub><m:mi>ϵ</m:mi><m:mrow><m:mo>(</m:mo><m:mi>δ</m:mi><m:mo>,</m:mo><m:mi>ℓ</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.
+Define in this context a typical set <m:math overflow="scroll"><m:mrow><m:mi>T</m:mi><m:mo>(</m:mo><m:mi>δ</m:mi><m:mo>,</m:mo><m:mi>ℓ</m:mi><m:mo>)</m:mo></m:mrow></m:math> that satisfies</para>
+    <equation id="uid5">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:msup>
+            <m:mn>2</m:mn>
+            <m:mrow>
+              <m:mo>-</m:mo>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>H</m:mi>
+                <m:mi>ℓ</m:mi>
+              </m:msub>
+              <m:mo>+</m:mo>
+              <m:mi>δ</m:mi>
+              <m:mo>)</m:mo>
+              <m:mi>ℓ</m:mi>
+            </m:mrow>
+          </m:msup>
+          <m:mo>≤</m:mo>
+          <m:mo form="prefix">Pr</m:mo>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:msubsup>
+              <m:mi>X</m:mi>
+              <m:mn>1</m:mn>
+              <m:mi>ℓ</m:mi>
+            </m:msubsup>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>≤</m:mo>
+          <m:msup>
+            <m:mn>2</m:mn>
+            <m:mrow>
+              <m:mo>-</m:mo>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>H</m:mi>
+                <m:mi>ℓ</m:mi>
+              </m:msub>
+              <m:mo>-</m:mo>
+              <m:mi>δ</m:mi>
+              <m:mo>)</m:mo>
+              <m:mi>ℓ</m:mi>
+            </m:mrow>
+          </m:msup>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id289636">For a typical sequence <m:math overflow="scroll"><m:mi>z</m:mi></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>E</m:mi><m:mrow><m:mo>[</m:mo><m:msub><m:mi>N</m:mi><m:mi>r</m:mi></m:msub><m:mo>|</m:mo><m:msubsup><m:mi>X</m:mi><m:mn>1</m:mn><m:mi>ℓ</m:mi></m:msubsup><m:mo>=</m:mo><m:mi>z</m:mi><m:mo>]</m:mo></m:mrow><m:mo>≤</m:mo><m:msup><m:mn>2</m:mn><m:mrow><m:mi>ℓ</m:mi><m:mo>(</m:mo><m:msub><m:mi>H</m:mi><m:mi>ℓ</m:mi></m:msub><m:mo>+</m:mo><m:mi>δ</m:mi><m:mo>)</m:mo></m:mrow></m:msup></m:mrow></m:math>. Then</para>
+    <equation id="uid6">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:mo form="prefix">Pr</m:mo>
+                <m:mfenced separators="" open="(" close=")">
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:mo form="prefix">log</m:mo>
+                      <m:mo>(</m:mo>
+                      <m:msub>
+                        <m:mi>N</m:mi>
+                        <m:mi>r</m:mi>
+                      </m:msub>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mi>ℓ</m:mi>
+                  </m:mfrac>
+                  <m:mo>≥</m:mo>
+                  <m:msub>
+                    <m:mi>H</m:mi>
+                    <m:mi>ℓ</m:mi>
+                  </m:msub>
+                  <m:mo>+</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mi>δ</m:mi>
+                </m:mfenced>
+              </m:mrow>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mo form="prefix">Pr</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>z</m:mi>
+                  <m:mo>∈</m:mo>
+                  <m:mi>T</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>δ</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>ℓ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo form="prefix">Pr</m:mo>
+                <m:mfenced separators="" open="(" close=")">
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:mo form="prefix">log</m:mo>
+                      <m:mo>(</m:mo>
+                      <m:msub>
+                        <m:mi>N</m:mi>
+                        <m:mi>r</m:mi>
+                      </m:msub>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mi>ℓ</m:mi>
+                  </m:mfrac>
+                  <m:mo>≥</m:mo>
+                  <m:msub>
+                    <m:mi>H</m:mi>
+                    <m:mi>ℓ</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>+</m:mo>
+                    <m:mn>2</m:mn>
+                    <m:mi>δ</m:mi>
+                    <m:mo>|</m:mo>
+                    <m:mi>z</m:mi>
+                    <m:mo>∈</m:mo>
+                    <m:mi>T</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>δ</m:mi>
+                      <m:mo>,</m:mo>
+                      <m:mi>ℓ</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mfenced>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>+</m:mo>
+                <m:mo form="prefix">Pr</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>z</m:mi>
+                  <m:mo>∉</m:mo>
+                  <m:mi>T</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>δ</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>ℓ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo form="prefix">Pr</m:mo>
+                <m:mfenced separators="" open="(" close=")">
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:mo form="prefix">log</m:mo>
+                      <m:mo>(</m:mo>
+                      <m:msub>
+                        <m:mi>N</m:mi>
+                        <m:mi>r</m:mi>
+                      </m:msub>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mi>ℓ</m:mi>
+                  </m:mfrac>
+                  <m:mo>≥</m:mo>
+                  <m:msub>
+                    <m:mi>H</m:mi>
+                    <m:mi>ℓ</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>+</m:mo>
+                    <m:mn>2</m:mn>
+                    <m:mi>δ</m:mi>
+                    <m:mo>|</m:mo>
+                    <m:mi>z</m:mi>
+                    <m:mo>∉</m:mo>
+                    <m:mi>T</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>δ</m:mi>
+                      <m:mo>,</m:mo>
+                      <m:mi>ℓ</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mfenced>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>≤</m:mo>
+                <m:msup>
+                  <m:mn>2</m:mn>
+                  <m:mrow>
+                    <m:mo>-</m:mo>
+                    <m:mi>δ</m:mi>
+                    <m:mi>ℓ</m:mi>
+                  </m:mrow>
+                </m:msup>
+                <m:mo>+</m:mo>
+                <m:mi>ϵ</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>δ</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>ℓ</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mover>
+                  <m:mo>→</m:mo>
+                  <m:mtext>AEP</m:mtext>
+                </m:mover>
+                <m:mn>0</m:mn>
+                <m:mo>.</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id290053">
+Consider our situation, we have a source with memory of length <m:math overflow="scroll"><m:mi>n</m:mi></m:math> and want to transmit <m:math overflow="scroll"><m:msubsup><m:mi>X</m:mi><m:mn>1</m:mn><m:mi>ℓ</m:mi></m:msubsup></m:math>.</para>
+    <list id="id290086" display="block" list-type="enumerated">
+      <item id="uid7">Choose <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>=</m:mo><m:msup><m:mn>2</m:mn><m:mrow><m:mi>ℓ</m:mi><m:mo>(</m:mo><m:msub><m:mi>H</m:mi><m:mi>ℓ</m:mi></m:msub><m:mo>+</m:mo><m:mn>2</m:mn><m:mi>δ</m:mi><m:mo>)</m:mo></m:mrow></m:msup></m:mrow></m:math>.
+</item>
+      <item id="uid8">For <m:math overflow="scroll"><m:mrow><m:mi>z</m:mi><m:mo>=</m:mo><m:msubsup><m:mi>X</m:mi><m:mn>1</m:mn><m:mi>ℓ</m:mi></m:msubsup></m:mrow></m:math>, find the value of <m:math overflow="scroll"><m:msub><m:mi>N</m:mi><m:mi>r</m:mi></m:msub></m:math> if it appears in memory.
+</item>
+      <item id="uid9">If it appears, then transmit a 0 flag bit followed by the value of <m:math overflow="scroll"><m:msub><m:mi>N</m:mi><m:mi>r</m:mi></m:msub></m:math>.
+</item>
+      <item id="uid10">Else transmit a 1 followed by the uncompressed <m:math overflow="scroll"><m:mi>z</m:mi></m:math>.
+</item>
+    </list>
+    <para id="id290239">Transmitting <m:math overflow="scroll"><m:mi>z</m:mi></m:math> via <m:math overflow="scroll"><m:msub><m:mi>N</m:mi><m:mi>r</m:mi></m:msub></m:math> requires <m:math overflow="scroll"><m:mrow><m:mo>⌈</m:mo><m:mo form="prefix">log</m:mo><m:mrow><m:mo>(</m:mo><m:msub><m:mi>N</m:mi><m:mi>r</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mo>⌉</m:mo></m:mrow></m:math> bits, and so
+the expected coding length is</para>
+    <equation id="uid11">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo form="prefix">Pr</m:mo>
+                <m:mfenced separators="" open="(" close=")">
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:mo form="prefix">log</m:mo>
+                      <m:mo>(</m:mo>
+                      <m:msub>
+                        <m:mi>N</m:mi>
+                        <m:mi>r</m:mi>
+                      </m:msub>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mi>ℓ</m:mi>
+                  </m:mfrac>
+                  <m:mo>≤</m:mo>
+                  <m:msub>
+                    <m:mi>H</m:mi>
+                    <m:mi>ℓ</m:mi>
+                  </m:msub>
+                  <m:mo>+</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mi>δ</m:mi>
+                </m:mfenced>
+                <m:mfenced separators="" open="(" close=")">
+                  <m:mn>1</m:mn>
+                  <m:mo>+</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>+</m:mo>
+                  <m:mo form="prefix">log</m:mo>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>N</m:mi>
+                      <m:mi>r</m:mi>
+                    </m:msub>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>+</m:mo>
+                  <m:msup>
+                    <m:mn>2</m:mn>
+                    <m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mi>δ</m:mi>
+                      <m:mi>ℓ</m:mi>
+                    </m:mrow>
+                  </m:msup>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mn>1</m:mn>
+                    <m:mo>+</m:mo>
+                    <m:mi>ℓ</m:mi>
+                    <m:mo form="prefix">log</m:mo>
+                    <m:mi>α</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mfenced>
+                <m:mo>+</m:mo>
+                <m:mi>ϵ</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>ℓ</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>δ</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>+</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>+</m:mo>
+                  <m:mi>ℓ</m:mi>
+                  <m:mo form="prefix">log</m:mo>
+                  <m:mi>α</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>≤</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mo>+</m:mo>
+                  <m:mi>ℓ</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>H</m:mi>
+                      <m:mi>ℓ</m:mi>
+                    </m:msub>
+                    <m:mo>+</m:mo>
+                    <m:mi>δ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>+</m:mo>
+                <m:msup>
+                  <m:mn>2</m:mn>
+                  <m:mrow>
+                    <m:mo>-</m:mo>
+                    <m:mi>δ</m:mi>
+                    <m:mi>ℓ</m:mi>
+                  </m:mrow>
+                </m:msup>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>+</m:mo>
+                  <m:mi>ℓ</m:mi>
+                  <m:mo form="prefix">log</m:mo>
+                  <m:mi>α</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>+</m:mo>
+                <m:mi>ϵ</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>ℓ</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>δ</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mo>+</m:mo>
+                  <m:mi>ℓ</m:mi>
+                  <m:mo form="prefix">log</m:mo>
+                  <m:mi>α</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>.</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id290585">
+After we normalize by <m:math overflow="scroll"><m:mi>ℓ</m:mi></m:math>, the per symbol length converges to <m:math overflow="scroll"><m:mrow><m:mfrac><m:mn>2</m:mn><m:mi>ℓ</m:mi></m:mfrac><m:mo>+</m:mo><m:msub><m:mi>H</m:mi><m:mi>ℓ</m:mi></m:msub><m:mo>+</m:mo><m:mn>2</m:mn><m:mi>δ</m:mi></m:mrow></m:math>.</para>
+    <para id="id290631">Note that this analysis assumes that the entropy <m:math overflow="scroll"><m:msub><m:mi>H</m:mi><m:mi>ℓ</m:mi></m:msub></m:math> for a block of <m:math overflow="scroll"><m:mi>ℓ</m:mi></m:math> symbols
+is known. If not, then we can have several sets that are each adjusted for some different
+entropy level.</para>
+    <section id="uid12">
+      <title>Universal Coding of the Integers</title>
+      <para id="id290668">Coding of an index also appears in other information theoretic problems such
+as indexing a coset in distributed source coding and a codeword in lossy
+coding. What are good ways to encode the index?</para>
+      <para id="id290673">If the index <m:math overflow="scroll"><m:mi>n</m:mi></m:math> lies in the range <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>∈</m:mo><m:mo>{</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:mi>N</m:mi><m:mo>}</m:mo></m:mrow></m:math> and <m:math overflow="scroll"><m:mi>N</m:mi></m:math> is known,
+then we can encode the index using <m:math overflow="scroll"><m:mrow><m:mo>⌈</m:mo><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>N</m:mi><m:mo>)</m:mo><m:mo>⌉</m:mo></m:mrow></m:math> bits.
+However, sometimes the index can be unbounded, or there could be an
+(unknown) distribution that biases us strongly toward smaller indices.
+Therefore, we are interested in a universal encoding of the integers
+such that each <m:math overflow="scroll"><m:mi>n</m:mi></m:math> is encoded using roughly <m:math overflow="scroll"><m:mrow><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:math> bits.</para>
+      <para id="id290778">To do so, we outline an approach by Elias <link target-id="bid2"/>.
+Let <m:math overflow="scroll"><m:mi>n</m:mi></m:math> be a natural number, and let <m:math overflow="scroll"><m:mrow><m:mi>b</m:mi><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:math>be the binary form for <m:math overflow="scroll"><m:mi>n</m:mi></m:math>.
+For example, <m:math overflow="scroll"><m:mrow><m:mi>b</m:mi><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mi>b</m:mi><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mi>b</m:mi><m:mo>(</m:mo><m:mn>2</m:mn><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>10</m:mn><m:mo>,</m:mo><m:mi>b</m:mi><m:mo>(</m:mo><m:mn>3</m:mn><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>11</m:mn></m:mrow></m:math>, and so on.
+Another challenge is that the length of this representation, <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mi>b</m:mi><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>|</m:mo></m:mrow></m:math>,
+is unknown. Let <m:math overflow="scroll"><m:mrow><m:mi>u</m:mi><m:mrow><m:mo>(</m:mo><m:mi>k</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msup><m:mn>0</m:mn><m:mrow><m:mi>k</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msup><m:mn>1</m:mn></m:mrow></m:math>, for example <m:math overflow="scroll"><m:mrow><m:mi>u</m:mi><m:mo>(</m:mo><m:mn>4</m:mn><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0001</m:mn></m:mrow></m:math>.
+We can now define <m:math overflow="scroll"><m:mrow><m:mi>e</m:mi><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>u</m:mi><m:mo>(</m:mo><m:mo>|</m:mo><m:mi>b</m:mi><m:mo>(</m:mo><m:mo>|</m:mo><m:mi>b</m:mi><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>)</m:mo><m:mi>b</m:mi><m:mo>(</m:mo><m:mo>|</m:mo><m:mi>b</m:mi><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>)</m:mo><m:mi>b</m:mi><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:math>.
+For example, for n=5, we have <m:math overflow="scroll"><m:mrow><m:mi>b</m:mi><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>101</m:mn></m:mrow></m:math>.
+Therefore,
+<m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mi>b</m:mi><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>=</m:mo><m:mn>3</m:mn><m:mo>,</m:mo><m:mi>b</m:mi><m:mo>(</m:mo><m:mo>|</m:mo><m:mi>b</m:mi><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>11</m:mn><m:mo>,</m:mo><m:mo>|</m:mo><m:mi>b</m:mi><m:mo>(</m:mo><m:mo>|</m:mo><m:mi>b</m:mi><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>=</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mi>u</m:mi><m:mo>(</m:mo><m:mo>|</m:mo><m:mi>b</m:mi><m:mo>(</m:mo><m:mo>|</m:mo><m:mi>b</m:mi><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>01</m:mn><m:mo>,</m:mo></m:mrow></m:math>
+and <m:math overflow="scroll"><m:mrow><m:mi>e</m:mi><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0111101</m:mn></m:mrow></m:math>.
+We note in passing that the first 2 bits of <m:math overflow="scroll"><m:mrow><m:mi>e</m:mi><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:math> describe the length
+of <m:math overflow="scroll"><m:mrow><m:mi>b</m:mi><m:mo>(</m:mo><m:mo>|</m:mo><m:mi>b</m:mi><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>)</m:mo></m:mrow></m:math>, which is 2,
+the middle 2 bits describe <m:math overflow="scroll"><m:mrow><m:mi>b</m:mi><m:mo>(</m:mo><m:mo>|</m:mo><m:mi>b</m:mi><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>)</m:mo></m:mrow></m:math>, which is 3,
+and the last 3 bits describe <m:math overflow="scroll"><m:mrow><m:mi>b</m:mi><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:math>, giving the actual number 5.
+It is easily seen that</para>
+      <equation id="uid13">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                  <m:mi>e</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>n</m:mi>
+                  <m:mo>)</m:mo>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mo>|</m:mo>
+                  <m:mi>b</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mo>|</m:mo>
+                  <m:mi>b</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>n</m:mi>
+                  <m:mo>)</m:mo>
+                  <m:mo>|</m:mo>
+                  <m:mo>)</m:mo>
+                  <m:mo>|</m:mo>
+                  <m:mo>+</m:mo>
+                  <m:mo>|</m:mo>
+                  <m:mi>b</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>n</m:mi>
+                  <m:mo>)</m:mo>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>≤</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mo form="prefix">log</m:mo>
+                  <m:mo>⌈</m:mo>
+                  <m:mo form="prefix">log</m:mo>
+                  <m:mo>(</m:mo>
+                  <m:mi>n</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>)</m:mo>
+                  <m:mo>+</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>⌉</m:mo>
+                  <m:mo>+</m:mo>
+                  <m:mi>l</m:mi>
+                  <m:mi>o</m:mi>
+                  <m:mi>g</m:mi>
+                  <m:mo>⌈</m:mo>
+                  <m:mi>n</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>⌉</m:mo>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+    </section>
+    <section id="uid14">
+      <title>Sliding Window Universal Coding</title>
+      <para id="id291442">Having described an efficient way to encode an index, in particular
+a large one, we can employ this technique in sliding window coding
+as developed by Wyner and Ziv <link target-id="bid3"/>.</para>
+      <para id="id291453">Take a fixed window of length <m:math overflow="scroll"><m:msub><m:mi>n</m:mi><m:mi>w</m:mi></m:msub></m:math> and a source that generates characters.
+Define the history as <m:math overflow="scroll"><m:msubsup><m:mi>x</m:mi><m:mn>1</m:mn><m:msub><m:mi>n</m:mi><m:mi>w</m:mi></m:msub></m:msubsup></m:math>, this is the portion of the data <m:math overflow="scroll"><m:mi>x</m:mi></m:math> that we
+have already processed and thus know.
+Our goal is to encode the phrase <m:math overflow="scroll"><m:mrow><m:msub><m:mi>y</m:mi><m:mn>1</m:mn></m:msub><m:mo>=</m:mo><m:msubsup><m:mi>x</m:mi><m:mrow><m:msub><m:mi>n</m:mi><m:mi>w</m:mi></m:msub><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow><m:mrow><m:msub><m:mi>n</m:mi><m:mi>w</m:mi></m:msub><m:mo>+</m:mo><m:msub><m:mi>L</m:mi><m:mn>1</m:mn></m:msub></m:mrow></m:msubsup></m:mrow></m:math>,
+where <m:math overflow="scroll"><m:msub><m:mi>L</m:mi><m:mn>1</m:mn></m:msub></m:math> is not fixed.
+The length <m:math overflow="scroll"><m:msub><m:mi>L</m:mi><m:mn>1</m:mn></m:msub></m:math> is chosen such that there exists</para>
+      <equation id="id291588">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>y</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:msubsup>
+              <m:mi>x</m:mi>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>n</m:mi>
+                  <m:mi>w</m:mi>
+                </m:msub>
+                <m:mo>+</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>n</m:mi>
+                  <m:mi>w</m:mi>
+                </m:msub>
+                <m:mo>+</m:mo>
+                <m:msub>
+                  <m:mi>L</m:mi>
+                  <m:mn>1</m:mn>
+                </m:msub>
+              </m:mrow>
+            </m:msubsup>
+            <m:mo>=</m:mo>
+            <m:msubsup>
+              <m:mi>x</m:mi>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>n</m:mi>
+                  <m:mi>w</m:mi>
+                </m:msub>
+                <m:mo>-</m:mo>
+                <m:mi>m</m:mi>
+              </m:mrow>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>n</m:mi>
+                  <m:mi>w</m:mi>
+                </m:msub>
+                <m:mo>-</m:mo>
+                <m:mi>m</m:mi>
+                <m:mo>+</m:mo>
+                <m:msub>
+                  <m:mi>L</m:mi>
+                  <m:mn>1</m:mn>
+                </m:msub>
+              </m:mrow>
+            </m:msubsup>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id291689">for some <m:math overflow="scroll"><m:mrow><m:mi>m</m:mi><m:mo>∈</m:mo><m:mo>{</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:msub><m:mi>n</m:mi><m:mi>w</m:mi></m:msub><m:mo>-</m:mo><m:mn>1</m:mn><m:mo>}</m:mo></m:mrow></m:math>.
+For example, if <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>a</m:mi><m:mi>b</m:mi><m:mi>c</m:mi><m:mi>b</m:mi><m:mi>a</m:mi><m:mi>b</m:mi><m:mi>a</m:mi><m:mi>b</m:mi><m:mi>c</m:mi></m:mrow></m:math> and we have processed the first 5
+symbols <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mi>b</m:mi><m:mi>c</m:mi><m:mi>b</m:mi><m:mi>a</m:mi></m:mrow></m:math>, then <m:math overflow="scroll"><m:mrow><m:msub><m:mi>L</m:mi><m:mn>1</m:mn></m:msub><m:mo>=</m:mo><m:mn>3</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>m</m:mi><m:mn>1</m:mn></m:msub><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:math>, where <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mi>b</m:mi><m:mi>c</m:mi><m:mi>b</m:mi><m:mi>a</m:mi></m:mrow></m:math> is the history
+and we begin encoding after that part.</para>
+      <para id="id291849">The actual encoding of the phrase <m:math overflow="scroll"><m:msub><m:mi>y</m:mi><m:mn>1</m:mn></m:msub></m:math> sends <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:msub><m:mi>y</m:mi><m:mn>1</m:mn></m:msub><m:mo>)</m:mo><m:mo>|</m:mo></m:mrow></m:math> bits,
+where</para>
+      <equation id="uid15">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mi>f</m:mi>
+            </m:mrow>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>y</m:mi>
+                <m:mn>1</m:mn>
+              </m:msub>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mo>=</m:mo>
+            </m:mrow>
+            <m:mfenced separators="" open="{" close="">
+              <m:mtable displaystyle="true">
+                <m:mtr>
+                  <m:mtd/>
+                  <m:mtd columnalign="left">
+                    <m:mrow>
+                      <m:mrow>
+                        <m:mo>⌈</m:mo>
+                        <m:mo form="prefix">log</m:mo>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:msub>
+                            <m:mi>n</m:mi>
+                            <m:mi>w</m:mi>
+                          </m:msub>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                        <m:mo>⌉</m:mo>
+                      </m:mrow>
+                      <m:mo>+</m:mo>
+                      <m:mrow>
+                        <m:mo>|</m:mo>
+                        <m:mi>e</m:mi>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:msub>
+                            <m:mi>L</m:mi>
+                            <m:mn>1</m:mn>
+                          </m:msub>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                        <m:mo>|</m:mo>
+                      </m:mrow>
+                      <m:mo>,</m:mo>
+                      <m:mo form="prefix">log</m:mo>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:msub>
+                          <m:mi>n</m:mi>
+                          <m:mn>2</m:mn>
+                        </m:msub>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:mo>&lt;</m:mo>
+                      <m:msub>
+                        <m:mi>L</m:mi>
+                        <m:mn>1</m:mn>
+                      </m:msub>
+                      <m:mo form="prefix">log</m:mo>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mi>α</m:mi>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd/>
+                  <m:mtd columnalign="left">
+                    <m:mrow>
+                      <m:mrow>
+                        <m:mo>⌈</m:mo>
+                        <m:msub>
+                          <m:mi>L</m:mi>
+                          <m:mn>1</m:mn>
+                        </m:msub>
+                        <m:mo form="prefix">log</m:mo>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:mi>α</m:mi>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                        <m:mo>⌉</m:mo>
+                      </m:mrow>
+                      <m:mo>+</m:mo>
+                      <m:mrow>
+                        <m:mo>|</m:mo>
+                        <m:mi>e</m:mi>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:msub>
+                            <m:mi>L</m:mi>
+                            <m:mn>1</m:mn>
+                          </m:msub>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                        <m:mo>|</m:mo>
+                      </m:mrow>
+                      <m:mo>,</m:mo>
+                      <m:mi>e</m:mi>
+                      <m:mi>l</m:mi>
+                      <m:mi>s</m:mi>
+                      <m:mi>e</m:mi>
+                    </m:mrow>
+                  </m:mtd>
+                </m:mtr>
+              </m:mtable>
+            </m:mfenced>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id292100">First we encode <m:math overflow="scroll"><m:msub><m:mi>L</m:mi><m:mn>1</m:mn></m:msub></m:math>;
+then either the index <m:math overflow="scroll"><m:mi>m</m:mi></m:math> into history is encoded or <m:math overflow="scroll"><m:msub><m:mi>y</m:mi><m:mn>1</m:mn></m:msub></m:math> is encoded uncompressed;
+finally, the first <m:math overflow="scroll"><m:msub><m:mi>L</m:mi><m:mn>1</m:mn></m:msub></m:math> characters <m:math overflow="scroll"><m:msubsup><m:mi>x</m:mi><m:mn>1</m:mn><m:msub><m:mi>L</m:mi><m:mn>1</m:mn></m:msub></m:msubsup></m:math> are removed from the history database,
+and <m:math overflow="scroll"><m:msub><m:mi>y</m:mi><m:mn>1</m:mn></m:msub></m:math> is appended to its end. The latter process gives this algorithm a sliding
+window flavor.</para>
+      <para id="id292196">This rather simple algorithm turns out to be asymptotically optimal in the limit of large <m:math overflow="scroll"><m:msub><m:mi>n</m:mi><m:mi>w</m:mi></m:msub></m:math>.
+That is, it achieves the entropy rate.
+To see this, let us compute the compression factor.
+Consider <m:math overflow="scroll"><m:msubsup><m:mi>x</m:mi><m:mn>1</m:mn><m:mi>N</m:mi></m:msubsup></m:math> where
+<m:math overflow="scroll"><m:mrow><m:mi>N</m:mi><m:mo>&gt;</m:mo><m:mo>&gt;</m:mo><m:msub><m:mi>n</m:mi><m:mi>w</m:mi></m:msub></m:mrow></m:math>,
+<m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>R</m:mi><m:mo>¯</m:mo></m:mover><m:mrow><m:mo>(</m:mo><m:mi>N</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mfrac><m:mrow><m:mi>E</m:mi><m:mo>(</m:mo><m:mi>l</m:mi><m:mrow><m:mo>(</m:mo><m:msubsup><m:mi>x</m:mi><m:mn>1</m:mn><m:mi>N</m:mi></m:msubsup><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mi>N</m:mi></m:mfrac></m:mrow></m:math>,
+<m:math overflow="scroll"><m:mrow><m:mi>N</m:mi><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>C</m:mi></m:msubsup><m:mrow><m:mo>|</m:mo><m:msub><m:mi>y</m:mi><m:mi>i</m:mi></m:msub><m:mo>|</m:mo></m:mrow></m:mrow></m:math>,
+and <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>|</m:mo></m:mrow><m:msub><m:mi>y</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>|</m:mo><m:mo>=</m:mo></m:mrow><m:msub><m:mi>L</m:mi><m:mn>1</m:mn></m:msub></m:mrow></m:math>,
+where <m:math overflow="scroll"><m:mi>C</m:mi></m:math> is the number of phrases required to encode <m:math overflow="scroll"><m:msubsup><m:mi>x</m:mi><m:mn>1</m:mn><m:mi>N</m:mi></m:msubsup></m:math>.
+The number of bits <m:math overflow="scroll"><m:mrow><m:mi>l</m:mi><m:mo>(</m:mo><m:msubsup><m:mi>x</m:mi><m:mn>1</m:mn><m:mi>N</m:mi></m:msubsup><m:mo>)</m:mo></m:mrow></m:math> needed to encoded <m:math overflow="scroll"><m:msubsup><m:mi>x</m:mi><m:mn>1</m:mn><m:mi>N</m:mi></m:msubsup></m:math> using the
+sliding window algorithm is</para>
+      <equation id="uid16">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>l</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msubsup>
+                <m:mi>x</m:mi>
+                <m:mn>1</m:mn>
+                <m:mi>N</m:mi>
+              </m:msubsup>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo>⌈</m:mo>
+              <m:msub>
+                <m:mi>n</m:mi>
+                <m:mi>w</m:mi>
+              </m:msub>
+              <m:mo form="prefix">log</m:mo>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>α</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>⌉</m:mo>
+            </m:mrow>
+            <m:mo>+</m:mo>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>C</m:mi>
+            </m:munderover>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mi>e</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:msub>
+                  <m:mi>L</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:mo>+</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>+</m:mo>
+            <m:mo movablelimits="true" form="prefix">min</m:mo>
+            <m:mrow>
+              <m:mo>{</m:mo>
+              <m:mrow>
+                <m:mo>⌈</m:mo>
+                <m:mo form="prefix">log</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>n</m:mi>
+                    <m:mi>w</m:mi>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>⌉</m:mo>
+              </m:mrow>
+              <m:mo>,</m:mo>
+              <m:mrow>
+                <m:mo>⌈</m:mo>
+                <m:msub>
+                  <m:mi>L</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mo form="prefix">log</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>α</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>⌉</m:mo>
+              </m:mrow>
+              <m:mo>}</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id292621">Therefore, the compression factor <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>R</m:mi><m:mo>¯</m:mo></m:mover><m:mrow><m:mo>(</m:mo><m:mi>N</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> satisfies</para>
+      <equation id="uid17">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mover accent="true">
+              <m:mi>R</m:mi>
+              <m:mo>¯</m:mo>
+            </m:mover>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>N</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mrow>
+                <m:mo>⌈</m:mo>
+                <m:msub>
+                  <m:mi>n</m:mi>
+                  <m:mi>w</m:mi>
+                </m:msub>
+                <m:mo form="prefix">log</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>α</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>⌉</m:mo>
+              </m:mrow>
+              <m:mi>N</m:mi>
+            </m:mfrac>
+            <m:mo>+</m:mo>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mi>N</m:mi>
+            </m:mfrac>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>C</m:mi>
+            </m:munderover>
+            <m:mi>m</m:mi>
+            <m:mi>i</m:mi>
+            <m:mi>n</m:mi>
+            <m:mrow>
+              <m:mo>{</m:mo>
+              <m:mrow>
+                <m:mo>⌈</m:mo>
+                <m:mo form="prefix">log</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>n</m:mi>
+                    <m:mi>w</m:mi>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>⌉</m:mo>
+              </m:mrow>
+              <m:mo>+</m:mo>
+              <m:mn>1</m:mn>
+              <m:mo>+</m:mo>
+              <m:msub>
+                <m:mi>r</m:mi>
+                <m:mn>1</m:mn>
+              </m:msub>
+              <m:mo form="prefix">log</m:mo>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:msub>
+                  <m:mi>L</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>,</m:mo>
+              <m:msub>
+                <m:mi>r</m:mi>
+                <m:mn>2</m:mn>
+              </m:msub>
+              <m:mo form="prefix">log</m:mo>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:msub>
+                  <m:mi>L</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>}</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id292834"><emphasis effect="bold">Claim 3 <link target-id="bid3"/></emphasis> 
+As <m:math overflow="scroll"><m:msub><m:mo movablelimits="true" form="prefix">lim</m:mo><m:mrow><m:msub><m:mi>n</m:mi><m:mi>w</m:mi></m:msub><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:msub></m:math> and <m:math overflow="scroll"><m:msub><m:mo movablelimits="true" form="prefix">lim</m:mo><m:mrow><m:mi>N</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:msub></m:math>, the compression factor
+<m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>R</m:mi><m:mo>¯</m:mo></m:mover><m:mrow><m:mo>(</m:mo><m:mi>N</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> converges to the entropy rate <m:math overflow="scroll"><m:mi>H</m:mi></m:math>.</para><para id="id292940">A direct proof is complicated, because the location of phrases is a random variable,
+making a detailed analysis complicated. Let us try to simplify the problem.</para>
+      <figure id="uid19"><media id="uid19_media" alt="Block partitioning in analysis of sliding window algorithm">
+          <image mime-type="image/png" src="../../media/parsing.png" id="uid19_onlineimage" width="507"><!-- NOTE: attribute width changes image size online (pixels). original width is 507. --></image>
+          <image mime-type="application/postscript" for="pdf" src="../../media/parsing.eps" id="uid19_printimage"/>
+        </media>
+        
+      <caption>Block partitioning in analysis of sliding window algorithm <link target-id="bid3"/>.</caption></figure><para id="id292962">Take <m:math overflow="scroll"><m:msub><m:mi>l</m:mi><m:mn>0</m:mn></m:msub></m:math> that divides <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mi>w</m:mi></m:msub><m:mo>+</m:mo><m:mi>N</m:mi></m:mrow></m:math> to create <m:math overflow="scroll"><m:mfrac><m:mrow><m:msub><m:mi>n</m:mi><m:mi>w</m:mi></m:msub><m:mo>+</m:mo><m:mi>N</m:mi></m:mrow><m:msub><m:mi>l</m:mi><m:mn>0</m:mn></m:msub></m:mfrac></m:math> intervals,
+where <m:math overflow="scroll"><m:mrow><m:msub><m:mi>l</m:mi><m:mn>0</m:mn></m:msub><m:mo>=</m:mo><m:mfrac><m:mrow><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:msub><m:mi>n</m:mi><m:mi>w</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mrow><m:mi>H</m:mi><m:mo>+</m:mo><m:mn>2</m:mn><m:mi>ϵ</m:mi></m:mrow></m:mfrac></m:mrow></m:math>, which is related to the window
+size in the algorithm from <link document="m46236"/>.
+This partition into blocks appears in <link target-id="uid19"/>.
+Denote by <m:math overflow="scroll"><m:mrow><m:msub><m:mi>w</m:mi><m:msub><m:mi>l</m:mi><m:mn>0</m:mn></m:msub></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math> the smallest value for which
+<m:math overflow="scroll"><m:mrow><m:msubsup><m:mi>x</m:mi><m:mn>1</m:mn><m:msub><m:mi>l</m:mi><m:mn>0</m:mn></m:msub></m:msubsup><m:mo>=</m:mo><m:msubsup><m:mi>x</m:mi><m:mrow><m:mo>-</m:mo><m:msub><m:mi>w</m:mi><m:msub><m:mi>l</m:mi><m:mn>0</m:mn></m:msub></m:msub><m:mo>-</m:mo><m:msub><m:mi>l</m:mi><m:mn>0</m:mn></m:msub><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow><m:mrow><m:mo>-</m:mo><m:msub><m:mi>w</m:mi><m:msub><m:mi>l</m:mi><m:mn>0</m:mn></m:msub></m:msub></m:mrow></m:msubsup></m:mrow></m:math>.
+Using Kac's lemma <link target-id="bid0"/>,</para><equation id="uid20">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mo form="prefix">Pr</m:mo>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>w</m:mi>
+                <m:msub>
+                  <m:mi>l</m:mi>
+                  <m:mn>0</m:mn>
+                </m:msub>
+              </m:msub>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>&gt;</m:mo>
+              <m:mi>n</m:mi>
+              <m:mo>|</m:mo>
+              <m:msubsup>
+                <m:mi>x</m:mi>
+                <m:mn>1</m:mn>
+                <m:msub>
+                  <m:mi>l</m:mi>
+                  <m:mn>0</m:mn>
+                </m:msub>
+              </m:msubsup>
+              <m:mo>=</m:mo>
+              <m:mi>z</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>≤</m:mo>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mrow>
+                <m:mi>n</m:mi>
+                <m:mo form="prefix">Pr</m:mo>
+                <m:mo>(</m:mo>
+                <m:msubsup>
+                  <m:mi>x</m:mi>
+                  <m:mn>1</m:mn>
+                  <m:msub>
+                    <m:mi>l</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                </m:msubsup>
+                <m:mo>=</m:mo>
+                <m:mi>z</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mfrac>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id293312"><emphasis effect="bold">Claim 4 <link target-id="bid3"/></emphasis> 
+We have the following convergence as <m:math overflow="scroll"><m:mi>l</m:mi></m:math> increases,</para><equation id="id293340">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>P</m:mi>
+            <m:mi>r</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>w</m:mi>
+                <m:msub>
+                  <m:mi>l</m:mi>
+                  <m:mn>0</m:mn>
+                </m:msub>
+              </m:msub>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>&gt;</m:mo>
+              <m:msup>
+                <m:mn>2</m:mn>
+                <m:mrow>
+                  <m:mi>l</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>H</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mi>ϵ</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:msup>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mover>
+              <m:mo>→</m:mo>
+              <m:mrow>
+                <m:mi>l</m:mi>
+                <m:mo>→</m:mo>
+                <m:mi>∞</m:mi>
+              </m:mrow>
+            </m:mover>
+            <m:mn>0</m:mn>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id293427">Because of the AEP <link target-id="bid1"/>,</para>
+      <equation id="id293436">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mo form="prefix">Pr</m:mo>
+            <m:mfenced separators="" open="(" close=")">
+              <m:msubsup>
+                <m:mi>x</m:mi>
+                <m:mn>1</m:mn>
+                <m:mi>l</m:mi>
+              </m:msubsup>
+              <m:mo>:</m:mo>
+              <m:mfenced separators="" open="|" close="|">
+                <m:mfrac>
+                  <m:mrow>
+                    <m:mo>-</m:mo>
+                    <m:mo form="prefix">log</m:mo>
+                    <m:mo>(</m:mo>
+                    <m:mi>P</m:mi>
+                    <m:mi>r</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:msubsup>
+                        <m:mi>x</m:mi>
+                        <m:mn>1</m:mn>
+                        <m:mi>l</m:mi>
+                      </m:msubsup>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:msub>
+                    <m:mi>l</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                </m:mfrac>
+                <m:mo>-</m:mo>
+                <m:mi>H</m:mi>
+              </m:mfenced>
+              <m:mo>&gt;</m:mo>
+              <m:mi>ϵ</m:mi>
+            </m:mfenced>
+            <m:mo>→</m:mo>
+            <m:mn>0</m:mn>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id293535">Therefore, for a typical input <m:math overflow="scroll"><m:mrow><m:mo form="prefix">Pr</m:mo><m:mrow><m:mo>(</m:mo><m:msubsup><m:mi>x</m:mi><m:mn>1</m:mn><m:mi>l</m:mi></m:msubsup><m:mo>)</m:mo></m:mrow><m:mo>&gt;</m:mo><m:msup><m:mn>2</m:mn><m:mrow><m:mo>-</m:mo><m:msub><m:mi>l</m:mi><m:mn>0</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>H</m:mi><m:mo>+</m:mo><m:mi>ϵ</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:msup></m:mrow></m:math>.</para>
+      <para id="id293600">Recall that the interval length is <m:math overflow="scroll"><m:mrow><m:msub><m:mi>l</m:mi><m:mn>0</m:mn></m:msub><m:mo>=</m:mo><m:mfrac><m:mrow><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:msub><m:mi>n</m:mi><m:mi>w</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mrow><m:mi>H</m:mi><m:mo>+</m:mo><m:mn>2</m:mn><m:mi>ϵ</m:mi></m:mrow></m:mfrac><m:mo>,</m:mo></m:mrow></m:math> and so the probability
+that an interval cannot be found in the history is</para>
+      <equation id="id293653">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mfrac>
+              <m:msup>
+                <m:mn>2</m:mn>
+                <m:mrow>
+                  <m:mo>-</m:mo>
+                  <m:msub>
+                    <m:mi>l</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>H</m:mi>
+                    <m:mo>+</m:mo>
+                    <m:mn>2</m:mn>
+                    <m:mi>ϵ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:msup>
+              <m:msup>
+                <m:mn>2</m:mn>
+                <m:mrow>
+                  <m:mo>-</m:mo>
+                  <m:msub>
+                    <m:mi>l</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>H</m:mi>
+                    <m:mo>+</m:mo>
+                    <m:mi>ϵ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:msup>
+            </m:mfrac>
+            <m:mo>=</m:mo>
+            <m:msup>
+              <m:mn>2</m:mn>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:msub>
+                  <m:mi>l</m:mi>
+                  <m:mn>0</m:mn>
+                </m:msub>
+                <m:mi>ϵ</m:mi>
+              </m:mrow>
+            </m:msup>
+            <m:mo>→</m:mo>
+            <m:mn>0</m:mn>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id293749">For a long enough interval, this probability goes to zero.</para>
+    </section>
+    <section id="uid22">
+      <title>Redundancy of parsing schemes</title>
+      <para id="id293766">There are many Ziv-Lempel style parsing algorithms <link target-id="bid4"/>, <link target-id="bid5"/>, <link target-id="bid3"/>,
+and each of the variants
+has different details, but the key idea is to find the longest match
+in a window of length <m:math overflow="scroll"><m:msub><m:mi>n</m:mi><m:mi>w</m:mi></m:msub></m:math>.
+The length of the match is <m:math overflow="scroll"><m:mi>L</m:mi></m:math>, where we remind the reader
+that <m:math overflow="scroll"><m:mrow><m:mi>L</m:mi><m:mo>≈</m:mo><m:mfrac><m:mrow><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:msub><m:mi>n</m:mi><m:mi>w</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mi>H</m:mi></m:mfrac></m:mrow></m:math>.</para>
+      <para id="id293844">Now, encoding <m:math overflow="scroll"><m:mi>L</m:mi></m:math> requires <m:math overflow="scroll"><m:mrow><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:msub><m:mi>n</m:mi><m:mi>w</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:math> bits, and so the per-symbol
+compression ratio is <m:math overflow="scroll"><m:mfrac><m:mrow><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:msub><m:mi>n</m:mi><m:mi>w</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mi>L</m:mi></m:mfrac></m:math>, which in the limit of large
+<m:math overflow="scroll"><m:msub><m:mi>n</m:mi><m:mi>w</m:mi></m:msub></m:math> approaches the entropy rate <m:math overflow="scroll"><m:mi>H</m:mi></m:math>.</para>
+      <para id="id293932">However, the encoding of <m:math overflow="scroll"><m:mi>L</m:mi></m:math> must also desribe its length, and often
+the symbol that follows the match. These require length
+<m:math overflow="scroll"><m:mrow><m:mo form="prefix">log</m:mo><m:mrow><m:mo>(</m:mo><m:mi>L</m:mi><m:mo>)</m:mo></m:mrow><m:mo>≈</m:mo><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mo form="prefix">log</m:mo><m:mrow><m:mo>(</m:mo><m:msub><m:mi>n</m:mi><m:mi>w</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow></m:math>, and the normalized (per-symbol) cost is</para>
+      <equation id="uid23">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mfrac>
+              <m:mrow>
+                <m:mo form="prefix">log</m:mo>
+                <m:mo>(</m:mo>
+                <m:mo form="prefix">log</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>n</m:mi>
+                    <m:mi>w</m:mi>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mi>L</m:mi>
+            </m:mfrac>
+            <m:mo>=</m:mo>
+            <m:mi>O</m:mi>
+            <m:mfenced separators="" open="(" close=")">
+              <m:mfrac>
+                <m:mrow>
+                  <m:mo form="prefix">log</m:mo>
+                  <m:mo>(</m:mo>
+                  <m:mo form="prefix">log</m:mo>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>n</m:mi>
+                      <m:mi>w</m:mi>
+                    </m:msub>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mrow>
+                  <m:mo form="prefix">log</m:mo>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>n</m:mi>
+                    <m:mi>w</m:mi>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mfrac>
+            </m:mfenced>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id294098">Therefore, the redundancy of Ziv-Lempel style compression algorithms is proportional to <m:math overflow="scroll"><m:mrow><m:mi>O</m:mi><m:mfenced separators="" open="(" close=")"><m:mfrac><m:mrow><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>)</m:mo></m:mrow><m:mrow><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:mfrac></m:mfenced></m:mrow></m:math>, which is much greater than the <m:math overflow="scroll"><m:mrow><m:mi>O</m:mi><m:mfenced separators="" open="(" close=")"><m:mfrac><m:mrow><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow><m:mi>n</m:mi></m:mfrac></m:mfenced></m:mrow></m:math> that we have seen for parametric sources. The fundamental reason why the redundancy is greater is that
+the class of non-parametric sources is much richer. Detailed
+redundancy analyses appear in a series of papers by Savari
+(c.f. <link target-id="bid6"/>).</para>
+    </section>
+    <section id="uid24">
+      <title>Parsing for Lossy Compression</title>
+      <para id="id294206">The parsing schemes that we have seen can also be adapted to lossy compression.
+Let us describe several approaches along these lines.</para>
+      <para id="id294210"><emphasis effect="bold">Fixed length:</emphasis> The first scheme, due to Gupta et al. <link target-id="bid7"/>,
+constructs a codebook of size <m:math overflow="scroll"><m:mrow><m:mo>≈</m:mo><m:msup><m:mn>2</m:mn><m:mrow><m:mi>L</m:mi><m:mi>R</m:mi><m:mo>(</m:mo><m:mi>D</m:mi><m:mo>)</m:mo></m:mrow></m:msup></m:mrow></m:math> codewords, where <m:math overflow="scroll"><m:mi>L</m:mi></m:math> is the length of the phrase being matched and <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mo>(</m:mo><m:mi>D</m:mi><m:mo>)</m:mo></m:mrow></m:math> is the rate distortion function. The algorithm cannot search for perfect matches of the phrase, because this is lossy compression. Instead, it seeks the codeword that matches our input phrase most closely. It turns out that for large <m:math overflow="scroll"><m:mi>L</m:mi></m:math> the expected distortion of the lossy match will be approximately
+<m:math overflow="scroll"><m:mi>D</m:mi></m:math> per symbol.</para>
+      <para id="id294298"><emphasis effect="bold">Variable length:</emphasis> Another approach, due to Gioran and Kontoyiannis <link target-id="bid8"/>,
+constructs a single long database string, and searches for the longest match whose distortion w.r.t. the input is approximately <m:math overflow="scroll"><m:mi>D</m:mi></m:math>; the location and length of the approximate match are encoded. Seeing that the database is of length <m:math overflow="scroll"><m:mrow><m:mo>≈</m:mo><m:msup><m:mn>2</m:mn><m:mrow><m:mi>L</m:mi><m:mi>R</m:mi></m:mrow></m:msup></m:mrow></m:math>, encoding the location requires <m:math overflow="scroll"><m:mrow><m:mo>≈</m:mo><m:mi>L</m:mi><m:mi>R</m:mi></m:mrow></m:math> bits, and the <m:math overflow="scroll"><m:mi>D</m:mi></m:math>-match (a match with distortion <m:math overflow="scroll"><m:mi>D</m:mi></m:math> w.r.t. the input string) is typically of length <m:math overflow="scroll"><m:mrow><m:mo>≈</m:mo><m:mi>L</m:mi></m:mrow></m:math>, giving a per-symbol rate of <m:math overflow="scroll"><m:mrow><m:mo>≈</m:mo><m:mi>R</m:mi><m:mo>(</m:mo><m:mi>D</m:mi><m:mo>)</m:mo></m:mrow></m:math> bits.</para>
+      <para id="id294407">An advantage of the latter scheme by Gioran and Kontoyiannis <link target-id="bid8"/>
+is reduced memory use.
+The database is a string of length <m:math overflow="scroll"><m:mrow><m:mo>≈</m:mo><m:msup><m:mn>2</m:mn><m:mrow><m:mi>L</m:mi><m:mi>R</m:mi><m:mo>(</m:mo><m:mi>D</m:mi><m:mo>)</m:mo></m:mrow></m:msup></m:mrow></m:math>, instead of a codebook comprised of <m:math overflow="scroll"><m:mrow><m:mo>≈</m:mo><m:msup><m:mn>2</m:mn><m:mrow><m:mi>L</m:mi><m:mi>R</m:mi><m:mo>(</m:mo><m:mi>D</m:mi><m:mo>)</m:mo></m:mrow></m:msup></m:mrow></m:math> codewords, each of length <m:math overflow="scroll"><m:mi>L</m:mi></m:math>. On the other hand, the Gupta et al. algorithm <link target-id="bid7"/>
+has better <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mi>D</m:mi></m:mrow></m:math> performance, because it does not need to spend <m:math overflow="scroll"><m:mrow><m:mo>≈</m:mo><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>L</m:mi><m:mo>)</m:mo></m:mrow></m:math> bits per phrase to describe its length. An improved algorithm, dubbed the hybrid algorithm by Gioran and Kontoyiannis,
+constructs a single database and performs fixed length coding for the best match of length <m:math overflow="scroll"><m:mi>L</m:mi></m:math> in the database. Therefore, it combines the memory usage of a single database approach with the <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mi>D</m:mi></m:mrow></m:math> performance of fixed length coding.</para>
+    </section>
+  </content>
+  <bib:file>
+    <bib:entry id="bid1">
+      <bib:book>
+        <!--required fields-->
+        <bib:author>Cover, T. M. and Thomas, J. A.</bib:author>
+        <bib:title>Elements of Information Theory</bib:title>
+        <bib:publisher>Wiley-Interscience</bib:publisher>
+        <bib:year>2006</bib:year>
+        <!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address/>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note/>
+      </bib:book>
+    </bib:entry>
+    <bib:entry id="bid2">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Elias, P.</bib:author>
+        <bib:title>Universal codeword sets and representations of the integers</bib:title>
+        <bib:journal>IEEE Trans. Inf. Theory</bib:journal>
+        <bib:year>1975</bib:year>
+        <!--optional fields-->
+        <bib:volume>21</bib:volume>
+        <bib:number>2</bib:number>
+        <bib:pages>194–203</bib:pages>
+        <bib:month>Mar.</bib:month>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid8">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Gioran, C. and Kontoyiannis, I.</bib:author>
+        <bib:title>Lossy Compression in Near-Linear Time via Efficient Random Codebooks and Databases</bib:title>
+        <bib:journal>CoRR</bib:journal>
+        <bib:year>2009</bib:year>
+        <!--optional fields-->
+        <bib:volume>abs/0904.3340</bib:volume>
+        <bib:number/>
+        <bib:pages/>
+        <bib:month/>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid7">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Gupta, A. and Verdú, S. and Weissman, T.</bib:author>
+        <bib:title>Rate-distortion in near-linear time</bib:title>
+        <bib:journal>preprint</bib:journal>
+        <bib:year>2008</bib:year>
+        <!--optional fields-->
+        <bib:volume/>
+        <bib:number/>
+        <bib:pages/>
+        <bib:month/>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid0">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Kac, M.</bib:author>
+        <bib:title>On the notion of recurrence in discrete stochastic processes</bib:title>
+        <bib:journal>Proc. Nat. Acad. Sci.</bib:journal>
+        <bib:year>1934</bib:year>
+        <!--optional fields-->
+        <bib:volume>20</bib:volume>
+        <bib:number/>
+        <bib:pages>376–379</bib:pages>
+        <bib:month/>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid6">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Savari, S.A.</bib:author>
+        <bib:title>Redundancy of the Lempel-Ziv incremental parsing rule</bib:title>
+        <bib:journal>IEEE Trans. Inf. Theory</bib:journal>
+        <bib:year>1997</bib:year>
+        <!--optional fields-->
+        <bib:volume>43</bib:volume>
+        <bib:number>1</bib:number>
+        <bib:pages>9–21</bib:pages>
+        <bib:month/>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid3">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Wyner, A.D. and Ziv, J.</bib:author>
+        <bib:title>The sliding-window Lempel-Ziv algorithm is asymptotically optimal</bib:title>
+        <bib:journal>Proc. IEEE</bib:journal>
+        <bib:year>1994</bib:year>
+        <!--optional fields-->
+        <bib:volume>82</bib:volume>
+        <bib:number>6</bib:number>
+        <bib:pages>872–877</bib:pages>
+        <bib:month/>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid4">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Ziv, J. and Lempel, A.</bib:author>
+        <bib:title>A universal algorithm for sequential data compression</bib:title>
+        <bib:journal>IEEE Trans. Inf. Theory</bib:journal>
+        <bib:year>1977</bib:year>
+        <!--optional fields-->
+        <bib:volume>23</bib:volume>
+        <bib:number>3</bib:number>
+        <bib:pages>337–343</bib:pages>
+        <bib:month/>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid5">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Ziv, J. and Lempel, A.</bib:author>
+        <bib:title>Compression of Individual Sequences via Variable-Rate Coding</bib:title>
+        <bib:journal>IEEE Trans. Inf. Theory</bib:journal>
+        <bib:year>1978</bib:year>
+        <!--optional fields-->
+        <bib:volume>24</bib:volume>
+        <bib:number>5</bib:number>
+        <bib:pages>530–536</bib:pages>
+        <bib:month>Sep.</bib:month>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+  </bib:file>
+</document>

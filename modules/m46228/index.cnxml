@@ -1,0 +1,3219 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:bib="http://bibtexml.sf.net/">
+  <title>Universal coding for classes of sources</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m46228</md:content-id>
+  <md:title>Universal coding for classes of sources</md:title>
+  <md:abstract/>
+  <md:uuid>fdd5a82b-6a0b-4113-8a5e-5fafb21798d5</md:uuid>
+</metadata>
+
+<content>
+    <para id="id279414">We have discussed several parametric sources, and will now start developing mathematical tools in
+order to investigate properties of universal codes that offer universal compression w.r.t.
+a class of parametric sources.</para>
+    <section id="uid1">
+      <title>Preliminaries</title>
+      <para id="id279431">Consider a class <m:math overflow="scroll"><m:mi>Λ</m:mi></m:math> of parametric models, where the parameter set <m:math overflow="scroll"><m:mi>θ</m:mi></m:math> characterizes
+the distribution for a specific source within this class, <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>p</m:mi><m:mi>θ</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mo>·</m:mo><m:mo>)</m:mo></m:mrow><m:mo>,</m:mo><m:mi>θ</m:mi><m:mo>∈</m:mo><m:mi>Λ</m:mi><m:mo>}</m:mo></m:mrow></m:math>.</para>
+      <example id="eip-755"><para id="eip-291">Consider the class of memoryless sources over an alphabet <m:math overflow="scroll"><m:mrow><m:mi>α</m:mi><m:mo>=</m:mo><m:mo>{</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:mi>r</m:mi><m:mo>}</m:mo></m:mrow></m:math>.
+Here we have</para></example><equation id="id279870">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>θ</m:mi>
+            <m:mo>=</m:mo>
+            <m:mo>{</m:mo>
+            <m:mi>p</m:mi>
+            <m:mo>(</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>)</m:mo>
+            <m:mo>,</m:mo>
+            <m:mi>p</m:mi>
+            <m:mo>(</m:mo>
+            <m:mn>2</m:mn>
+            <m:mo>)</m:mo>
+            <m:mo>,</m:mo>
+            <m:mo>.</m:mo>
+            <m:mo>.</m:mo>
+            <m:mo>.</m:mo>
+            <m:mo>,</m:mo>
+            <m:mi>p</m:mi>
+            <m:mo>(</m:mo>
+            <m:mi>r</m:mi>
+            <m:mo>-</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>)</m:mo>
+            <m:mo>}</m:mo>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id279932">The goal is to find a fixed to variable length lossless code that is independent of <m:math overflow="scroll"><m:mi>θ</m:mi></m:math>, which is unknown, yet achieves</para>
+      <equation id="id279944">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>E</m:mi>
+              <m:mi>θ</m:mi>
+            </m:msub>
+            <m:mfrac>
+              <m:mrow>
+                <m:mi>l</m:mi>
+                <m:mo>(</m:mo>
+                <m:msubsup>
+                  <m:mi>X</m:mi>
+                  <m:mn>1</m:mn>
+                  <m:mi>n</m:mi>
+                </m:msubsup>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:mfrac>
+            <m:mover>
+              <m:mo>→</m:mo>
+              <m:mrow>
+                <m:mi>n</m:mi>
+                <m:mo>→</m:mo>
+                <m:mi>∞</m:mi>
+              </m:mrow>
+            </m:mover>
+            <m:mover accent="true">
+              <m:msub>
+                <m:mi>H</m:mi>
+                <m:mi>θ</m:mi>
+              </m:msub>
+              <m:mo>¯</m:mo>
+            </m:mover>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>X</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id279379">where expectation is taken w.r.t. the distribution implied by <m:math overflow="scroll"><m:mi>θ</m:mi></m:math>.
+We have seen for</para>
+      <equation id="id280211">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>p</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mn>2</m:mn>
+            </m:mfrac>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>+</m:mo>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mn>2</m:mn>
+            </m:mfrac>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id280276">that a code that is good for two sources (distributions) <m:math overflow="scroll"><m:msub><m:mi>p</m:mi><m:mn>1</m:mn></m:msub></m:math> and <m:math overflow="scroll"><m:msub><m:mi>p</m:mi><m:mn>2</m:mn></m:msub></m:math> exists,
+modulo the one bit loss <link target-id="uid1" document="m46231"/>.
+As an expansion beyond this idea, consider</para><equation id="id280311">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>p</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msub>
+              <m:mo>∫</m:mo>
+              <m:mi>Λ</m:mi>
+            </m:msub>
+            <m:mi>d</m:mi>
+            <m:mi>w</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>θ</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:mi>θ</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>X</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id280368">where <m:math overflow="scroll"><m:mrow><m:mi>w</m:mi><m:mo>(</m:mo><m:mi>θ</m:mi><m:mo>)</m:mo></m:mrow></m:math> is a prior.</para>
+      <example id="eip-677"><para id="eip-157">
+Let us revisit the memoryless source, choose <m:math overflow="scroll"><m:mrow><m:mi>r</m:mi><m:mo>=</m:mo><m:mn>2</m:mn></m:mrow></m:math>, and define
+the scalar parameter
+</para>
+</example><equation id="id280414">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>θ</m:mi>
+            <m:mo>=</m:mo>
+            <m:mtext>Pr</m:mtext>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>X</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>-</m:mo>
+            <m:mtext>Pr</m:mtext>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>X</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+              <m:mo>=</m:mo>
+              <m:mn>0</m:mn>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id280474">Then</para>
+      <equation id="uid4">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:mi>θ</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msup>
+              <m:mi>θ</m:mi>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>n</m:mi>
+                  <m:mi>X</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:msup>
+            <m:mo>·</m:mo>
+            <m:msup>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mn>1</m:mn>
+                <m:mo>-</m:mo>
+                <m:mi>θ</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>n</m:mi>
+                  <m:mi>X</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>0</m:mn>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:msup>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id280563">and</para>
+      <equation id="uid5">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>p</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msubsup>
+              <m:mo>∫</m:mo>
+              <m:mn>0</m:mn>
+              <m:mn>1</m:mn>
+            </m:msubsup>
+            <m:mi>d</m:mi>
+            <m:mi>θ</m:mi>
+            <m:mo>·</m:mo>
+            <m:msup>
+              <m:mi>θ</m:mi>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>n</m:mi>
+                  <m:mi>X</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:msup>
+            <m:mo>·</m:mo>
+            <m:msup>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mn>1</m:mn>
+                <m:mo>-</m:mo>
+                <m:mi>θ</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>n</m:mi>
+                  <m:mi>X</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>0</m:mn>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:msup>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id280666">Moreover, it can be shown that</para>
+      <equation id="id280672">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>p</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>n</m:mi>
+                  <m:mi>X</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>0</m:mn>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>!</m:mo>
+                <m:msub>
+                  <m:mi>n</m:mi>
+                  <m:mi>X</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>!</m:mo>
+              </m:mrow>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>n</m:mi>
+                <m:mo>+</m:mo>
+                <m:mn>1</m:mn>
+                <m:mo>)</m:mo>
+                <m:mo>!</m:mo>
+              </m:mrow>
+            </m:mfrac>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id280746">this result appears in Krichevsky and Trofimov <link target-id="bid0"/>.</para>
+      <para id="id280757">Is the source <m:math overflow="scroll"><m:mi>X</m:mi></m:math> implied by the distribution <m:math overflow="scroll"><m:mrow><m:mi>p</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> an ergodic source?
+Consider the event <m:math overflow="scroll"><m:mrow><m:msub><m:mo movablelimits="true" form="prefix">lim</m:mo><m:mrow><m:mi>n</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:msub><m:mfrac><m:mn>1</m:mn><m:mi>n</m:mi></m:mfrac><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>X</m:mi><m:mi>i</m:mi></m:msub><m:mo>≤</m:mo><m:mfrac><m:mn>1</m:mn><m:mn>2</m:mn></m:mfrac></m:mrow></m:math>.
+Owing to symmetry, in the limit of large <m:math overflow="scroll"><m:mi>n</m:mi></m:math> the probability of this event under <m:math overflow="scroll"><m:mrow><m:mi>p</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> must be <m:math overflow="scroll"><m:mfrac><m:mn>1</m:mn><m:mn>2</m:mn></m:mfrac></m:math>,</para>
+      <equation id="id280881">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mtext>Pr</m:mtext>
+            <m:mfenced separators="" open="{" close="}">
+              <m:munder>
+                <m:mo movablelimits="true" form="prefix">lim</m:mo>
+                <m:mrow>
+                  <m:mi>n</m:mi>
+                  <m:mo>→</m:mo>
+                  <m:mi>∞</m:mi>
+                </m:mrow>
+              </m:munder>
+              <m:mfrac>
+                <m:mn>1</m:mn>
+                <m:mi>n</m:mi>
+              </m:mfrac>
+              <m:munderover>
+                <m:mo>∑</m:mo>
+                <m:mrow>
+                  <m:mi>i</m:mi>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                </m:mrow>
+                <m:mi>n</m:mi>
+              </m:munderover>
+              <m:msub>
+                <m:mi>X</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+              <m:mo>≤</m:mo>
+              <m:mfrac>
+                <m:mn>1</m:mn>
+                <m:mn>2</m:mn>
+              </m:mfrac>
+            </m:mfenced>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mn>2</m:mn>
+            </m:mfrac>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id280966">On the other hand, recall that an ergodic source must allocate probability 0 or 1 to
+this flavor of event. Therefore, the source implied by <m:math overflow="scroll"><m:mrow><m:mi>p</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> is not ergodic.</para>
+      <para id="id280987">Recall the definitions of <m:math overflow="scroll"><m:mrow><m:msub><m:mi>p</m:mi><m:mi>θ</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>p</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> in
+<link target-id="uid4"/> and <link target-id="uid5"/>, respectively.
+Based on these definitions, consider the following,</para>
+      <equation id="id281036"><m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>H</m:mi>
+                    <m:mi>θ</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msubsup>
+                      <m:mi>X</m:mi>
+                      <m:mn>1</m:mn>
+                      <m:mi>n</m:mi>
+                    </m:msubsup>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>-</m:mo>
+                  <m:munder>
+                    <m:mo>∑</m:mo>
+                    <m:mrow>
+                      <m:msubsup>
+                        <m:mi>X</m:mi>
+                        <m:mn>1</m:mn>
+                        <m:mi>n</m:mi>
+                      </m:msubsup>
+                      <m:mo>∈</m:mo>
+                      <m:msup>
+                        <m:mi>A</m:mi>
+                        <m:mi>n</m:mi>
+                      </m:msup>
+                    </m:mrow>
+                  </m:munder>
+                  <m:msub>
+                    <m:mi>p</m:mi>
+                    <m:mi>θ</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msubsup>
+                      <m:mi>X</m:mi>
+                      <m:mn>1</m:mn>
+                      <m:mi>n</m:mi>
+                    </m:msubsup>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo form="prefix">log</m:mo>
+                  <m:msub>
+                    <m:mi>p</m:mi>
+                    <m:mi>θ</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msubsup>
+                      <m:mi>X</m:mi>
+                      <m:mn>1</m:mn>
+                      <m:mi>n</m:mi>
+                    </m:msubsup>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mi>H</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msubsup>
+                      <m:mi>X</m:mi>
+                      <m:mn>1</m:mn>
+                      <m:mi>n</m:mi>
+                    </m:msubsup>
+                    <m:mo>|</m:mo>
+                    <m:mo>Θ</m:mo>
+                    <m:mo>=</m:mo>
+                    <m:mi>θ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mi>H</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:msubsup>
+                    <m:mi>X</m:mi>
+                    <m:mn>1</m:mn>
+                    <m:mi>n</m:mi>
+                  </m:msubsup>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>-</m:mo>
+                  <m:munder>
+                    <m:mo>∑</m:mo>
+                    <m:msubsup>
+                      <m:mi>X</m:mi>
+                      <m:mn>1</m:mn>
+                      <m:mi>n</m:mi>
+                    </m:msubsup>
+                  </m:munder>
+                  <m:mi>p</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msubsup>
+                      <m:mi>X</m:mi>
+                      <m:mn>1</m:mn>
+                      <m:mi>n</m:mi>
+                    </m:msubsup>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo form="prefix">log</m:mo>
+                  <m:mi>p</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msubsup>
+                      <m:mi>X</m:mi>
+                      <m:mn>1</m:mn>
+                      <m:mi>n</m:mi>
+                    </m:msubsup>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mi>H</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:msubsup>
+                    <m:mi>X</m:mi>
+                    <m:mn>1</m:mn>
+                    <m:mi>n</m:mi>
+                  </m:msubsup>
+                  <m:mo>|</m:mo>
+                  <m:mo>Θ</m:mo>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:msub>
+                    <m:mo>∫</m:mo>
+                    <m:mi>Λ</m:mi>
+                  </m:msub>
+                  <m:mi>d</m:mi>
+                  <m:mi>w</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>θ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>·</m:mo>
+                  <m:mi>H</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msubsup>
+                      <m:mi>X</m:mi>
+                      <m:mn>1</m:mn>
+                      <m:mi>n</m:mi>
+                    </m:msubsup>
+                    <m:mo>|</m:mo>
+                    <m:mo>Θ</m:mo>
+                    <m:mo>=</m:mo>
+                    <m:mi>θ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation><para id="id281371">We get the following quantity for mutual information between the random variable <m:math overflow="scroll"><m:mo>Θ</m:mo></m:math>
+and random sequence <m:math overflow="scroll"><m:msubsup><m:mi>X</m:mi><m:mn>1</m:mn><m:mi>N</m:mi></m:msubsup></m:math>,</para><equation id="id281401"><m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>I</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mo>Θ</m:mo>
+              <m:mo>;</m:mo>
+              <m:msubsup>
+                <m:mi>X</m:mi>
+                <m:mn>1</m:mn>
+                <m:mi>n</m:mi>
+              </m:msubsup>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mi>H</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msubsup>
+                <m:mi>X</m:mi>
+                <m:mn>1</m:mn>
+                <m:mi>n</m:mi>
+              </m:msubsup>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>-</m:mo>
+            <m:mi>H</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msubsup>
+                <m:mi>X</m:mi>
+                <m:mn>1</m:mn>
+                <m:mi>n</m:mi>
+              </m:msubsup>
+              <m:mo>|</m:mo>
+              <m:mo>Θ</m:mo>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation><para id="id281479">Note that this quantity represents the gain in bits that the parameter <m:math overflow="scroll"><m:mi>θ</m:mi></m:math> creates;
+more about this quantity will be mentioned later.</para>
+    </section>
+    <section id="uid6">
+      <title>Redundancy</title>
+      <para id="id281502">We now define the conditional <emphasis effect="italics">redundancy</emphasis>,</para>
+      <equation id="id281511">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>r</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>l</m:mi>
+              <m:mo>,</m:mo>
+              <m:mi>θ</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mi>n</m:mi>
+            </m:mfrac>
+            <m:mrow>
+              <m:mo>[</m:mo>
+              <m:msub>
+                <m:mi>E</m:mi>
+                <m:mi>θ</m:mi>
+              </m:msub>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>l</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msubsup>
+                    <m:mi>X</m:mi>
+                    <m:mn>1</m:mn>
+                    <m:mi>n</m:mi>
+                  </m:msubsup>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>-</m:mo>
+              <m:msub>
+                <m:mi>H</m:mi>
+                <m:mi>θ</m:mi>
+              </m:msub>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:msubsup>
+                  <m:mi>X</m:mi>
+                  <m:mn>1</m:mn>
+                  <m:mi>n</m:mi>
+                </m:msubsup>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>]</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id281611">this quantifies how far a coding length function <m:math overflow="scroll"><m:mi>l</m:mi></m:math> is from the entropy where the
+parameter <m:math overflow="scroll"><m:mi>θ</m:mi></m:math> is known. Note that</para>
+      <equation id="id281633">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>l</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msubsup>
+                <m:mi>X</m:mi>
+                <m:mn>1</m:mn>
+                <m:mi>n</m:mi>
+              </m:msubsup>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msub>
+              <m:mo>∫</m:mo>
+              <m:mi>Λ</m:mi>
+            </m:msub>
+            <m:mi>d</m:mi>
+            <m:mi>w</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>θ</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>E</m:mi>
+              <m:mi>θ</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>l</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:msubsup>
+                  <m:mi>X</m:mi>
+                  <m:mn>1</m:mn>
+                  <m:mi>n</m:mi>
+                </m:msubsup>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>≥</m:mo>
+            <m:mi>H</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msubsup>
+                <m:mi>X</m:mi>
+                <m:mn>1</m:mn>
+                <m:mi>n</m:mi>
+              </m:msubsup>
+              <m:mo>|</m:mo>
+              <m:mi>θ</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id281739">Denote by <m:math overflow="scroll"><m:msub><m:mi>c</m:mi><m:mi>n</m:mi></m:msub></m:math> the collection of lossless codes for length-<m:math overflow="scroll"><m:mi>n</m:mi></m:math> inputs, and define the expected redundancy of a code <m:math overflow="scroll"><m:mrow><m:mi>l</m:mi><m:mo>∈</m:mo><m:msub><m:mi>C</m:mi><m:mi>n</m:mi></m:msub></m:mrow></m:math> by</para>
+      <equation id="id281783">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:msubsup>
+                    <m:mi>R</m:mi>
+                    <m:mi>n</m:mi>
+                    <m:mo>-</m:mo>
+                  </m:msubsup>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>w</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>l</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:msub>
+                    <m:mo>∫</m:mo>
+                    <m:mi>Λ</m:mi>
+                  </m:msub>
+                  <m:mi>d</m:mi>
+                  <m:mi>w</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>θ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:msub>
+                    <m:mi>r</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>l</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>θ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:msubsup>
+                    <m:mi>R</m:mi>
+                    <m:mi>n</m:mi>
+                    <m:mo>-</m:mo>
+                  </m:msubsup>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>w</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">inf</m:mo>
+                    <m:mrow>
+                      <m:mi>l</m:mi>
+                      <m:mo>∈</m:mo>
+                      <m:msub>
+                        <m:mi>C</m:mi>
+                        <m:mi>n</m:mi>
+                      </m:msub>
+                    </m:mrow>
+                  </m:munder>
+                  <m:msubsup>
+                    <m:mi>R</m:mi>
+                    <m:mi>n</m:mi>
+                    <m:mo>-</m:mo>
+                  </m:msubsup>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>w</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>l</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id281947">The asymptotic expected redundancy follows,</para>
+      <equation id="id281952">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msup>
+              <m:mi>R</m:mi>
+              <m:mo>-</m:mo>
+            </m:msup>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>w</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">lim</m:mo>
+              <m:mrow>
+                <m:mi>n</m:mi>
+                <m:mo>→</m:mo>
+                <m:mi>∞</m:mi>
+              </m:mrow>
+            </m:munder>
+            <m:msubsup>
+              <m:mi>R</m:mi>
+              <m:mi>n</m:mi>
+              <m:mo>-</m:mo>
+            </m:msubsup>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>w</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id282015">assuming that the limit exists.</para>
+      <para id="id282021">We can also define the minimum redundancy that incorporates the
+worst prior for parameter,</para>
+      <equation id="id282025">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msubsup>
+              <m:mi>R</m:mi>
+              <m:mi>n</m:mi>
+              <m:mo>-</m:mo>
+            </m:msubsup>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">sup</m:mo>
+              <m:mrow>
+                <m:mi>w</m:mi>
+                <m:mo>∈</m:mo>
+                <m:mi>W</m:mi>
+              </m:mrow>
+            </m:munder>
+            <m:msubsup>
+              <m:mi>R</m:mi>
+              <m:mi>n</m:mi>
+              <m:mo>-</m:mo>
+            </m:msubsup>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>w</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id282084">while keeping the best code. Similarly,</para>
+      <equation id="id282090">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msup>
+              <m:mi>R</m:mi>
+              <m:mo>-</m:mo>
+            </m:msup>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">lim</m:mo>
+              <m:mrow>
+                <m:mi>n</m:mi>
+                <m:mo>→</m:mo>
+                <m:mi>∞</m:mi>
+              </m:mrow>
+            </m:munder>
+            <m:msubsup>
+              <m:mi>R</m:mi>
+              <m:mi>n</m:mi>
+              <m:mo>-</m:mo>
+            </m:msubsup>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id282140">Let us derive <m:math overflow="scroll"><m:msubsup><m:mi>R</m:mi><m:mi>n</m:mi><m:mo>-</m:mo></m:msubsup></m:math>,</para>
+      <equation id="id282163"><m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:msubsup>
+                  <m:mi>R</m:mi>
+                  <m:mi>n</m:mi>
+                  <m:mo>-</m:mo>
+                </m:msubsup>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">sup</m:mo>
+                    <m:mi>w</m:mi>
+                  </m:munder>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">inf</m:mo>
+                    <m:mi>l</m:mi>
+                  </m:munder>
+                  <m:msub>
+                    <m:mo>∫</m:mo>
+                    <m:mi>Λ</m:mi>
+                  </m:msub>
+                  <m:mi>d</m:mi>
+                  <m:mi>w</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>θ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mfrac>
+                    <m:mn>1</m:mn>
+                    <m:mi>n</m:mi>
+                  </m:mfrac>
+                  <m:mfenced separators="" open="[" close="]">
+                    <m:msub>
+                      <m:mi>E</m:mi>
+                      <m:mi>θ</m:mi>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>l</m:mi>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:msubsup>
+                          <m:mi>X</m:mi>
+                          <m:mn>1</m:mn>
+                          <m:mi>n</m:mi>
+                        </m:msubsup>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>-</m:mo>
+                    <m:mi>H</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:msubsup>
+                        <m:mi>X</m:mi>
+                        <m:mn>1</m:mn>
+                        <m:mi>n</m:mi>
+                      </m:msubsup>
+                      <m:mo>|</m:mo>
+                      <m:mo>Θ</m:mo>
+                      <m:mo>=</m:mo>
+                      <m:mi>θ</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mfenced>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">sup</m:mo>
+                    <m:mi>w</m:mi>
+                  </m:munder>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">inf</m:mo>
+                    <m:mi>l</m:mi>
+                  </m:munder>
+                  <m:mfrac>
+                    <m:mn>1</m:mn>
+                    <m:mi>n</m:mi>
+                  </m:mfrac>
+                  <m:msub>
+                    <m:mi>E</m:mi>
+                    <m:mi>p</m:mi>
+                  </m:msub>
+                  <m:mfenced separators="" open="[" close="]">
+                    <m:mi>l</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:msubsup>
+                        <m:mi>X</m:mi>
+                        <m:mn>1</m:mn>
+                        <m:mi>n</m:mi>
+                      </m:msubsup>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>-</m:mo>
+                    <m:mi>H</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:msubsup>
+                        <m:mi>X</m:mi>
+                        <m:mn>1</m:mn>
+                        <m:mi>n</m:mi>
+                      </m:msubsup>
+                      <m:mo>|</m:mo>
+                      <m:mo>Θ</m:mo>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mfenced>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">sup</m:mo>
+                    <m:mi>w</m:mi>
+                  </m:munder>
+                  <m:mfrac>
+                    <m:mn>1</m:mn>
+                    <m:mi>n</m:mi>
+                  </m:mfrac>
+                  <m:mfenced separators="" open="[" close="]">
+                    <m:mi>H</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:msubsup>
+                        <m:mi>X</m:mi>
+                        <m:mn>1</m:mn>
+                        <m:mi>n</m:mi>
+                      </m:msubsup>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>-</m:mo>
+                    <m:mi>H</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:msubsup>
+                        <m:mi>X</m:mi>
+                        <m:mn>1</m:mn>
+                        <m:mi>n</m:mi>
+                      </m:msubsup>
+                      <m:mo>|</m:mo>
+                      <m:mo>Θ</m:mo>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mfenced>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">sup</m:mo>
+                    <m:mi>w</m:mi>
+                  </m:munder>
+                  <m:mfrac>
+                    <m:mn>1</m:mn>
+                    <m:mi>n</m:mi>
+                  </m:mfrac>
+                  <m:mi>I</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mo>Θ</m:mo>
+                    <m:mo>;</m:mo>
+                    <m:msubsup>
+                      <m:mi>X</m:mi>
+                      <m:mn>1</m:mn>
+                      <m:mi>n</m:mi>
+                    </m:msubsup>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mfrac>
+                    <m:msub>
+                      <m:mi>C</m:mi>
+                      <m:mi>n</m:mi>
+                    </m:msub>
+                    <m:mi>n</m:mi>
+                  </m:mfrac>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation><para id="id282554">where <m:math overflow="scroll"><m:msub><m:mi>C</m:mi><m:mi>n</m:mi></m:msub></m:math> is the capacity of a channel from the sequence <m:math overflow="scroll"><m:mi>x</m:mi></m:math> to the
+parameter <link target-id="bid1"/>.
+That is, we try to estimate the parameter from the noisy channel.</para>
+      <para id="id282590">In an analogous manner, we define</para>
+      <equation id="id282593">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:msubsup>
+                  <m:mi>R</m:mi>
+                  <m:mi>n</m:mi>
+                  <m:mo>+</m:mo>
+                </m:msubsup>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">inf</m:mo>
+                    <m:mi>l</m:mi>
+                  </m:munder>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">sup</m:mo>
+                    <m:mrow>
+                      <m:mi>θ</m:mi>
+                      <m:mo>∈</m:mo>
+                      <m:mi>Λ</m:mi>
+                    </m:mrow>
+                  </m:munder>
+                  <m:msub>
+                    <m:mi>r</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>l</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>θ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">inf</m:mo>
+                    <m:mi>l</m:mi>
+                  </m:munder>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">sup</m:mo>
+                    <m:mi>θ</m:mi>
+                  </m:munder>
+                  <m:mfrac>
+                    <m:mn>1</m:mn>
+                    <m:mi>n</m:mi>
+                  </m:mfrac>
+                  <m:msub>
+                    <m:mi>E</m:mi>
+                    <m:mi>θ</m:mi>
+                  </m:msub>
+                  <m:mfenced separators="" open="[" close="]">
+                    <m:mo form="prefix">log</m:mo>
+                    <m:mfrac>
+                      <m:mrow>
+                        <m:msub>
+                          <m:mi>p</m:mi>
+                          <m:mi>θ</m:mi>
+                        </m:msub>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:msup>
+                            <m:mi>x</m:mi>
+                            <m:mi>n</m:mi>
+                          </m:msup>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                      </m:mrow>
+                      <m:msup>
+                        <m:mn>2</m:mn>
+                        <m:mrow>
+                          <m:mo>-</m:mo>
+                          <m:mi>l</m:mi>
+                          <m:mo>(</m:mo>
+                          <m:msup>
+                            <m:mi>x</m:mi>
+                            <m:mi>n</m:mi>
+                          </m:msup>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                      </m:msup>
+                    </m:mfrac>
+                  </m:mfenced>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">inf</m:mo>
+                    <m:mi>Q</m:mi>
+                  </m:munder>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">sup</m:mo>
+                    <m:mi>θ</m:mi>
+                  </m:munder>
+                  <m:mfrac>
+                    <m:mn>1</m:mn>
+                    <m:mi>n</m:mi>
+                  </m:mfrac>
+                  <m:mrow>
+                    <m:mi>D</m:mi>
+                    <m:mo>(</m:mo>
+                  </m:mrow>
+                  <m:msub>
+                    <m:mi>P</m:mi>
+                    <m:mi>θ</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>|</m:mo>
+                    <m:mo>|</m:mo>
+                    <m:mi>Q</m:mi>
+                    <m:mo>)</m:mo>
+                    <m:mo>,</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id282849">where <m:math overflow="scroll"><m:mi>Q</m:mi></m:math> is the prior induced by the coding length function <m:math overflow="scroll"><m:mi>l</m:mi></m:math>.</para>
+    </section>
+    <section id="uid7">
+      <title>Minimal redundancy</title>
+      <para id="id282883">Note that</para>
+      <equation id="id282886">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mo>∀</m:mo>
+                  <m:mi>w</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>l</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mspace width="1.em"/>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">sup</m:mo>
+                    <m:mi>θ</m:mi>
+                  </m:munder>
+                  <m:msub>
+                    <m:mi>r</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>l</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>θ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>≥</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:msub>
+                    <m:mo>∫</m:mo>
+                    <m:mi>Λ</m:mi>
+                  </m:msub>
+                  <m:mi>w</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>d</m:mi>
+                    <m:mi>θ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:msub>
+                    <m:mi>r</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>l</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>θ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>≥</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">inf</m:mo>
+                    <m:mrow>
+                      <m:mi>l</m:mi>
+                      <m:mo>∈</m:mo>
+                      <m:msub>
+                        <m:mi>c</m:mi>
+                        <m:mi>n</m:mi>
+                      </m:msub>
+                    </m:mrow>
+                  </m:munder>
+                  <m:msub>
+                    <m:mo>∫</m:mo>
+                    <m:mi>Λ</m:mi>
+                  </m:msub>
+                  <m:mi>w</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>d</m:mi>
+                    <m:mi>θ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:msub>
+                    <m:mi>r</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>l</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>θ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id283071">Therefore,</para>
+      <equation id="id283077">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msubsup>
+              <m:mi>R</m:mi>
+              <m:mi>n</m:mi>
+              <m:mo>+</m:mo>
+            </m:msubsup>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">inf</m:mo>
+              <m:mi>l</m:mi>
+            </m:munder>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">sup</m:mo>
+              <m:mi>θ</m:mi>
+            </m:munder>
+            <m:msub>
+              <m:mi>r</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>l</m:mi>
+              <m:mo>,</m:mo>
+              <m:mi>θ</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>≥</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">sup</m:mo>
+              <m:mi>w</m:mi>
+            </m:munder>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">inf</m:mo>
+              <m:mi>l</m:mi>
+            </m:munder>
+            <m:msub>
+              <m:mo>∫</m:mo>
+              <m:mi>Λ</m:mi>
+            </m:msub>
+            <m:mi>w</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>d</m:mi>
+              <m:mi>θ</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>r</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>l</m:mi>
+              <m:mo>,</m:mo>
+              <m:mi>θ</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msubsup>
+              <m:mi>R</m:mi>
+              <m:mi>n</m:mi>
+              <m:mo>-</m:mo>
+            </m:msubsup>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id283224">In fact, Gallager showed that <m:math overflow="scroll"><m:mrow><m:msubsup><m:mi>R</m:mi><m:mi>n</m:mi><m:mo>+</m:mo></m:msubsup><m:mo>=</m:mo><m:msubsup><m:mi>R</m:mi><m:mi>n</m:mi><m:mo>-</m:mo></m:msubsup></m:mrow></m:math>.
+That is, the min-max and max-min redundancies are equal.</para>
+      <para id="id283262">Let us revisit the Bernoulli source <m:math overflow="scroll"><m:msub><m:mi>p</m:mi><m:mi>θ</m:mi></m:msub></m:math> where <m:math overflow="scroll"><m:mrow><m:mi>θ</m:mi><m:mo>∈</m:mo><m:mi>Λ</m:mi><m:mo>=</m:mo><m:mo>[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>]</m:mo></m:mrow></m:math>.
+From the definition of <link target-id="uid4"/>, which relies on a uniform prior for the sources,
+i.e., <m:math overflow="scroll"><m:mrow><m:mi>w</m:mi><m:mo>(</m:mo><m:mi>θ</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>∀</m:mo><m:mi>θ</m:mi><m:mo>∈</m:mo><m:mi>Λ</m:mi></m:mrow></m:math>, it can be shown that there there exists a universal
+code with length function <m:math overflow="scroll"><m:mi>l</m:mi></m:math> such that</para>
+      <equation id="id283355">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>E</m:mi>
+              <m:mi>θ</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>[</m:mo>
+              <m:mi>l</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:msup>
+                  <m:mi>x</m:mi>
+                  <m:mi>n</m:mi>
+                </m:msup>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>]</m:mo>
+            </m:mrow>
+            <m:mo>≤</m:mo>
+            <m:mi>n</m:mi>
+            <m:msub>
+              <m:mi>E</m:mi>
+              <m:mi>θ</m:mi>
+            </m:msub>
+            <m:mfenced separators="" open="[" close="]">
+              <m:msub>
+                <m:mi>h</m:mi>
+                <m:mn>2</m:mn>
+              </m:msub>
+              <m:mfenced separators="" open="(" close=")">
+                <m:mfrac>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>n</m:mi>
+                      <m:mi>x</m:mi>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mn>1</m:mn>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mrow>
+                  <m:mi>n</m:mi>
+                </m:mfrac>
+              </m:mfenced>
+            </m:mfenced>
+            <m:mo>+</m:mo>
+            <m:mo form="prefix">log</m:mo>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>n</m:mi>
+              <m:mo>+</m:mo>
+              <m:mn>1</m:mn>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>+</m:mo>
+            <m:mn>2</m:mn>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id283471">where <m:math overflow="scroll"><m:mrow><m:msub><m:mi>h</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>p</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mo>-</m:mo><m:mi>p</m:mi><m:mo form="prefix">log</m:mo><m:mrow><m:mo>(</m:mo><m:mi>p</m:mi><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>-</m:mo><m:mi>p</m:mi><m:mo>)</m:mo></m:mrow><m:mo form="prefix">log</m:mo><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>-</m:mo><m:mi>p</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> is the binary entropy.
+That is, the redundancy is approximately <m:math overflow="scroll"><m:mrow><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:math> bits.
+Clarke and Barron <link target-id="bid2"/> studied the weighting approach,</para>
+      <equation id="id283573">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>p</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msub>
+              <m:mo>∫</m:mo>
+              <m:mi>Λ</m:mi>
+            </m:msub>
+            <m:mi>d</m:mi>
+            <m:mi>w</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>θ</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:mi>θ</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id283632">and constructed a prior that achieves <m:math overflow="scroll"><m:mrow><m:msubsup><m:mi>R</m:mi><m:mi>n</m:mi><m:mo>-</m:mo></m:msubsup><m:mo>=</m:mo><m:msubsup><m:mi>R</m:mi><m:mi>n</m:mi><m:mo>+</m:mo></m:msubsup></m:mrow></m:math>
+precisely for memoryless sources.</para>
+      <para id="id283670"><emphasis effect="bold">Theorem 5 <link target-id="bid2"/></emphasis> 
+
+For memoryless source with an alphabet of size <m:math overflow="scroll"><m:mi>r</m:mi></m:math>,
+<m:math overflow="scroll"><m:mrow><m:mi>θ</m:mi><m:mo>=</m:mo><m:mo>(</m:mo><m:mi>p</m:mi><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>)</m:mo><m:mo>,</m:mo><m:mi>p</m:mi><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>)</m:mo><m:mo>,</m:mo><m:mo>⋯</m:mo><m:mo>,</m:mo><m:mi>p</m:mi><m:mo>(</m:mo><m:mi>r</m:mi><m:mo>-</m:mo><m:mn>1</m:mn><m:mo>)</m:mo><m:mo>)</m:mo></m:mrow></m:math>,</para><equation id="id283750">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>n</m:mi>
+            <m:msubsup>
+              <m:mi>R</m:mi>
+              <m:mi>n</m:mi>
+              <m:mo>-</m:mo>
+            </m:msubsup>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>w</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mrow>
+                <m:mi>r</m:mi>
+                <m:mo>-</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mn>2</m:mn>
+            </m:mfrac>
+            <m:mo form="prefix">log</m:mo>
+            <m:mfenced separators="" open="(" close=")">
+              <m:mfrac>
+                <m:mi>n</m:mi>
+                <m:mrow>
+                  <m:mn>2</m:mn>
+                  <m:mi>π</m:mi>
+                  <m:mi>e</m:mi>
+                </m:mrow>
+              </m:mfrac>
+            </m:mfenced>
+            <m:mo>+</m:mo>
+            <m:msub>
+              <m:mo>∫</m:mo>
+              <m:mi>Λ</m:mi>
+            </m:msub>
+            <m:mi>w</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>d</m:mi>
+              <m:mi>θ</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo form="prefix">log</m:mo>
+            <m:mfenced separators="" open="(" close=")">
+              <m:mfrac>
+                <m:msqrt>
+                  <m:mrow>
+                    <m:mo>|</m:mo>
+                    <m:mi>I</m:mi>
+                    <m:mo>(</m:mo>
+                    <m:mi>θ</m:mi>
+                    <m:mo>)</m:mo>
+                    <m:mo>|</m:mo>
+                  </m:mrow>
+                </m:msqrt>
+                <m:mrow>
+                  <m:mi>w</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>θ</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mfrac>
+            </m:mfenced>
+            <m:mo>+</m:mo>
+            <m:msub>
+              <m:mi>O</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mn>1</m:mn>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id283898">where <m:math overflow="scroll"><m:mrow><m:msub><m:mi>O</m:mi><m:mi>n</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow></m:mrow></m:math> vanishes uniformly as <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:math> for any compact subset of <m:math overflow="scroll"><m:mi>Λ</m:mi></m:math>, and</para>
+      <equation id="id283951">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>I</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>θ</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>≜</m:mo>
+            <m:mi>E</m:mi>
+            <m:mfenced separators="" open="[" close="]">
+              <m:mfenced separators="" open="(" close=")">
+                <m:mfrac>
+                  <m:mrow>
+                    <m:mi>∂</m:mi>
+                    <m:mo form="prefix">ln</m:mo>
+                    <m:msub>
+                      <m:mi>p</m:mi>
+                      <m:mi>θ</m:mi>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:msub>
+                        <m:mi>x</m:mi>
+                        <m:mi>i</m:mi>
+                      </m:msub>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mrow>
+                  <m:mrow>
+                    <m:mi>∂</m:mi>
+                    <m:mi>θ</m:mi>
+                  </m:mrow>
+                </m:mfrac>
+              </m:mfenced>
+              <m:msup>
+                <m:mfenced separators="" open="(" close=")">
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:mi>∂</m:mi>
+                      <m:mo form="prefix">ln</m:mo>
+                      <m:msub>
+                        <m:mi>p</m:mi>
+                        <m:mi>θ</m:mi>
+                      </m:msub>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:msub>
+                          <m:mi>x</m:mi>
+                          <m:mi>i</m:mi>
+                        </m:msub>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:mi>∂</m:mi>
+                      <m:mi>θ</m:mi>
+                    </m:mrow>
+                  </m:mfrac>
+                </m:mfenced>
+                <m:mi>T</m:mi>
+              </m:msup>
+            </m:mfenced>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id284074">is Fisher's information.</para>
+      <para id="id284080">Note that when the parameter is sensitive to change we have large <m:math overflow="scroll"><m:mrow><m:mi>I</m:mi><m:mo>(</m:mo><m:mi>θ</m:mi><m:mo>)</m:mo></m:mrow></m:math>,
+which increases the redundancy. That is, good sensitivity means bad universal compression.</para>
+      <para id="id284101">Denote</para>
+      <equation id="uid9">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>J</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>θ</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:msqrt>
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                  <m:mi>I</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>θ</m:mi>
+                  <m:mo>)</m:mo>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+              </m:msqrt>
+              <m:mrow>
+                <m:msub>
+                  <m:mo>∫</m:mo>
+                  <m:mi>Λ</m:mi>
+                </m:msub>
+                <m:msqrt>
+                  <m:mrow>
+                    <m:mo>|</m:mo>
+                    <m:mi>I</m:mi>
+                    <m:mo>(</m:mo>
+                    <m:msup>
+                      <m:mi>θ</m:mi>
+                      <m:mo>'</m:mo>
+                    </m:msup>
+                    <m:mo>)</m:mo>
+                    <m:mo>|</m:mo>
+                  </m:mrow>
+                </m:msqrt>
+                <m:mi>d</m:mi>
+                <m:msup>
+                  <m:mi>θ</m:mi>
+                  <m:mo>'</m:mo>
+                </m:msup>
+              </m:mrow>
+            </m:mfrac>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id284190">this is known as <emphasis effect="italics">Jeffrey's prior</emphasis>. Using <m:math overflow="scroll"><m:mrow><m:mi>w</m:mi><m:mo>(</m:mo><m:mi>θ</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>J</m:mi><m:mo>(</m:mo><m:mi>θ</m:mi><m:mo>)</m:mo></m:mrow></m:math>,
+it can be shown that <m:math overflow="scroll"><m:mrow><m:msubsup><m:mi>R</m:mi><m:mi>n</m:mi><m:mo>-</m:mo></m:msubsup><m:mo>=</m:mo><m:msubsup><m:mi>R</m:mi><m:mi>n</m:mi><m:mo>+</m:mo></m:msubsup></m:mrow></m:math>.</para>
+      <example id="eip-958"><para id="eip-607">
+Let us derive the Fisher information <m:math overflow="scroll"><m:mrow><m:mi>I</m:mi><m:mo>(</m:mo><m:mi>θ</m:mi><m:mo>)</m:mo></m:mrow></m:math> for the Bernoulli source,
+</para>
+</example><equation id="id284290">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>p</m:mi>
+                    <m:mi>θ</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:msup>
+                    <m:mi>θ</m:mi>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>n</m:mi>
+                        <m:mi>x</m:mi>
+                      </m:msub>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mn>1</m:mn>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:msup>
+                  <m:mo>·</m:mo>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mn>1</m:mn>
+                      <m:mo>-</m:mo>
+                      <m:mi>θ</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>n</m:mi>
+                        <m:mi>x</m:mi>
+                      </m:msub>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mn>0</m:mn>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:msup>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>⇒</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo form="prefix">ln</m:mo>
+                  <m:msub>
+                    <m:mi>p</m:mi>
+                    <m:mi>θ</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:msub>
+                    <m:mi>n</m:mi>
+                    <m:mi>x</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mn>1</m:mn>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo form="prefix">ln</m:mo>
+                  <m:mi>θ</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:msub>
+                    <m:mi>n</m:mi>
+                    <m:mi>x</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mn>0</m:mn>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo form="prefix">ln</m:mo>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mn>1</m:mn>
+                    <m:mo>-</m:mo>
+                    <m:mi>θ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>⇒</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:mi>∂</m:mi>
+                      <m:mo form="prefix">ln</m:mo>
+                      <m:msub>
+                        <m:mi>p</m:mi>
+                        <m:mi>θ</m:mi>
+                      </m:msub>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mi>x</m:mi>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:mi>∂</m:mi>
+                      <m:mi>θ</m:mi>
+                    </m:mrow>
+                  </m:mfrac>
+                  <m:mo>=</m:mo>
+                  <m:msub>
+                    <m:mi>n</m:mi>
+                    <m:mi>x</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mn>1</m:mn>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mfrac>
+                    <m:mn>1</m:mn>
+                    <m:mi>θ</m:mi>
+                  </m:mfrac>
+                  <m:mo>-</m:mo>
+                  <m:msub>
+                    <m:mi>n</m:mi>
+                    <m:mi>x</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mn>0</m:mn>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mfrac>
+                    <m:mn>1</m:mn>
+                    <m:mrow>
+                      <m:mn>1</m:mn>
+                      <m:mo>-</m:mo>
+                      <m:mi>θ</m:mi>
+                    </m:mrow>
+                  </m:mfrac>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>⇒</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:msup>
+                    <m:mfenced separators="" open="(" close=")">
+                      <m:mfrac>
+                        <m:mrow>
+                          <m:mi>∂</m:mi>
+                          <m:mo form="prefix">ln</m:mo>
+                          <m:msub>
+                            <m:mi>p</m:mi>
+                            <m:mi>θ</m:mi>
+                          </m:msub>
+                          <m:mrow>
+                            <m:mo>(</m:mo>
+                            <m:mi>x</m:mi>
+                            <m:mo>)</m:mo>
+                          </m:mrow>
+                        </m:mrow>
+                        <m:mrow>
+                          <m:mi>∂</m:mi>
+                          <m:mi>θ</m:mi>
+                        </m:mrow>
+                      </m:mfrac>
+                    </m:mfenced>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>=</m:mo>
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:msubsup>
+                        <m:mi>n</m:mi>
+                        <m:mi>x</m:mi>
+                        <m:mn>2</m:mn>
+                      </m:msubsup>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mn>1</m:mn>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                    <m:msup>
+                      <m:mi>θ</m:mi>
+                      <m:mn>2</m:mn>
+                    </m:msup>
+                  </m:mfrac>
+                  <m:mo>+</m:mo>
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:msubsup>
+                        <m:mi>n</m:mi>
+                        <m:mi>x</m:mi>
+                        <m:mn>2</m:mn>
+                      </m:msubsup>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mn>0</m:mn>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                    <m:msup>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mn>1</m:mn>
+                        <m:mo>-</m:mo>
+                        <m:mi>θ</m:mi>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:mn>2</m:mn>
+                    </m:msup>
+                  </m:mfrac>
+                  <m:mo>-</m:mo>
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:mn>2</m:mn>
+                      <m:msub>
+                        <m:mi>n</m:mi>
+                        <m:mi>x</m:mi>
+                      </m:msub>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mn>1</m:mn>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:msub>
+                        <m:mi>n</m:mi>
+                        <m:mi>x</m:mi>
+                      </m:msub>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mn>0</m:mn>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:mi>θ</m:mi>
+                      <m:mo>(</m:mo>
+                      <m:mn>1</m:mn>
+                      <m:mo>-</m:mo>
+                      <m:mi>θ</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mfrac>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>⇒</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mi>E</m:mi>
+                  <m:mfenced separators="" open="[" close="]">
+                    <m:msup>
+                      <m:mfenced separators="" open="(" close=")">
+                        <m:mfrac>
+                          <m:mrow>
+                            <m:mi>∂</m:mi>
+                            <m:mo form="prefix">ln</m:mo>
+                            <m:msub>
+                              <m:mi>p</m:mi>
+                              <m:mi>θ</m:mi>
+                            </m:msub>
+                            <m:mrow>
+                              <m:mo>(</m:mo>
+                              <m:mi>x</m:mi>
+                              <m:mo>)</m:mo>
+                            </m:mrow>
+                          </m:mrow>
+                          <m:mrow>
+                            <m:mi>∂</m:mi>
+                            <m:mi>θ</m:mi>
+                          </m:mrow>
+                        </m:mfrac>
+                      </m:mfenced>
+                      <m:mn>2</m:mn>
+                    </m:msup>
+                  </m:mfenced>
+                  <m:mo>=</m:mo>
+                  <m:mfrac>
+                    <m:mi>θ</m:mi>
+                    <m:msup>
+                      <m:mi>θ</m:mi>
+                      <m:mn>2</m:mn>
+                    </m:msup>
+                  </m:mfrac>
+                  <m:mo>+</m:mo>
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:mn>1</m:mn>
+                      <m:mo>-</m:mo>
+                      <m:mi>θ</m:mi>
+                    </m:mrow>
+                    <m:msup>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mn>1</m:mn>
+                        <m:mo>-</m:mo>
+                        <m:mi>θ</m:mi>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:mn>2</m:mn>
+                    </m:msup>
+                  </m:mfrac>
+                  <m:mo>-</m:mo>
+                  <m:mfrac>
+                    <m:mn>2</m:mn>
+                    <m:mrow>
+                      <m:mi>θ</m:mi>
+                      <m:mo>(</m:mo>
+                      <m:mn>1</m:mn>
+                      <m:mo>-</m:mo>
+                      <m:mi>θ</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mfrac>
+                  <m:mi>E</m:mi>
+                  <m:mrow>
+                    <m:mo>[</m:mo>
+                    <m:msub>
+                      <m:mi>n</m:mi>
+                      <m:mi>x</m:mi>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mn>1</m:mn>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:msub>
+                      <m:mi>n</m:mi>
+                      <m:mi>x</m:mi>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mn>0</m:mn>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>]</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mfrac>
+                    <m:mn>1</m:mn>
+                    <m:mi>θ</m:mi>
+                  </m:mfrac>
+                  <m:mo>+</m:mo>
+                  <m:mfrac>
+                    <m:mn>1</m:mn>
+                    <m:mrow>
+                      <m:mn>1</m:mn>
+                      <m:mo>-</m:mo>
+                      <m:mi>θ</m:mi>
+                    </m:mrow>
+                  </m:mfrac>
+                  <m:mo>-</m:mo>
+                  <m:mn>0</m:mn>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mfrac>
+                    <m:mn>1</m:mn>
+                    <m:mrow>
+                      <m:mi>θ</m:mi>
+                      <m:mo>(</m:mo>
+                      <m:mn>1</m:mn>
+                      <m:mo>-</m:mo>
+                      <m:mi>θ</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mfrac>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id284969">Therefore, the Fisher information satisfies
+<m:math overflow="scroll"><m:mrow><m:mi>I</m:mi><m:mrow><m:mo>(</m:mo><m:mi>θ</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mfrac><m:mn>1</m:mn><m:mrow><m:mi>θ</m:mi><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>-</m:mo><m:mi>θ</m:mi><m:mo>)</m:mo></m:mrow></m:mfrac></m:mrow></m:math>.</para>
+      <example id="eip-225"><para id="eip-728">Recall the Krichevsky–Trofimov coding, which was mentioned in <link target-id="eip-677"/>.
+Using the definition of Jeffreys' prior <link target-id="uid9"/>, we see that
+<m:math overflow="scroll"><m:mrow><m:mi>J</m:mi><m:mrow><m:mo>(</m:mo><m:mi>θ</m:mi><m:mo>)</m:mo></m:mrow><m:mo>∝</m:mo><m:mfrac><m:mn>1</m:mn><m:msqrt><m:mrow><m:mi>θ</m:mi><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>-</m:mo><m:mi>θ</m:mi><m:mo>)</m:mo></m:mrow></m:msqrt></m:mfrac></m:mrow></m:math>. Taking the integral over Jeffery's prior,
+</para></example><equation id="id285077">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>p</m:mi>
+                    <m:mi>J</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msup>
+                      <m:mi>x</m:mi>
+                      <m:mi>n</m:mi>
+                    </m:msup>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:msubsup>
+                    <m:mo>∫</m:mo>
+                    <m:mn>0</m:mn>
+                    <m:mn>1</m:mn>
+                  </m:msubsup>
+                  <m:mi>c</m:mi>
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:mi>d</m:mi>
+                      <m:mi>θ</m:mi>
+                    </m:mrow>
+                    <m:msqrt>
+                      <m:mrow>
+                        <m:mi>θ</m:mi>
+                        <m:mo>(</m:mo>
+                        <m:mn>1</m:mn>
+                        <m:mo>-</m:mo>
+                        <m:mi>θ</m:mi>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:msqrt>
+                  </m:mfrac>
+                  <m:msup>
+                    <m:mi>θ</m:mi>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>n</m:mi>
+                        <m:mi>x</m:mi>
+                      </m:msub>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mn>1</m:mn>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:msup>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mn>1</m:mn>
+                      <m:mo>-</m:mo>
+                      <m:mi>θ</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>n</m:mi>
+                        <m:mi>x</m:mi>
+                      </m:msub>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mn>0</m:mn>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:msup>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mi>c</m:mi>
+                  <m:msubsup>
+                    <m:mo>∫</m:mo>
+                    <m:mn>0</m:mn>
+                    <m:mn>1</m:mn>
+                  </m:msubsup>
+                  <m:msup>
+                    <m:mi>θ</m:mi>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>n</m:mi>
+                        <m:mi>x</m:mi>
+                      </m:msub>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mn>1</m:mn>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mfrac>
+                        <m:mn>1</m:mn>
+                        <m:mn>2</m:mn>
+                      </m:mfrac>
+                    </m:mrow>
+                  </m:msup>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mn>1</m:mn>
+                      <m:mo>-</m:mo>
+                      <m:mi>θ</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>n</m:mi>
+                        <m:mi>x</m:mi>
+                      </m:msub>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mn>0</m:mn>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mfrac>
+                        <m:mn>1</m:mn>
+                        <m:mn>2</m:mn>
+                      </m:mfrac>
+                    </m:mrow>
+                  </m:msup>
+                  <m:mi>d</m:mi>
+                  <m:mi>θ</m:mi>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:mi>Γ</m:mi>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:msub>
+                          <m:mi>n</m:mi>
+                          <m:mi>x</m:mi>
+                        </m:msub>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:mn>0</m:mn>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                        <m:mo>+</m:mo>
+                        <m:mfrac>
+                          <m:mn>1</m:mn>
+                          <m:mn>2</m:mn>
+                        </m:mfrac>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:mi>Γ</m:mi>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:msub>
+                          <m:mi>n</m:mi>
+                          <m:mi>x</m:mi>
+                        </m:msub>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:mn>1</m:mn>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                        <m:mo>+</m:mo>
+                        <m:mfrac>
+                          <m:mn>1</m:mn>
+                          <m:mn>2</m:mn>
+                        </m:mfrac>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:mi>π</m:mi>
+                      <m:mi>Γ</m:mi>
+                      <m:mo>(</m:mo>
+                      <m:mi>n</m:mi>
+                      <m:mo>+</m:mo>
+                      <m:mn>1</m:mn>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mfrac>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id285402">where we used the gamma function. It can be shown that</para>
+      <equation id="id285408">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:mi>J</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msup>
+                <m:mi>x</m:mi>
+                <m:mi>n</m:mi>
+              </m:msup>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:munderover>
+              <m:mo>∏</m:mo>
+              <m:mrow>
+                <m:mi>t</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>0</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:mi>J</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mrow>
+                  <m:mi>t</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mn>1</m:mn>
+                </m:mrow>
+              </m:msub>
+              <m:mo>|</m:mo>
+              <m:msubsup>
+                <m:mi>x</m:mi>
+                <m:mn>1</m:mn>
+                <m:mi>t</m:mi>
+              </m:msubsup>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id285498">where</para>
+      <equation id="id285503">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>p</m:mi>
+                    <m:mi>J</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mrow>
+                        <m:mi>t</m:mi>
+                        <m:mo>+</m:mo>
+                        <m:mn>1</m:mn>
+                      </m:mrow>
+                    </m:msub>
+                    <m:mo>|</m:mo>
+                    <m:msubsup>
+                      <m:mi>x</m:mi>
+                      <m:mn>1</m:mn>
+                      <m:mi>t</m:mi>
+                    </m:msubsup>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>p</m:mi>
+                        <m:mi>J</m:mi>
+                      </m:msub>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:msubsup>
+                          <m:mi>x</m:mi>
+                          <m:mn>1</m:mn>
+                          <m:mrow>
+                            <m:mi>t</m:mi>
+                            <m:mo>+</m:mo>
+                            <m:mn>1</m:mn>
+                          </m:mrow>
+                        </m:msubsup>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>p</m:mi>
+                        <m:mi>J</m:mi>
+                      </m:msub>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:msubsup>
+                          <m:mi>x</m:mi>
+                          <m:mn>1</m:mn>
+                          <m:mi>t</m:mi>
+                        </m:msubsup>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:mfrac>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>p</m:mi>
+                    <m:mi>J</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mrow>
+                        <m:mi>t</m:mi>
+                        <m:mo>+</m:mo>
+                        <m:mn>1</m:mn>
+                      </m:mrow>
+                    </m:msub>
+                    <m:mo>=</m:mo>
+                    <m:mn>0</m:mn>
+                    <m:mo>|</m:mo>
+                    <m:msubsup>
+                      <m:mi>x</m:mi>
+                      <m:mn>1</m:mn>
+                      <m:mi>t</m:mi>
+                    </m:msubsup>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:msubsup>
+                        <m:mi>n</m:mi>
+                        <m:mi>x</m:mi>
+                        <m:mi>t</m:mi>
+                      </m:msubsup>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mn>0</m:mn>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:mo>+</m:mo>
+                      <m:mfrac>
+                        <m:mn>1</m:mn>
+                        <m:mn>2</m:mn>
+                      </m:mfrac>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:mi>t</m:mi>
+                      <m:mo>+</m:mo>
+                      <m:mn>1</m:mn>
+                    </m:mrow>
+                  </m:mfrac>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>p</m:mi>
+                    <m:mi>J</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mrow>
+                        <m:mi>t</m:mi>
+                        <m:mo>+</m:mo>
+                        <m:mn>1</m:mn>
+                      </m:mrow>
+                    </m:msub>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                    <m:mo>|</m:mo>
+                    <m:msubsup>
+                      <m:mi>x</m:mi>
+                      <m:mn>1</m:mn>
+                      <m:mi>t</m:mi>
+                    </m:msubsup>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:msubsup>
+                        <m:mi>n</m:mi>
+                        <m:mi>x</m:mi>
+                        <m:mi>t</m:mi>
+                      </m:msubsup>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mn>1</m:mn>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:mo>+</m:mo>
+                      <m:mfrac>
+                        <m:mn>1</m:mn>
+                        <m:mn>2</m:mn>
+                      </m:mfrac>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:mi>t</m:mi>
+                      <m:mo>+</m:mo>
+                      <m:mn>1</m:mn>
+                    </m:mrow>
+                  </m:mfrac>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id285816">Similar to before, this universal code can be implemented sequentially.
+It is due to Krichevsky and Trofimov <link target-id="bid0"/>, its redundancy satisfies
+ <link target-id="id283670">Theorem 5</link> by Clarke and Barron <link target-id="bid2"/>,
+and it is commonly used in universal lossless compression.</para></section>
+    <section id="uid12">
+      <title>Rissanen's bound</title>
+      <para id="id285850">Let us consider – on an intuitive level – why <m:math overflow="scroll"><m:mrow><m:msub><m:mi>C</m:mi><m:mi>n</m:mi></m:msub><m:mo>≈</m:mo><m:mfrac><m:mrow><m:mi>r</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow><m:mn>2</m:mn></m:mfrac><m:mfrac><m:mrow><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow><m:mi>n</m:mi></m:mfrac></m:mrow></m:math>.
+Expending <m:math overflow="scroll"><m:mrow><m:mfrac><m:mrow><m:mi>r</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow><m:mn>2</m:mn></m:mfrac><m:mo form="prefix">log</m:mo><m:mrow><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> bits allows to differentiate between <m:math overflow="scroll"><m:msup><m:mrow><m:mo>(</m:mo><m:msqrt><m:mi>n</m:mi></m:msqrt><m:mo>)</m:mo></m:mrow><m:mrow><m:mi>r</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msup></m:math>
+parameter vectors. That is, we would differentiate between each of the <m:math overflow="scroll"><m:mrow><m:mi>r</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:math> parameters with <m:math overflow="scroll"><m:msqrt><m:mi>n</m:mi></m:msqrt></m:math> levels.
+Now consider a Bernoulli RV with (unknown) parameter <m:math overflow="scroll"><m:mi>θ</m:mi></m:math>.</para>
+      <para id="id285991">One perspective is that with <m:math overflow="scroll"><m:mi>n</m:mi></m:math> drawings of the RV,
+the standard deviation in the number of 1's is <m:math overflow="scroll"><m:mrow><m:mi>O</m:mi><m:mo>(</m:mo><m:msqrt><m:mi>n</m:mi></m:msqrt><m:mo>)</m:mo></m:mrow></m:math>. That is, <m:math overflow="scroll"><m:msqrt><m:mi>n</m:mi></m:msqrt></m:math> levels differentiate between
+parameter levels up to a resolution that reflects the randomness of the experiment.</para>
+      <para id="id286033">A second perspective is that of coding a sequence of Bernoulli outcomes with an imprecise parameter,
+where it is convenient to think of a universal code in terms of first quantizing the parameter and then using
+that (imprecise) parameter to encode the input <m:math overflow="scroll"><m:mi>x</m:mi></m:math>.
+For the Bernoulli example, the <emphasis effect="italics">maximum likelihood</emphasis> parameter
+<m:math overflow="scroll"><m:msub><m:mi>θ</m:mi><m:mrow><m:mi>M</m:mi><m:mi>L</m:mi></m:mrow></m:msub></m:math> satisfies</para>
+      <equation id="id286070">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>θ</m:mi>
+              <m:mrow>
+                <m:mi>M</m:mi>
+                <m:mi>L</m:mi>
+              </m:mrow>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo form="prefix">arg</m:mo>
+              <m:mo movablelimits="true" form="prefix">max</m:mo>
+            </m:mrow>
+            <m:mrow>
+              <m:mo>{</m:mo>
+              <m:msup>
+                <m:mi>θ</m:mi>
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>n</m:mi>
+                    <m:mi>x</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mn>1</m:mn>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:msup>
+              <m:msup>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>-</m:mo>
+                  <m:mi>θ</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>n</m:mi>
+                    <m:mi>x</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mn>0</m:mn>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:msup>
+              <m:mo>}</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id286166">and plugging this parameter <m:math overflow="scroll"><m:mrow><m:mi>θ</m:mi><m:mo>=</m:mo><m:msub><m:mi>θ</m:mi><m:mrow><m:mi>M</m:mi><m:mi>L</m:mi></m:mrow></m:msub></m:mrow></m:math> into <m:math overflow="scroll"><m:mrow><m:msub><m:mi>p</m:mi><m:mi>θ</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> minimizes the coding length
+among all possible parameters, <m:math overflow="scroll"><m:mrow><m:mi>θ</m:mi><m:mo>∈</m:mo><m:mi>Λ</m:mi></m:mrow></m:math>. It is readily seen that</para>
+      <equation id="id286234">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>θ</m:mi>
+              <m:mrow>
+                <m:mi>M</m:mi>
+                <m:mi>L</m:mi>
+              </m:mrow>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>n</m:mi>
+                  <m:mi>x</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:mfrac>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id286279">Suppose, however, that we were to encode with <m:math overflow="scroll"><m:mrow><m:msup><m:mi>θ</m:mi><m:mo>'</m:mo></m:msup><m:mo>=</m:mo><m:msub><m:mi>θ</m:mi><m:mrow><m:mi>M</m:mi><m:mi>L</m:mi></m:mrow></m:msub><m:mo>+</m:mo><m:mi>Δ</m:mi></m:mrow></m:math>.
+Then the coding length would be</para>
+      <equation id="id286318">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>l</m:mi>
+              <m:mi>θ</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mo>-</m:mo>
+            <m:mo form="prefix">log</m:mo>
+            <m:mfenced separators="" open="(" close=")">
+              <m:msup>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msup>
+                    <m:mi>θ</m:mi>
+                    <m:mo>'</m:mo>
+                  </m:msup>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>n</m:mi>
+                    <m:mi>x</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mn>1</m:mn>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:msup>
+              <m:msup>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>-</m:mo>
+                  <m:msup>
+                    <m:mi>θ</m:mi>
+                    <m:mo>'</m:mo>
+                  </m:msup>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>n</m:mi>
+                    <m:mi>x</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mn>0</m:mn>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:msup>
+            </m:mfenced>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id286430">It can be shown that this coding length is suboptimal w.r.t. <m:math overflow="scroll"><m:mrow><m:msub><m:mi>l</m:mi><m:msub><m:mi>θ</m:mi><m:mrow><m:mi>M</m:mi><m:mi>L</m:mi></m:mrow></m:msub></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>
+by <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>·</m:mo><m:mi>O</m:mi><m:mo>(</m:mo><m:msup><m:mi>Δ</m:mi><m:mn>2</m:mn></m:msup><m:mo>)</m:mo></m:mrow></m:math> bits.
+Keep in mind that doubling the number of parameter levels used by our
+universal encoder requires an extra bit to encode the extra factor of 2 in resolution.
+It makes sense to expend this extra bit only if it buys us at least one other bit,
+meaning that <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>·</m:mo><m:mi>O</m:mi><m:mo>(</m:mo><m:msup><m:mi>Δ</m:mi><m:mn>2</m:mn></m:msup><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:math>, which implies that we encode <m:math overflow="scroll"><m:msub><m:mi>θ</m:mi><m:mrow><m:mi>M</m:mi><m:mi>L</m:mi></m:mrow></m:msub></m:math>
+to a resolution of <m:math overflow="scroll"><m:mrow><m:mn>1</m:mn><m:mo>/</m:mo><m:msqrt><m:mi>n</m:mi></m:msqrt></m:mrow></m:math>, corresponding to <m:math overflow="scroll"><m:mrow><m:mi>O</m:mi><m:mo>(</m:mo><m:msqrt><m:mi>n</m:mi></m:msqrt><m:mo>)</m:mo></m:mrow></m:math> levels.
+Again, this is a redundancy of <m:math overflow="scroll"><m:mrow><m:mo>≈</m:mo><m:mfrac><m:mn>1</m:mn><m:mn>2</m:mn></m:mfrac><m:mo form="prefix">log</m:mo><m:mrow><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> bits per parameter.</para>
+      <para id="id286606">Having described Rissanen's result intuitively, let us formalize matters.
+Consider <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>p</m:mi><m:mi>θ</m:mi></m:msub><m:mo>,</m:mo><m:mi>θ</m:mi><m:mo>∈</m:mo><m:mi>Λ</m:mi><m:mo>}</m:mo></m:mrow></m:math>, where
+<m:math overflow="scroll"><m:mrow><m:mi>Λ</m:mi><m:mo>⊂</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>K</m:mi></m:msup></m:mrow></m:math> is a compact set.
+Suppose that there exists an estimator <m:math overflow="scroll"><m:mover accent="true"><m:mi>θ</m:mi><m:mo>^</m:mo></m:mover></m:math> such that</para>
+      <equation id="uid13">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mo>∀</m:mo>
+            <m:mi>n</m:mi>
+            <m:mo>≥</m:mo>
+            <m:mi>n</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>c</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>:</m:mo>
+            <m:mspace width="1.em"/>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:mi>θ</m:mi>
+            </m:msub>
+            <m:mfenced separators="" open="{" close="}">
+              <m:mrow>
+                <m:mo>∥</m:mo>
+              </m:mrow>
+              <m:mover accent="true">
+                <m:mi>θ</m:mi>
+                <m:mo>^</m:mo>
+              </m:mover>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:msup>
+                  <m:mi>x</m:mi>
+                  <m:mi>n</m:mi>
+                </m:msup>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:mi>θ</m:mi>
+                <m:mo>∥</m:mo>
+                <m:mo>&gt;</m:mo>
+              </m:mrow>
+              <m:mfrac>
+                <m:mi>c</m:mi>
+                <m:msqrt>
+                  <m:mi>n</m:mi>
+                </m:msqrt>
+              </m:mfrac>
+            </m:mfenced>
+            <m:mo>≤</m:mo>
+            <m:mi>δ</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>c</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id286787">where <m:math overflow="scroll"><m:mrow><m:msub><m:mo movablelimits="true" form="prefix">lim</m:mo><m:mrow><m:mi>c</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:msub><m:mi>δ</m:mi><m:mrow><m:mo>(</m:mo><m:mi>c</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Then we have the following converse result.</para>
+      <para id="id286833"><emphasis effect="bold">Theorem 6 </emphasis>(Converse to universal coding <link target-id="bid3"/>) 
+Given a parametric class that satisfies the above condition <link target-id="uid13"/>,
+for all <m:math overflow="scroll"><m:mrow><m:mi>ϵ</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math> and all codes <m:math overflow="scroll"><m:mi>l</m:mi></m:math> that do not know <m:math overflow="scroll"><m:mi>θ</m:mi></m:math>,</para><equation id="id286890">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>r</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>l</m:mi>
+              <m:mo>,</m:mo>
+              <m:mi>θ</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>≥</m:mo>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mn>1</m:mn>
+              <m:mo>-</m:mo>
+              <m:mi>ϵ</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mfrac>
+              <m:mi>K</m:mi>
+              <m:mn>2</m:mn>
+            </m:mfrac>
+            <m:mfrac>
+              <m:mrow>
+                <m:mo form="prefix">log</m:mo>
+                <m:mo>(</m:mo>
+                <m:mi>n</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:mfrac>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id286957">except for a class of <m:math overflow="scroll"><m:mi>θ</m:mi></m:math> in <m:math overflow="scroll"><m:mrow><m:msub><m:mi>B</m:mi><m:mi>ϵ</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow><m:mo>⊆</m:mo><m:mi>Λ</m:mi></m:mrow></m:math>
+whose Lebesgue volume shrinks to zero as <m:math overflow="scroll"><m:mi>n</m:mi></m:math> increases.</para>
+      <para id="id287010">That is, a universal code cannot compress at a redundancy substantialy
+below <m:math overflow="scroll"><m:mrow><m:mfrac><m:mn>1</m:mn><m:mn>2</m:mn></m:mfrac><m:mo form="prefix">log</m:mo><m:mrow><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> bits per parameter.
+Rissanen also proved the following achievable result in his seminal paper.</para>
+      <para id="id287040"><emphasis effect="bold">Theorem 7 </emphasis> (Achievable to universal coding <link target-id="bid3"/>) 
+If <m:math overflow="scroll"><m:mrow><m:msub><m:mi>p</m:mi><m:mi>θ</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> is twice differentiable in <m:math overflow="scroll"><m:mi>θ</m:mi></m:math> for every <m:math overflow="scroll"><m:msup><m:mi>x</m:mi><m:mi>n</m:mi></m:msup></m:math>,
+then there exists a universal code such that
+<m:math overflow="scroll"><m:mrow><m:mo>∀</m:mo><m:mi>θ</m:mi><m:mo>∈</m:mo><m:mi>Λ</m:mi><m:mo>:</m:mo><m:msub><m:mi>r</m:mi><m:mi>n</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>l</m:mi><m:mo>,</m:mo><m:mi>θ</m:mi><m:mo>)</m:mo></m:mrow><m:mo>≤</m:mo><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>+</m:mo><m:mi>ϵ</m:mi><m:mo>)</m:mo></m:mrow><m:mfrac><m:mi>K</m:mi><m:mn>2</m:mn></m:mfrac><m:mfrac><m:mrow><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow><m:mi>n</m:mi></m:mfrac></m:mrow></m:math>.</para></section>
+    <section id="uid16">
+      <title>Universal coding for piecewise i.i.d. sources</title>
+      <para id="id287190">We have emphasized stationary parametric classes, but a parametric class can be nonstationary.
+Let us show how universal coding can be achieved for some nonstationary classes of sources
+by providing an example.
+Consider <m:math overflow="scroll"><m:mrow><m:mi>Λ</m:mi><m:mo>=</m:mo><m:mo>{</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:mi>n</m:mi><m:mo>}</m:mo></m:mrow></m:math> where</para>
+      <equation id="id287232">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:mi>θ</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msup>
+                <m:mi>x</m:mi>
+                <m:mi>n</m:mi>
+              </m:msup>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msub>
+              <m:mi>Q</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msubsup>
+                <m:mi>x</m:mi>
+                <m:mn>1</m:mn>
+                <m:mi>θ</m:mi>
+              </m:msubsup>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>·</m:mo>
+            <m:msub>
+              <m:mi>Q</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msubsup>
+                <m:mi>x</m:mi>
+                <m:mrow>
+                  <m:mi>θ</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mn>1</m:mn>
+                </m:mrow>
+                <m:mi>n</m:mi>
+              </m:msubsup>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id287321">where <m:math overflow="scroll"><m:msub><m:mi>Q</m:mi><m:mn>1</m:mn></m:msub></m:math> and <m:math overflow="scroll"><m:msub><m:mi>Q</m:mi><m:mn>2</m:mn></m:msub></m:math> are both know i.i.d. sources.
+This is a <emphasis effect="italics">piecewise i.i.d. source</emphasis>; in each segment it is i.i.d., and there is an abrupt transition in statistics
+when the first segment ends and the second begins.</para>
+      <para id="id287363">Here are two approaches to coding this source.</para>
+      <list id="id287367" display="block" list-type="enumerated">
+        <item id="uid17">Encode the best index <m:math overflow="scroll"><m:msub><m:mi>θ</m:mi><m:mrow><m:mi>M</m:mi><m:mi>L</m:mi></m:mrow></m:msub></m:math> using <m:math overflow="scroll"><m:mrow><m:mo>⌈</m:mo><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>+</m:mo><m:mn>1</m:mn><m:mo>)</m:mo><m:mo>⌉</m:mo></m:mrow></m:math> bits, then encode <m:math overflow="scroll"><m:mrow><m:msub><m:mi>p</m:mi><m:msub><m:mi>θ</m:mi><m:mrow><m:mi>M</m:mi><m:mi>L</m:mi></m:mrow></m:msub></m:msub><m:mrow><m:mo>(</m:mo><m:msup><m:mi>x</m:mi><m:mi>n</m:mi></m:msup><m:mo>)</m:mo></m:mrow></m:mrow></m:math>.
+This is known as <emphasis effect="italics">two-part code</emphasis> or <emphasis effect="italics">plug-in</emphasis>; after encoding the index, we plug the best parameter into the distribution.
+Clearly,
+<equation id="id287475"><m:math overflow="scroll" mode="display"><m:mtable displaystyle="true"><m:mtr><m:mtd columnalign="right"><m:mrow><m:mi>l</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mrow><m:munder><m:mo movablelimits="true" form="prefix">min</m:mo><m:mrow><m:mn>0</m:mn><m:mo>≤</m:mo><m:mi>θ</m:mi><m:mo>≤</m:mo><m:mi>n</m:mi></m:mrow></m:munder><m:mrow><m:mo>⌈</m:mo><m:mo>-</m:mo><m:mo form="prefix">log</m:mo><m:msub><m:mi>p</m:mi><m:mi>θ</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>⌉</m:mo></m:mrow><m:mo>+</m:mo><m:mrow><m:mo>⌈</m:mo><m:mo form="prefix">log</m:mo><m:mrow><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>+</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow><m:mo>⌉</m:mo></m:mrow></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>≤</m:mo></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>-</m:mo><m:mo form="prefix">log</m:mo><m:msub><m:mi>p</m:mi><m:mi>θ</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:mo form="prefix">log</m:mo><m:mrow><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>+</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:mn>2</m:mn><m:mo>.</m:mo></m:mrow></m:mtd></m:mtr></m:mtable></m:math></equation></item>
+        <item id="uid18">The second approach is a <emphasis effect="italics">mixture</emphasis>, we allocate weights for all possible parameters,
+<equation id="id287658"><m:math overflow="scroll" mode="display"><m:mtable displaystyle="true"><m:mtr><m:mtd columnalign="right"><m:mrow><m:mi>l</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>-</m:mo><m:mo form="prefix">log</m:mo><m:mfenced separators="" open="(" close=")"><m:mfrac><m:mn>1</m:mn><m:mrow><m:mi>n</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:mfrac><m:munderover><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow><m:mi>n</m:mi></m:munderover><m:msub><m:mi>p</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msup><m:mi>x</m:mi><m:mi>n</m:mi></m:msup><m:mo>)</m:mo></m:mrow></m:mfenced></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>&lt;</m:mo></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>-</m:mo><m:mo form="prefix">log</m:mo><m:mfenced separators="" open="(" close=")"><m:mfrac><m:mn>1</m:mn><m:mrow><m:mi>n</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:mfrac><m:msub><m:mi>p</m:mi><m:msub><m:mi>θ</m:mi><m:mrow><m:mi>M</m:mi><m:mi>L</m:mi></m:mrow></m:msub></m:msub><m:mrow><m:mo>(</m:mo><m:msup><m:mi>x</m:mi><m:mi>n</m:mi></m:msup><m:mo>)</m:mo></m:mrow></m:mfenced></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>-</m:mo><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:msub><m:mi>p</m:mi><m:msub><m:mi>θ</m:mi><m:mrow><m:mi>M</m:mi><m:mi>L</m:mi></m:mrow></m:msub></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo><m:mo>+</m:mo><m:mo form="prefix">log</m:mo><m:mrow><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>+</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow><m:mo>.</m:mo></m:mrow></m:mtd></m:mtr></m:mtable></m:math></equation></item>
+      </list>
+      <para id="id287884">Merhav <link target-id="bid4"/> provided redundancy theorems for this class of sources.
+Algorithmic approaches to the mixture appear in Shamir and Merhav <link target-id="bid5"/>
+and Willems <link target-id="bid6"/>.</para>
+      <para id="id287906">The theme that is common to both approaches, the plug-in and the mixture,
+is that they lose approximately <m:math overflow="scroll"><m:mrow><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:math> bits in encoding
+the location of the transition. Indeed, Merhav showed that the penalty for each transition in universal coding
+is approximately <m:math overflow="scroll"><m:mrow><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:math> bits <link target-id="bid4"/>.
+Intuitively, the reason that the redundancy required to encode the location of the transition is larger
+than the <m:math overflow="scroll"><m:mrow><m:mfrac><m:mn>1</m:mn><m:mn>2</m:mn></m:mfrac><m:mo form="prefix">log</m:mo><m:mrow><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> from Rissanen <link target-id="bid3"/> is
+because the location of the transition
+must be described precisely to prevent paying a big coding length penalty in encoding segments
+using the wrong i.i.d. statistics. In contrast, in encoding our Bernoulli example an imprecision of <m:math overflow="scroll"><m:mfrac><m:mn>1</m:mn><m:msqrt><m:mi>n</m:mi></m:msqrt></m:mfrac></m:math>
+in encoding <m:math overflow="scroll"><m:msub><m:mi>θ</m:mi><m:mrow><m:mi>M</m:mi><m:mi>L</m:mi></m:mrow></m:msub></m:math> in the first part of the code yields only an <m:math overflow="scroll"><m:mrow><m:mi>O</m:mi><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow></m:math> bit penalty in the second part of the code.</para>
+      <para id="id288038">It is well known that mixtures out-compress the plug-in. However, in many cases they do so by
+only a small amount per parameter. For example, Baron et al. showed that the plug-in for i.i.d. sources
+loses approximately 1 bit per parameter w.r.t. the mixture.</para>
+    </section>
+  </content>
+  <bib:file>
+    <bib:entry id="bid2">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Clarke, B.S. and Barron, A.R.</bib:author>
+        <bib:title>Jeffreys' prior is asymptotically least favorable under entropy risk</bib:title>
+        <bib:journal>J. Stat. Planning Inference</bib:journal>
+        <bib:year>1994</bib:year>
+        <!--optional fields-->
+        <bib:volume>41</bib:volume>
+        <bib:number>1</bib:number>
+        <bib:pages>37–60</bib:pages>
+        <bib:month/>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid0">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Krichevsky, R. and Trofimov, V.</bib:author>
+        <bib:title>The performance of universal encoding</bib:title>
+        <bib:journal>IEEE Trans. Inf. Theory</bib:journal>
+        <bib:year>1981</bib:year>
+        <!--optional fields-->
+        <bib:volume>27</bib:volume>
+        <bib:number>2</bib:number>
+        <bib:pages>199–207</bib:pages>
+        <bib:month/>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid4">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Merhav, N.</bib:author>
+        <bib:title>On the minimum description length principle for sources with piecewise constant parameters</bib:title>
+        <bib:journal>IEEE Trans. Inf. Theory</bib:journal>
+        <bib:year>1993</bib:year>
+        <!--optional fields-->
+        <bib:volume>39</bib:volume>
+        <bib:number>6</bib:number>
+        <bib:pages>1962–1967</bib:pages>
+        <bib:month/>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid1">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Merhav, N. and Feder, M.</bib:author>
+        <bib:title>A strong version of the redundancy-capacity theorem of universal coding</bib:title>
+        <bib:journal>IEEE Trans. Inf. Theory</bib:journal>
+        <bib:year>1995</bib:year>
+        <!--optional fields-->
+        <bib:volume>41</bib:volume>
+        <bib:number>3</bib:number>
+        <bib:pages>714–722</bib:pages>
+        <bib:month/>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid3">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Rissanen, J.</bib:author>
+        <bib:title>Universal coding, information, prediction, and estimation</bib:title>
+        <bib:journal>IEEE Trans. Inf. Theory</bib:journal>
+        <bib:year>1984</bib:year>
+        <!--optional fields-->
+        <bib:volume>30</bib:volume>
+        <bib:number>4</bib:number>
+        <bib:pages>629–636</bib:pages>
+        <bib:month>Jul.</bib:month>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid5">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Shamir, G.I. and Merhav, N.</bib:author>
+        <bib:title>Low-complexity sequential lossless coding for piecewise-stationary memoryless sources</bib:title>
+        <bib:journal>IEEE Trans. Inf. Theory</bib:journal>
+        <bib:year>1999</bib:year>
+        <!--optional fields-->
+        <bib:volume>45</bib:volume>
+        <bib:number>5</bib:number>
+        <bib:pages>1498–1519</bib:pages>
+        <bib:month/>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid6">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Willems, F.M.J.</bib:author>
+        <bib:title>Coding for a binary independent piecewise-identically-distributed source</bib:title>
+        <bib:journal>IEEE Trans. Inf. Theory</bib:journal>
+        <bib:year>1996</bib:year>
+        <!--optional fields-->
+        <bib:volume>42</bib:volume>
+        <bib:number>6</bib:number>
+        <bib:pages>2210–2217</bib:pages>
+        <bib:month/>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+  </bib:file>
+</document>

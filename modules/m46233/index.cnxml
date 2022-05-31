@@ -1,0 +1,701 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:bib="http://bibtexml.sf.net/">
+  <title>Universal compression for context tree sources</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m46233</md:content-id>
+  <md:title>Universal compression for context tree sources</md:title>
+  <md:abstract/>
+  <md:uuid>02c87a54-60a8-48b2-8143-ba39ae1e6e74</md:uuid>
+</metadata>
+
+<content>
+    <section id="uid1">
+      <title>Semi-predictive approach</title>
+      <para id="id62167">Recall that a context tree source is similar to a Markov source, where the number of states
+is greatly reduced. Let <m:math overflow="scroll"><m:mi>T</m:mi></m:math> be the set of leaves of a context tree source, then the redundancy is</para>
+      <equation id="uid2">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>r</m:mi>
+            <m:mo>≲</m:mo>
+            <m:mfrac>
+              <m:mrow>
+                <m:mo>|</m:mo>
+                <m:mi>T</m:mi>
+                <m:mo>|</m:mo>
+                <m:mo>(</m:mo>
+                <m:mi>r</m:mi>
+                <m:mo>-</m:mo>
+                <m:mn>1</m:mn>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mn>2</m:mn>
+            </m:mfrac>
+            <m:mfenced separators="" open="(" close=")">
+              <m:mo form="prefix">log</m:mo>
+              <m:mfenced separators="" open="(" close=")">
+                <m:mfrac>
+                  <m:mi>n</m:mi>
+                  <m:mrow>
+                    <m:mo>|</m:mo>
+                    <m:mi>T</m:mi>
+                    <m:mo>|</m:mo>
+                  </m:mrow>
+                </m:mfrac>
+              </m:mfenced>
+              <m:mo>+</m:mo>
+              <m:mi>O</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mn>1</m:mn>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mfenced>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id62602">where <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mi>T</m:mi><m:mo>|</m:mo></m:mrow></m:math> is the number of leaves, and we have <m:math overflow="scroll"><m:mrow><m:mo form="prefix">log</m:mo><m:mfenced separators="" open="(" close=")"><m:mfrac><m:mi>n</m:mi><m:mrow><m:mo>|</m:mo><m:mi>T</m:mi><m:mo>|</m:mo></m:mrow></m:mfrac></m:mfenced></m:mrow></m:math>
+instead of <m:math overflow="scroll"><m:mrow><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:math>, because each state generated <m:math overflow="scroll"><m:mfrac><m:mi>n</m:mi><m:mrow><m:mo>|</m:mo><m:mi>T</m:mi><m:mo>|</m:mo></m:mrow></m:mfrac></m:math> symbols, on average.
+In contrast, the redundancy for a Markov representation of the tree source <m:math overflow="scroll"><m:mi>T</m:mi></m:math> is much larger.
+Therefore, tree sources are greatly preferable in practice, they offer a significant reduction
+in redundancy.</para>
+      <para id="id62695">How can we compress universally over the parametric class of tree sources? Suppose that we
+knew <m:math overflow="scroll"><m:mi>T</m:mi></m:math>, that is we knew the set of leaves. Then we could process <m:math overflow="scroll"><m:mi>x</m:mi></m:math> sequentially, where
+for each <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub></m:math> we can determine what state its context is in, that is the unique suffix of
+<m:math overflow="scroll"><m:msubsup><m:mi>x</m:mi><m:mn>1</m:mn><m:mrow><m:mi>i</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msubsup></m:math> that belongs to the set of leaf labels in <m:math overflow="scroll"><m:mi>T</m:mi></m:math>. Having determined that we are
+in some state <m:math overflow="scroll"><m:mi>s</m:mi></m:math>, <m:math overflow="scroll"><m:mrow><m:mo form="prefix">Pr</m:mo><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>|</m:mo><m:mi>s</m:mi><m:mo>,</m:mo><m:msubsup><m:mi>x</m:mi><m:mn>1</m:mn><m:mrow><m:mi>i</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msubsup><m:mo>)</m:mo></m:mrow></m:math> can be computed by examining all
+previous times that we were in state <m:math overflow="scroll"><m:mi>s</m:mi></m:math> and computing the probability with the
+Krichevsky-Trofimov approach based on the number of times that the following symbol
+(after <m:math overflow="scroll"><m:mi>s</m:mi></m:math>) was 0 or 1. In fact, we can store symbol counts <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>s</m:mi><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>)</m:mo></m:mrow></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>s</m:mi><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow></m:mrow></m:math> for
+all <m:math overflow="scroll"><m:mrow><m:mi>s</m:mi><m:mo>∈</m:mo><m:mi>T</m:mi></m:mrow></m:math>, update them sequentially as we process <m:math overflow="scroll"><m:mi>x</m:mi></m:math>, and compute
+<m:math overflow="scroll"><m:mrow><m:mo form="prefix">Pr</m:mo><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>|</m:mo><m:mi>s</m:mi><m:mo>,</m:mo><m:msubsup><m:mi>x</m:mi><m:mn>1</m:mn><m:mrow><m:mi>i</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msubsup><m:mo>)</m:mo></m:mrow></m:math> efficiently. (The actual translation to bits is performed with an
+arithmetic encoder.)</para>
+      <para id="id63138">While promising, this approach above requires to know <m:math overflow="scroll"><m:mi>T</m:mi></m:math>. How do we compute the optimal <m:math overflow="scroll"><m:msup><m:mi>T</m:mi><m:mo>*</m:mo></m:msup></m:math> from the data?</para>
+      <figure id="uid3"><media id="uid3_media" alt="Tree pruning in the semi-predictive approach.">
+          <image mime-type="image/png" src="../../media/02212012_a.png" id="uid3_onlineimage" width="405"><!-- NOTE: attribute width changes image size online (pixels). original width is 405. --></image>
+          <image mime-type="application/postscript" for="pdf" src="../../media/02212012_a.eps" id="uid3_printimage"/>
+        </media>
+        
+      <caption>Tree pruning in the semi-predictive approach.</caption></figure><para id="id63175"><emphasis effect="bold">Semi-predictive coding</emphasis>: The <emphasis effect="italics">semi-predictive</emphasis> approach to encoding for context tree sources <link target-id="bid0"/>
+is to scan
+the data twice, where in the first scan we estimate <m:math overflow="scroll"><m:msup><m:mi>T</m:mi><m:mo>*</m:mo></m:msup></m:math> and in the second scan we
+encode <m:math overflow="scroll"><m:mi>x</m:mi></m:math> from <m:math overflow="scroll"><m:msup><m:mi>T</m:mi><m:mo>*</m:mo></m:msup></m:math>, as described above. Let us describe a procedure for computing
+the optimal <m:math overflow="scroll"><m:msup><m:mi>T</m:mi><m:mo>*</m:mo></m:msup></m:math> among tree sources whose depth is bounded by <m:math overflow="scroll"><m:mi>D</m:mi></m:math>.
+This procedure is visualized in <link target-id="uid3"/>.
+As suggested above, we count <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>s</m:mi><m:mo>,</m:mo><m:mi>a</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, the number of times that each possible symbol
+appeared in context <m:math overflow="scroll"><m:mi>s</m:mi></m:math>, for all <m:math overflow="scroll"><m:mrow><m:mi>s</m:mi><m:mo>∈</m:mo><m:msup><m:mi>α</m:mi><m:mi>D</m:mi></m:msup><m:mo>,</m:mo><m:mi>a</m:mi><m:mo>∈</m:mo><m:mi>α</m:mi></m:mrow></m:math>.
+Having computed all the symbol counts, we process the depth-<m:math overflow="scroll"><m:mi>D</m:mi></m:math> tree in a bottom-top fashion,
+from the leaves to the root, where for each internal node <m:math overflow="scroll"><m:mi>s</m:mi></m:math> of the tree (that is, <m:math overflow="scroll"><m:mrow><m:mi>s</m:mi><m:mo>∈</m:mo><m:msup><m:mi>α</m:mi><m:mi>d</m:mi></m:msup></m:mrow></m:math>
+where <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>&lt;</m:mo><m:mi>D</m:mi></m:mrow></m:math>), we track <m:math overflow="scroll"><m:msubsup><m:mi>T</m:mi><m:mi>s</m:mi><m:mo>*</m:mo></m:msubsup></m:math>, the optimal tree structure rooted at <m:math overflow="scroll"><m:mi>s</m:mi></m:math>
+to encode symbols whose context ends with <m:math overflow="scroll"><m:mi>s</m:mi></m:math>, and
+<m:math overflow="scroll"><m:mrow><m:mtext>MDL</m:mtext><m:mo>(</m:mo><m:mi>s</m:mi><m:mo>)</m:mo></m:mrow></m:math> the minimum description lengths (MDL) required for encoding these symbols.</para>
+      <para id="id63415">Without loss of generality, consider the simple case of a binary alphabet <m:math overflow="scroll"><m:mrow><m:mi>α</m:mi><m:mo>=</m:mo><m:mo>{</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>}</m:mo></m:mrow></m:math>.
+When processing <m:math overflow="scroll"><m:mi>s</m:mi></m:math>
+we have already computed the symbol counts
+<m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mn>0</m:mn><m:mi>s</m:mi><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>)</m:mo></m:mrow></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mn>0</m:mn><m:mi>s</m:mi><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mi>s</m:mi><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mi>s</m:mi><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow></m:mrow></m:math>,
+the optimal trees <m:math overflow="scroll"><m:msubsup><m:mi>T</m:mi><m:mrow><m:mn>0</m:mn><m:mi>s</m:mi></m:mrow><m:mo>*</m:mo></m:msubsup></m:math> and <m:math overflow="scroll"><m:msubsup><m:mi>T</m:mi><m:mrow><m:mn>1</m:mn><m:mi>s</m:mi></m:mrow><m:mo>*</m:mo></m:msubsup></m:math>,
+and the minimum description lengths (MDL)
+<m:math overflow="scroll"><m:mrow><m:mtext>MDL</m:mtext><m:mo>(</m:mo><m:mn>0</m:mn><m:mi>s</m:mi><m:mo>)</m:mo></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mtext>MDL</m:mtext><m:mo>(</m:mo><m:mn>1</m:mn><m:mi>S</m:mi><m:mo>)</m:mo></m:mrow></m:math>. We have two options for state <m:math overflow="scroll"><m:mi>s</m:mi></m:math>.</para>
+      <list id="id63644" display="block" list-type="enumerated">
+        <item id="uid4"><emphasis effect="italics">Keep</emphasis><m:math overflow="scroll"><m:msubsup><m:mi>T</m:mi><m:mrow><m:mn>0</m:mn><m:mi>S</m:mi></m:mrow><m:mo>*</m:mo></m:msubsup></m:math> and <m:math overflow="scroll"><m:msubsup><m:mi>T</m:mi><m:mrow><m:mn>1</m:mn><m:mi>S</m:mi></m:mrow><m:mo>*</m:mo></m:msubsup></m:math>. The coding length required to do so is
+<m:math overflow="scroll"><m:mrow><m:mtext>MDL</m:mtext><m:mo>(</m:mo><m:mn>0</m:mn><m:mi>S</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mtext>MDL</m:mtext><m:mo>(</m:mo><m:mn>1</m:mn><m:mi>S</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:math>,
+where the extra bit is spent to describe the structure of the maximizing tree.
+</item>
+        <item id="uid5"><emphasis effect="italics">Merge</emphasis> both states (this is also called <emphasis effect="italics">tree pruning</emphasis>). The symbol counts will be
+<m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>s</m:mi><m:mo>,</m:mo><m:mi>α</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mi>n</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mn>0</m:mn><m:mi>s</m:mi><m:mo>,</m:mo><m:mi>α</m:mi><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:msub><m:mi>n</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mi>s</m:mi><m:mo>,</m:mo><m:mi>α</m:mi><m:mo>)</m:mo></m:mrow><m:mo>,</m:mo><m:mi>α</m:mi><m:mo>∈</m:mo><m:mrow><m:mo>{</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>}</m:mo></m:mrow></m:mrow></m:math>,
+and the coding length will be
+<equation id="uid6"><m:math overflow="scroll" mode="display"><m:mrow><m:mtext>KT</m:mtext><m:mo>(</m:mo><m:msub><m:mi>n</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>s</m:mi><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>)</m:mo></m:mrow><m:mo>,</m:mo><m:msub><m:mi>n</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>s</m:mi><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo><m:mo>+</m:mo><m:mn>1</m:mn><m:mo>,</m:mo></m:mrow></m:math></equation>
+where <m:math overflow="scroll"><m:mrow><m:mtext>KT</m:mtext><m:mo>(</m:mo><m:mo>·</m:mo><m:mo>,</m:mo><m:mo>·</m:mo><m:mo>)</m:mo></m:mrow></m:math> is the Krichevsky-Trofimov length <link target-id="bid1"/>,
+and we again included an extra bit for the structure of the tree.
+</item>
+      </list>
+      <para id="id63948">We note in past that there is no need to spend a bit to encode leaves of depth <m:math overflow="scroll"><m:mi>D</m:mi></m:math>.
+To see this, consider a procedure for encoding the structure of a tree:</para>
+      <example id="eip-961"><para id="eip-352">
+Consider the tree sourced depicted in <link target-id="uid8"/>.
+In order to encode the structure of this tree, we will utilize the following
+procedure. (Such a procedure has appeared, for example,
+in <link target-id="bid2"/>.)
+</para>
+</example><figure id="uid8"><media id="uid8_media" alt="Tree used in Example 10 to demonstrate how the structure of the source is encoded.">
+          <image mime-type="image/png" src="../../media/02212012_b.png" id="uid8_onlineimage" width="469"><!-- NOTE: attribute width changes image size online (pixels). original width is 469. --></image>
+          <image mime-type="application/postscript" for="pdf" src="../../media/02212012_b.eps" id="uid8_printimage"/>
+        </media>
+        
+      <caption>Tree used in <link target-id="eip-961"/> to demonstrate how
+the structure of the source is encoded.</caption></figure><para id="eip-686">Start from root. [procedure(root)]<newline/>
+1. If node <m:math overflow="scroll"><m:mi>S</m:mi></m:math> is of depth <m:math overflow="scroll"><m:mi>D</m:mi></m:math> (maximum), then return. <newline/>
+
+2. If node <m:math overflow="scroll"><m:mi>S</m:mi></m:math> is internal node, then {<newline/>
+<space count="2"/>     encode 0<newline/>
+<space count="2"/>     procedure(0S)<newline/>
+<space count="2"/>     procedure(1S)<newline/>
+<space count="2"/>} else encode 1.<newline/>
+
+3. return.
+
+      <space count="10"/></para><para id="id64090">Let us now simulate the procedure, the procedure will traverse through
+the following states of the tree in <link target-id="uid8"/> while
+outputting the corresponding bits.</para><table id="id64100" summary="">
+        <tgroup cols="8">
+          <tbody>
+            <row>
+              <entry>Source</entry>
+              <entry>root</entry>
+              <entry>0</entry>
+              <entry>1</entry>
+              <entry>01</entry>
+              <entry>001</entry>
+              <entry>101</entry>
+              <entry>11</entry>
+            </row>
+            <row>
+              <entry>Encoded symbol</entry>
+              <entry>0</entry>
+              <entry>1</entry>
+              <entry>0</entry>
+              <entry>0</entry>
+              <entry/>
+              <entry/>
+              <entry>1</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para id="id64189">Returning to tree pruning, following <link target-id="eip-961"/>
+we see that we must initialize
+<m:math overflow="scroll"><m:mrow><m:mtext>MDL</m:mtext><m:mrow><m:mo>(</m:mo><m:mi>s</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mtext>KT</m:mtext><m:mo>(</m:mo><m:msub><m:mi>n</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>s</m:mi><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>)</m:mo></m:mrow><m:mo>,</m:mo><m:msub><m:mi>n</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>s</m:mi><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow></m:math> for <m:math overflow="scroll"><m:mi>s</m:mi></m:math> of full depth <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mi>s</m:mi><m:mo>|</m:mo><m:mo>=</m:mo><m:mi>D</m:mi></m:mrow></m:math>
+without the extra bit.</para><para id="id64288">At the end of the pruning procedure, <m:math overflow="scroll"><m:msubsup><m:mi>T</m:mi><m:mrow><m:mo>{</m:mo><m:mo>}</m:mo></m:mrow><m:mo>*</m:mo></m:msubsup></m:math> the maximizing tree for the root, will be the optimal tree for universal coding.</para>
+    </section>
+    <section id="uid12">
+      <title>Burrows wheeler Transform</title>
+      <para id="id64321">The Burrows Wheeler transform (BWT) was proposed by Burrows and Wheeler in
+1994 <link target-id="bid3"/> (see also the analysis by Effros et al. <link target-id="bid4"/>
+and references therein).
+It is an invertible permutation sort that sorts symbols according to their contexts. That
+way, the symbols that were generated by the same state of the context tree are grouped
+together, which as we will see is advantageous.</para>
+      <para id="id64339">To compute the BWT, we first compute all cyclical shifts of the input <m:math overflow="scroll"><m:mi>x</m:mi></m:math>. Next, we sort
+the cyclical shifts.
+The output of the BWT consists of <m:math overflow="scroll"><m:mi>y</m:mi></m:math>, the last column of the matrix of sorted shifts,
+and <m:math overflow="scroll"><m:mi>i</m:mi></m:math> the index of the original version. We illustrate with an example.</para>
+      <example id="eip-713"><para id="eip-635">
+Consider the input <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>b</m:mi><m:mi>a</m:mi><m:mi>n</m:mi><m:mi>a</m:mi><m:mi>n</m:mi><m:mi>a</m:mi></m:mrow></m:math>. First, we compute the cyclic shifts and their sorts.
+</para>
+</example><table id="id64406" summary="">
+        <tgroup cols="2">
+          <tbody>
+            <row>
+              <entry>All Shifts</entry>
+              <entry>Sorted</entry>
+            </row>
+            <row>
+              <entry>banana</entry>
+              <entry>abanan</entry>
+            </row>
+            <row>
+              <entry>abanan</entry>
+              <entry>anaban</entry>
+            </row>
+            <row>
+              <entry>nabana</entry>
+              <entry>ananab</entry>
+            </row>
+            <row>
+              <entry>anaban</entry>
+              <entry>banana</entry>
+            </row>
+            <row>
+              <entry>nanaba</entry>
+              <entry>nabana</entry>
+            </row>
+            <row>
+              <entry>ananab</entry>
+              <entry>nanaba</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para id="id64499">
+The output of the BWT consists of <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mi>n</m:mi><m:mi>n</m:mi><m:mi>b</m:mi><m:mi>a</m:mi><m:mi>a</m:mi><m:mi>a</m:mi></m:mrow></m:math>, the last column of the matrix of
+sorted shifts (to the right), and the index <m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>4</m:mn></m:mrow></m:math> containing the original input.</para>
+      <para id="id64543">Interestingly, we can recover <m:math overflow="scroll"><m:mi>x</m:mi></m:math> from <m:math overflow="scroll"><m:mi>y</m:mi></m:math> and <m:math overflow="scroll"><m:mi>i</m:mi></m:math>.
+Seeing that <m:math overflow="scroll"><m:mi>y</m:mi></m:math> is structured and thus quite compressible, the BWT can be
+used as a compression system; a building block that illustrates such a system appears
+in <link target-id="uid14"/>.</para>
+      <figure id="uid14"><media id="uid14_media" alt="Typical compression system using the Burrows Wheeler transform">
+          <image mime-type="image/png" src="../../media/02232012_a.png" id="uid14_onlineimage" width="511"><!-- NOTE: attribute width changes image size online (pixels). original width is 511. --></image>
+          <image mime-type="application/postscript" for="pdf" src="../../media/02232012_a.eps" id="uid14_printimage"/>
+        </media>
+        
+      <caption>Typical compression system using the Burrows Wheeler transform <link target-id="bid3"/>.</caption></figure><para id="id64606">To see that the BWT is invertible, let us work out how to do this by continuing our example.</para>
+      <example id="eip-764"><para id="eip-31">
+In the matrix of sorted shifts, column 1 is a sorted version of column <m:math overflow="scroll"><m:mi>n</m:mi></m:math>, which we know.
+</para>
+</example><table id="id64634" summary="">
+        <tgroup cols="2">
+          <tbody>
+            <row>
+              <entry>Column 1</entry>
+              <entry>Column n</entry>
+            </row>
+            <row>
+              <entry>a</entry>
+              <entry>n</entry>
+            </row>
+            <row>
+              <entry>a</entry>
+              <entry>n</entry>
+            </row>
+            <row>
+              <entry>a</entry>
+              <entry>b</entry>
+            </row>
+            <row>
+              <entry>b</entry>
+              <entry>a</entry>
+            </row>
+            <row>
+              <entry>n</entry>
+              <entry>a</entry>
+            </row>
+            <row>
+              <entry>n</entry>
+              <entry>a</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para id="id64724">Now take column <m:math overflow="scroll"><m:mi>n</m:mi></m:math> and put it before column 1:</para>
+      <table id="id64738" summary="">
+        <tgroup cols="2">
+          <tbody>
+            <row>
+              <entry>Column n</entry>
+              <entry>Column 1</entry>
+            </row>
+            <row>
+              <entry>n</entry>
+              <entry>a</entry>
+            </row>
+            <row>
+              <entry>n</entry>
+              <entry>a</entry>
+            </row>
+            <row>
+              <entry>b</entry>
+              <entry>a</entry>
+            </row>
+            <row>
+              <entry>a</entry>
+              <entry>b</entry>
+            </row>
+            <row>
+              <entry>a</entry>
+              <entry>n</entry>
+            </row>
+            <row>
+              <entry>a</entry>
+              <entry>n</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para id="id64828">We now sort these rows, which each consist of 2 symbols:
+<m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mi>b</m:mi></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mi>n</m:mi></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mi>n</m:mi></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>b</m:mi><m:mi>a</m:mi></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mi>a</m:mi></m:mrow></m:math>, and <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mi>a</m:mi></m:mrow></m:math>.
+Now fill column 2 of the sorted shifts matrix accordingly.</para>
+      <table id="id64905" summary="">
+        <tgroup cols="2">
+          <tbody>
+            <row>
+              <entry>Columns 1–2</entry>
+              <entry>Column <m:math overflow="scroll"><m:mi>n</m:mi></m:math></entry>
+            </row>
+            <row>
+              <entry>ab</entry>
+              <entry>n</entry>
+            </row>
+            <row>
+              <entry>an</entry>
+              <entry>n</entry>
+            </row>
+            <row>
+              <entry>an</entry>
+              <entry>b</entry>
+            </row>
+            <row>
+              <entry>ba</entry>
+              <entry>a</entry>
+            </row>
+            <row>
+              <entry>na</entry>
+              <entry>a</entry>
+            </row>
+            <row>
+              <entry>na</entry>
+              <entry>a</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para id="id65003">The entire matrix can be unraveled, and the row containing the original <m:math overflow="scroll"><m:mi>x</m:mi></m:math> is indexed by <m:math overflow="scroll"><m:mi>i</m:mi></m:math>.</para>
+      <para id="id65025">What is the BWT good for?
+The key property of the BWT is that symbols generated by the same state are grouped together in <m:math overflow="scroll"><m:mi>y</m:mi></m:math>.
+To see this, note how the last column <m:math overflow="scroll"><m:mi>n</m:mi></m:math> can be rotated to a position to the left of column 1,
+and symbols that came before the same prefix appear together.
+(To bunch together symbols generated by the same suffix, we can reverse the order of symbols
+in <m:math overflow="scroll"><m:mi>x</m:mi></m:math> before running the BWT.) Therefore, <m:math overflow="scroll"><m:mi>y</m:mi></m:math> has the form of a piecewise i.i.d. sequence <link target-id="bid4"/>,
+where segments generated by the same state of the context tree are bunched together.</para>
+      <para id="id65076">As a consequence of the structure of y, it is easy to see that it can be compressed with the following redundancy,</para>
+      <equation id="uid16">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>r</m:mi>
+            <m:mo>≲</m:mo>
+            <m:mfrac>
+              <m:mrow>
+                <m:mo>|</m:mo>
+                <m:mi>T</m:mi>
+                <m:mo>|</m:mo>
+                <m:mo>(</m:mo>
+                <m:mi>r</m:mi>
+                <m:mo>-</m:mo>
+                <m:mn>1</m:mn>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mn>2</m:mn>
+            </m:mfrac>
+            <m:mfenced separators="" open="(" close=")">
+              <m:mo form="prefix">log</m:mo>
+              <m:mo>(</m:mo>
+              <m:mfrac>
+                <m:mi>n</m:mi>
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                  <m:mi>T</m:mi>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+              </m:mfrac>
+              <m:mo>+</m:mo>
+              <m:mi>O</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mn>1</m:mn>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>)</m:mo>
+            </m:mfenced>
+            <m:mo>+</m:mo>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mi>T</m:mi>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:mo form="prefix">log</m:mo>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>n</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id65183">where the new <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mi>T</m:mi><m:mo>|</m:mo><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:math> term arises from coding the locations of transitions between segments (states of the tree) in the BWT output. Not only is the BWT convenient for compression, but it is amenable to fast computation. Both the BWT and its inverse can be implemented in <m:math overflow="scroll"><m:mrow><m:mi>O</m:mi><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:math> time. This combination of great compression and speed has made the BWT quite popular in compressors that have appeared since the late 1990s. For example, the bzip2 archiving package is very popular among network administrators.</para>
+      <para id="id65235">That said, from a theoretical perspective the BWT suffers from an extraneous redundancy of <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mi>T</m:mi><m:mo>|</m:mo><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:math> bits.
+Until this gap was resolved, the theoretical community still preferred the semi-predictive method or another approach based on mixtures.</para>
+    </section>
+    <section id="uid17">
+      <title>Semi-predictive coding using the BWT</title>
+      <para id="id65274">Another approach for using the BWT is to use <m:math overflow="scroll"><m:mi>y</m:mi></m:math> only for learning the MDL tree source <m:math overflow="scroll"><m:msup><m:mi>T</m:mi><m:mo>*</m:mo></m:msup></m:math>. To do so, note that when the BWT is run, it is possible to track the correspondences between contexts and segments of the BWT output. Therefore, information about per-segment symbol count is available, and can be easily applied to perform the tree pruning procedure that we have seen. Not only that, but some BWT computation algorithms (e.g., suffix tree approaches) maintain this information for all context depths and not just bounded <m:math overflow="scroll"><m:mi>D</m:mi></m:math>. In short, the BWT allows to compute the minimizing tree <m:math overflow="scroll"><m:msup><m:mi>T</m:mi><m:mo>*</m:mo></m:msup></m:math> in linear time <link target-id="bid5"/>.</para>
+      <para id="id65333">Given the minimizing tree <m:math overflow="scroll"><m:msup><m:mi>T</m:mi><m:mo>*</m:mo></m:msup></m:math>, it is not obvious how to determine which state generated each character of <m:math overflow="scroll"><m:mi>y</m:mi></m:math> (respectively, <m:math overflow="scroll"><m:mi>x</m:mi></m:math>) in linear time. It has been shown by Martín et al. <link target-id="bid6"/>
+that this step can also be performed in linear time by developing a state machine whose states include the leaves of <m:math overflow="scroll"><m:msup><m:mi>T</m:mi><m:mo>*</m:mo></m:msup></m:math>. The result is a two part code, where the first part computes the optimal <m:math overflow="scroll"><m:msup><m:mi>T</m:mi><m:mo>*</m:mo></m:msup></m:math> via BWT, and the second part actually compresses <m:math overflow="scroll"><m:mi>x</m:mi></m:math> by tracking which state of <m:math overflow="scroll"><m:msup><m:mi>T</m:mi><m:mo>*</m:mo></m:msup></m:math> generated each of the symbols. To summarize, we have a linear complexity algorithm for compressing and decompressing a source while achieving the redundancy bounds for the class of tree sources.</para>
+    </section>
+    <section id="uid18">
+      <title>Context Tree Weighting</title>
+      <para id="id65440">We discussed in <link target-id="uid16" document="m46228"/> for
+the problem of encoding a transition between two known i.i.d. distributions that</para><equation id="uid19">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mi>n</m:mi>
+            </m:mfrac>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:msub>
+                <m:mi>θ</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>&gt;</m:mo>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mi>n</m:mi>
+            </m:mfrac>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">max</m:mo>
+              <m:mi>i</m:mi>
+            </m:munder>
+            <m:mrow>
+              <m:mo>{</m:mo>
+              <m:msub>
+                <m:mi>p</m:mi>
+                <m:msub>
+                  <m:mi>θ</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+              </m:msub>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>}</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id65553">Therefore, a mixture over all parameter values yields a greater probability (and thus lower coding length) than the maximizing approach. Keep in mind that finding the optimal MDL tree source <m:math overflow="scroll"><m:msup><m:mi>T</m:mi><m:mo>*</m:mo></m:msup></m:math> is analogous to the
+plug-in approach, and it would reduce the coding length if we could assign the probability as a mixture over all possible trees, where we assign trees with fewer leaves a greater weight. That is, ideally we want to implement</para>
+      <equation id="uid20">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mo form="prefix">Pr</m:mo>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo>∑</m:mo>
+              <m:mi>T</m:mi>
+            </m:munder>
+            <m:msup>
+              <m:mn>2</m:mn>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:mo>|</m:mo>
+                <m:mtext>code</m:mtext>
+                <m:mo>(</m:mo>
+                <m:mi>T</m:mi>
+                <m:mo>)</m:mo>
+                <m:mo>|</m:mo>
+              </m:mrow>
+            </m:msup>
+            <m:mo>·</m:mo>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:mi>T</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id65653">where <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mtext>code</m:mtext><m:mo>(</m:mo><m:mi>T</m:mi><m:mo>)</m:mo><m:mo>|</m:mo></m:mrow></m:math> is the length of the encoding procedure that we discussed for the tree structure <m:math overflow="scroll"><m:mi>T</m:mi></m:math>,
+and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>p</m:mi><m:mi>T</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> is the probability for the sequence <m:math overflow="scroll"><m:mi>x</m:mi></m:math> under the model <m:math overflow="scroll"><m:mi>T</m:mi></m:math>.</para>
+      <para id="id65730">Willems et al. showed how to implement such a mixture in a simple way over the class of tree sources of bounded depth <m:math overflow="scroll"><m:mi>D</m:mi></m:math>. As before, the algorithm proceeds in a bottom up manner from leaves toward the root.
+At leaves, the probability <m:math overflow="scroll"><m:msub><m:mi>p</m:mi><m:mi>s</m:mi></m:msub></m:math> assigned to symbols that were generated within that context <m:math overflow="scroll"><m:mi>s</m:mi></m:math>
+is the Krichevsky-Trofimov probability, <m:math overflow="scroll"><m:mrow><m:msub><m:mi>p</m:mi><m:mrow><m:mi>K</m:mi><m:mi>T</m:mi></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mi>s</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> <link target-id="bid1"/>.
+For <m:math overflow="scroll"><m:mi>s</m:mi></m:math> that is an internal node whose depth is less than <m:math overflow="scroll"><m:mi>D</m:mi></m:math>, the approach by
+Willems et al. <link target-id="bid2"/>
+is to mix (<emphasis effect="italics">i</emphasis>) the probabilities of keeping the branches for 0s and 1s and (<emphasis effect="italics">ii</emphasis>) pruning,</para>
+      <equation id="uid21">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:mi>s</m:mi>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mn>2</m:mn>
+            </m:mfrac>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:mi>K</m:mi>
+            </m:msub>
+            <m:mi>T</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>s</m:mi>
+              <m:mo>,</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>+</m:mo>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mn>2</m:mn>
+            </m:mfrac>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:mrow>
+                <m:mn>0</m:mn>
+                <m:mi>s</m:mi>
+              </m:mrow>
+            </m:msub>
+            <m:mo>·</m:mo>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:mrow>
+                <m:mn>1</m:mn>
+                <m:mi>s</m:mi>
+              </m:mrow>
+            </m:msub>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id65924">It can be shown that this simple formula allows to implement a mixture over the class of bounded depth context tree sources, thus reducing the coding length w.r.t. the semi-predictive approach.</para>
+      <para id="id65929">In fact, Willems later showed how to extend the context tree weighting (CTW) approach to
+tree sources of unbounded depth <link target-id="bid7"/>. Unfortunately, while the basic
+bounded depth CTW has complexity that is comparable to the BWT, the unbounded
+CTW has potentially higher complexity.</para>
+    </section>
+  </content>
+  <bib:file>
+    <bib:entry id="bid5">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Baron, D. and Bresler, Y.</bib:author>
+        <bib:title>An O(N) semipredictive universal encoder via the BWT</bib:title>
+        <bib:journal>IEEE Trans. Inf. Theory</bib:journal>
+        <bib:year>2004</bib:year>
+        <!--optional fields-->
+        <bib:volume>50</bib:volume>
+        <bib:number>5</bib:number>
+        <bib:pages>928-937</bib:pages>
+        <bib:month>May</bib:month>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid3">
+      <bib:book>
+        <!--required fields-->
+        <bib:author>Burrows, M. and Wheeler, D.J.</bib:author>
+        <bib:title>A block-sorting lossless data compression algorithm</bib:title>
+        <bib:publisher/>
+        <bib:year>1994</bib:year>
+        <!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address/>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note/>
+      </bib:book>
+    </bib:entry>
+    <bib:entry id="bid4">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Effros, M. and Visweswariah, K. and Kulkarni, S. and Verdú, S.</bib:author>
+        <bib:title>Data compression based on the Burrows-Wheeler transform: Analysis and optimality</bib:title>
+        <bib:journal>IEEE Trans. Inf. Theory</bib:journal>
+        <bib:year>2002</bib:year>
+        <!--optional fields-->
+        <bib:volume>48</bib:volume>
+        <bib:number/>
+        <bib:pages>1061–1081</bib:pages>
+        <bib:month/>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid1">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Krichevsky, R. and Trofimov, V.</bib:author>
+        <bib:title>The performance of universal encoding</bib:title>
+        <bib:journal>IEEE Trans. Inf. Theory</bib:journal>
+        <bib:year>1981</bib:year>
+        <!--optional fields-->
+        <bib:volume>27</bib:volume>
+        <bib:number>2</bib:number>
+        <bib:pages>199–207</bib:pages>
+        <bib:month/>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid6">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Martin, A. and Seroussi, G. and Weinberger, M. J.</bib:author>
+        <bib:title>Linear time universal coding and time reversal of tree sources via FSM closure</bib:title>
+        <bib:journal>IEEE Trans. Inf. Theory</bib:journal>
+        <bib:year>2004</bib:year>
+        <!--optional fields-->
+        <bib:volume>50</bib:volume>
+        <bib:number>7</bib:number>
+        <bib:pages>1442-1468</bib:pages>
+        <bib:month>Jul.</bib:month>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid0">
+      <bib:phdthesis>
+        <!--required fields-->
+        <bib:author>Nohre, R.</bib:author>
+        <bib:title>Topics in descriptive complexity</bib:title>
+        <bib:school>Ph. D. dissertation, Univ. Lingköping, Lingköping, Sweden</bib:school>
+        <bib:year>1994</bib:year>
+        <!--optional fields-->
+        <bib:type>Ph. D. Thesis</bib:type>
+        <bib:address/>
+        <bib:month/>
+        <bib:note/>
+      </bib:phdthesis>
+    </bib:entry>
+    <bib:entry id="bid7">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Willems, F.M.J.</bib:author>
+        <bib:title>The context-tree weighting method: Extensions</bib:title>
+        <bib:journal>IEEE Trans. Inf. Theory</bib:journal>
+        <bib:year>1998</bib:year>
+        <!--optional fields-->
+        <bib:volume>44</bib:volume>
+        <bib:number>2</bib:number>
+        <bib:pages>792–798</bib:pages>
+        <bib:month/>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+    <bib:entry id="bid2">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Willems, F. M. J. and Shtarkov, Y. M. and Tjalkens, T. J.</bib:author>
+        <bib:title>The context tree weighting method: Basic properties</bib:title>
+        <bib:journal>IEEE Trans. Inf. Theory</bib:journal>
+        <bib:year>1995</bib:year>
+        <!--optional fields-->
+        <bib:volume>41</bib:volume>
+        <bib:number>3</bib:number>
+        <bib:pages>653–664</bib:pages>
+        <bib:month>May</bib:month>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+  </bib:file>
+</document>

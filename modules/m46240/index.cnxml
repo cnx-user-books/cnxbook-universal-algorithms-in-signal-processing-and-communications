@@ -1,0 +1,1522 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:bib="http://bibtexml.sf.net/">
+  <title>Background</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m46240</md:content-id>
+  <md:title>Background</md:title>
+  <md:abstract/>
+  <md:uuid>e31c96bc-4648-46ba-94d0-273d41dcc9d5</md:uuid>
+</metadata>
+
+<content>
+    <section id="cid1">
+      <title>Convergence of random variables</title>
+      <para id="id226451">We include some background material for the course.
+Let us recall some notions of convergence of random variables (RV's).</para>
+      <list id="id226455" display="block" list-type="bulleted">
+        <item id="uid1">A sequence of RV's <m:math overflow="scroll"><m:msub><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>n</m:mi><m:mo>≥</m:mo><m:mn>1</m:mn></m:mrow></m:msub></m:math> converges in probability if
+<m:math overflow="scroll"><m:mrow><m:mo>∀</m:mo><m:mi>ϵ</m:mi><m:mo>≥</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:msub><m:mo movablelimits="true" form="prefix">lim</m:mo><m:mrow><m:mi>n</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:msub><m:mrow><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mo form="prefix">Pr</m:mo><m:mo>(</m:mo><m:mo>|</m:mo></m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>-</m:mo><m:mover accent="true"><m:mi>x</m:mi><m:mo>¯</m:mo></m:mover><m:mrow><m:mo>|</m:mo><m:mo>&gt;</m:mo><m:mi>ϵ</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.
+We denote this by <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mover><m:mo>→</m:mo><m:mrow><m:mi>P</m:mi><m:mo>.</m:mo></m:mrow></m:mover><m:mover accent="true"><m:mi>x</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:math>.
+</item>
+        <item id="uid2">A sequence of RV's <m:math overflow="scroll"><m:msub><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>n</m:mi><m:mo>≥</m:mo><m:mn>1</m:mn></m:mrow></m:msub></m:math> converges to <m:math overflow="scroll"><m:mover accent="true"><m:mi>x</m:mi><m:mo>¯</m:mo></m:mover></m:math> with probability 1 if <m:math overflow="scroll"><m:mrow><m:mo form="prefix">Pr</m:mo><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>:</m:mo><m:msub><m:mo movablelimits="true" form="prefix">lim</m:mo><m:mrow><m:mi>n</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:msub><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>=</m:mo><m:mover accent="true"><m:mi>x</m:mi><m:mo>¯</m:mo></m:mover><m:mo>}</m:mo><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:math>.
+We denote this by <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mover><m:mo>→</m:mo><m:mrow><m:mi>w</m:mi><m:mo>.</m:mo><m:mi>p</m:mi><m:mo>.</m:mo><m:mn>1</m:mn></m:mrow></m:mover><m:mover accent="true"><m:mi>x</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:math> or <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mover><m:mo>→</m:mo><m:mrow><m:mi>a</m:mi><m:mo>.</m:mo><m:mi>s</m:mi><m:mo>.</m:mo></m:mrow></m:mover><m:mover accent="true"><m:mi>x</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:math>.
+</item>
+        <item id="uid3">A sequence of RV's <m:math overflow="scroll"><m:msub><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>n</m:mi><m:mo>≥</m:mo><m:mn>1</m:mn></m:mrow></m:msub></m:math> converges to <m:math overflow="scroll"><m:mover accent="true"><m:mi>x</m:mi><m:mo>¯</m:mo></m:mover></m:math> in the <m:math overflow="scroll"><m:msub><m:mi>ℓ</m:mi><m:mi>p</m:mi></m:msub></m:math> sense if <m:math overflow="scroll"><m:mrow><m:mi>E</m:mi><m:mo>[</m:mo><m:mo>|</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>-</m:mo><m:mover accent="true"><m:mi>x</m:mi><m:mo>¯</m:mo></m:mover><m:msup><m:mo>|</m:mo><m:mi>p</m:mi></m:msup><m:mo>]</m:mo><m:mo>→</m:mo><m:mn>0</m:mn></m:mrow></m:math>.
+We denote this by <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mover><m:mo>→</m:mo><m:msub><m:mi>ℓ</m:mi><m:mi>p</m:mi></m:msub></m:mover><m:mover accent="true"><m:mi>x</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:math>.
+</item>
+      </list>
+      <para id="id227488">For example, for <m:math overflow="scroll"><m:mrow><m:mi>p</m:mi><m:mo>=</m:mo><m:mn>2</m:mn></m:mrow></m:math> we have mean square convergence, <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mover><m:mo>→</m:mo><m:mrow><m:mi>m</m:mi><m:mo>.</m:mo><m:mi>s</m:mi><m:mo>.</m:mo></m:mrow></m:mover><m:mover accent="true"><m:mi>x</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:math>.
+For <m:math overflow="scroll"><m:mrow><m:mi>p</m:mi><m:mo>≥</m:mo><m:mn>2</m:mn></m:mrow></m:math>,</para>
+      <equation id="id227554"><m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mrow>
+              <m:mi>E</m:mi>
+            </m:mrow>
+            <m:msup>
+            <m:mfenced open="|" close="|">
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mo>-</m:mo>
+            <m:mover accent="true">
+              <m:mi>x</m:mi>
+              <m:mo>¯</m:mo>
+            </m:mover>
+            </m:mfenced>
+              <m:mrow>
+                <m:mi>p</m:mi>
+                <m:mo>-</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+            </m:msup>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mi>E</m:mi>
+            </m:mrow>
+            <m:msup>
+            <m:mfenced open="(" close=")">
+              <m:msup>
+                <m:mfenced open="|" close="|">
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>-</m:mo>
+                  <m:mover accent="true">
+                    <m:mi>x</m:mi>
+                    <m:mo>¯</m:mo>
+                  </m:mover>
+                </m:mfenced>
+                <m:mi>p</m:mi>
+              </m:msup>
+            </m:mfenced>
+              <m:mfrac>
+                <m:mrow>
+                  <m:mi>p</m:mi>
+                  <m:mo>-</m:mo>
+                  <m:mn>1</m:mn>
+                </m:mrow>
+                <m:mi>p</m:mi>
+              </m:mfrac>
+            </m:msup>
+            <m:mo>≤</m:mo>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>E</m:mi>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mo>-</m:mo>
+            <m:mover accent="true">
+              <m:mi>x</m:mi>
+              <m:mo>¯</m:mo>
+            </m:mover>
+            <m:msup>
+              <m:mrow>
+                <m:msup>
+                  <m:mo>|</m:mo>
+                  <m:mi>p</m:mi>
+                </m:msup>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mfrac>
+                <m:mrow>
+                  <m:mi>p</m:mi>
+                  <m:mo>-</m:mo>
+                  <m:mn>1</m:mn>
+                </m:mrow>
+                <m:mi>p</m:mi>
+              </m:mfrac>
+            </m:msup>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation><para id="id227710">Therefore, <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mover><m:mo>→</m:mo><m:msub><m:mi>ℓ</m:mi><m:mi>p</m:mi></m:msub></m:mover><m:mover accent="true"><m:mi>x</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:math> yields <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mover><m:mo>→</m:mo><m:msub><m:mi>ℓ</m:mi><m:mrow><m:mi>p</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msub></m:mover><m:mover accent="true"><m:mi>x</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:math>.
+Note that for convergence in <m:math overflow="scroll"><m:msub><m:mi>ℓ</m:mi><m:mn>1</m:mn></m:msub></m:math> sense, we have</para>
+      <equation id="id227802">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mrow>
+              <m:mo form="prefix">Pr</m:mo>
+              <m:mo>(</m:mo>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mo>-</m:mo>
+            <m:mover accent="true">
+              <m:mi>x</m:mi>
+              <m:mo>¯</m:mo>
+            </m:mover>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mo>&gt;</m:mo>
+              <m:mi>ϵ</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>≤</m:mo>
+            <m:mfrac>
+              <m:mrow>
+                <m:mrow>
+                  <m:mi>E</m:mi>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+                <m:msub>
+                  <m:mi>x</m:mi>
+                  <m:mi>n</m:mi>
+                </m:msub>
+                <m:mo>-</m:mo>
+                <m:mover accent="true">
+                  <m:mi>x</m:mi>
+                  <m:mo>¯</m:mo>
+                </m:mover>
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+              </m:mrow>
+              <m:mi>ϵ</m:mi>
+            </m:mfrac>
+            <m:mo>→</m:mo>
+            <m:mn>0</m:mn>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+    </section>
+    <section id="cid2">
+      <title>Typical Sequences</title>
+      <para id="id227898">The following material appears in most textbooks on information theory
+(c.f., Cover and Thomas <link target-id="bid0"/> and references therein).
+We include the highlights in order
+to make these notes self contained, but skip some details and the proofs.
+Consider a sequence <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:msup><m:mi>x</m:mi><m:mi>n</m:mi></m:msup><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, where <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo>∈</m:mo><m:mi>α</m:mi></m:mrow></m:math>, <m:math overflow="scroll"><m:mi>α</m:mi></m:math> is the alphabet, and
+the cardinality of <m:math overflow="scroll"><m:mi>α</m:mi></m:math> is <m:math overflow="scroll"><m:mi>r</m:mi></m:math>, i.e., <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mi>α</m:mi><m:mo>|</m:mo><m:mo>=</m:mo><m:mi>r</m:mi></m:mrow></m:math>.</para>
+      <para id="id228031"><emphasis effect="bold">Definition 1</emphasis> The <emphasis effect="italics">type</emphasis> of <m:math overflow="scroll"><m:mi>x</m:mi></m:math> consists of the empirical probabilities of symbols in <m:math overflow="scroll"><m:mi>x</m:mi></m:math>,</para>
+      <equation id="id228064">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>P</m:mi>
+              <m:mi>x</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>a</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>n</m:mi>
+                  <m:mi>x</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>a</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:mfrac>
+            <m:mo>,</m:mo>
+            <m:mspace width="1.em"/>
+            <m:mi>a</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>α</m:mi>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id228124">where <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> is the <emphasis effect="italics">empirical symbol count</emphasis>,
+which is the the number of times that <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>∈</m:mo><m:mi>α</m:mi></m:mrow></m:math> appears in <m:math overflow="scroll"><m:mi>x</m:mi></m:math>.</para>
+      <para id="id228177"><emphasis effect="bold">Definition 2</emphasis> The set of <emphasis effect="italics">all possible types</emphasis> is defined as <m:math overflow="scroll"><m:msub><m:mi>P</m:mi><m:mi>n</m:mi></m:msub></m:math>.</para>
+      <example id="eip-286"><para id="fs-id1165637812027">For an alphabet <m:math overflow="scroll"><m:mrow><m:mi>α</m:mi><m:mo>=</m:mo><m:mo>{</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>}</m:mo></m:mrow></m:math> we have <m:math overflow="scroll"><m:mrow><m:msub><m:mi>P</m:mi><m:mi>n</m:mi></m:msub><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mrow><m:mo>(</m:mo><m:mfrac><m:mn>0</m:mn><m:mi>n</m:mi></m:mfrac><m:mo>,</m:mo><m:mfrac><m:mi>n</m:mi><m:mi>n</m:mi></m:mfrac><m:mo>)</m:mo></m:mrow><m:mo>,</m:mo><m:mrow><m:mo>(</m:mo><m:mfrac><m:mn>1</m:mn><m:mi>n</m:mi></m:mfrac><m:mo>,</m:mo><m:mfrac><m:mrow><m:mi>n</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:mfrac><m:mo>)</m:mo></m:mrow><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:mrow><m:mo>(</m:mo><m:mfrac><m:mi>n</m:mi><m:mi>n</m:mi></m:mfrac><m:mo>,</m:mo><m:mfrac><m:mn>0</m:mn><m:mi>n</m:mi></m:mfrac><m:mo>)</m:mo></m:mrow><m:mo>}</m:mo></m:mrow></m:mrow></m:math>.
+In this case, <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>|</m:mo></m:mrow><m:msub><m:mi>P</m:mi><m:mi>n</m:mi></m:msub><m:mrow><m:mo>|</m:mo><m:mo>=</m:mo><m:mi>n</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:math>.</para></example><para id="id228370"><emphasis effect="bold">Definition 3</emphasis> A <emphasis effect="italics">type class </emphasis><m:math overflow="scroll"><m:msub><m:mi>T</m:mi><m:mi>x</m:mi></m:msub></m:math> contains all <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mo>'</m:mo></m:msup><m:mo>∈</m:mo><m:msup><m:mi>α</m:mi><m:mi>n</m:mi></m:msup></m:mrow></m:math>, such that <m:math overflow="scroll"><m:msub><m:mi>P</m:mi><m:mi>x</m:mi></m:msub></m:math>=<m:math overflow="scroll"><m:msub><m:mi>P</m:mi><m:msup><m:mi>x</m:mi><m:mo>'</m:mo></m:msup></m:msub></m:math>,</para><equation id="id228455">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>T</m:mi>
+              <m:mi>x</m:mi>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:mi>T</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>P</m:mi>
+                <m:mi>x</m:mi>
+              </m:msub>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo>{</m:mo>
+              <m:msup>
+                <m:mi>x</m:mi>
+                <m:mo>'</m:mo>
+              </m:msup>
+              <m:mo>∈</m:mo>
+              <m:msup>
+                <m:mi>α</m:mi>
+                <m:mi>n</m:mi>
+              </m:msup>
+              <m:mo>:</m:mo>
+              <m:msub>
+                <m:mi>P</m:mi>
+                <m:msup>
+                  <m:mi>x</m:mi>
+                  <m:mo>'</m:mo>
+                </m:msup>
+              </m:msub>
+              <m:mo>=</m:mo>
+              <m:msub>
+                <m:mi>P</m:mi>
+                <m:mi>x</m:mi>
+              </m:msub>
+              <m:mo>}</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <example id="eip-465"><para id="fs-id1165637418497">Consider <m:math overflow="scroll"><m:mrow><m:mi>α</m:mi><m:mo>=</m:mo><m:mrow><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mn>3</m:mn></m:mrow></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>11321</m:mn></m:mrow></m:math>.
+We have <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>=</m:mo><m:mn>5</m:mn></m:mrow></m:math> and the empirical counts are <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mi>x</m:mi></m:msub><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo><m:mn>3</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow></m:mrow></m:math>.
+Therefore, the type is <m:math overflow="scroll"><m:mrow><m:msub><m:mi>P</m:mi><m:mi>x</m:mi></m:msub><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo><m:mfrac><m:mn>3</m:mn><m:mn>5</m:mn></m:mfrac><m:mo>,</m:mo><m:mfrac><m:mn>1</m:mn><m:mn>5</m:mn></m:mfrac><m:mo>,</m:mo><m:mfrac><m:mn>1</m:mn><m:mn>5</m:mn></m:mfrac><m:mo>)</m:mo></m:mrow></m:mrow></m:math>,
+and the type class <m:math overflow="scroll"><m:msub><m:mi>T</m:mi><m:mi>x</m:mi></m:msub></m:math> contains all length-5 sequences with 3 ones, 1 two, and 1 three.
+That is, <m:math overflow="scroll"><m:mrow><m:msub><m:mi>T</m:mi><m:mi>x</m:mi></m:msub><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mn>11123</m:mn><m:mo>,</m:mo><m:mn>11132</m:mn><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:mn>32111</m:mn><m:mo>}</m:mo></m:mrow></m:mrow></m:math>.
+It is easy to see that <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>|</m:mo></m:mrow><m:msub><m:mi>T</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>|</m:mo><m:mo>=</m:mo></m:mrow><m:mfrac><m:mrow><m:mn>5</m:mn><m:mo>!</m:mo></m:mrow><m:mrow><m:mn>3</m:mn><m:mo>!</m:mo><m:mn>1</m:mn><m:mo>!</m:mo><m:mn>1</m:mn><m:mo>!</m:mo></m:mrow></m:mfrac><m:mo>=</m:mo><m:mn>20</m:mn></m:mrow></m:math>.</para></example>
+
+<para id="id228785"><emphasis effect="bold">Theorem 1</emphasis> The cardinality of the set of all types satisfies <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>|</m:mo></m:mrow><m:msub><m:mi>P</m:mi><m:mi>n</m:mi></m:msub><m:msup><m:mrow><m:mo>|</m:mo><m:mo>≤</m:mo><m:mrow><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>+</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow></m:mrow><m:mrow><m:mi>r</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msup></m:mrow></m:math>.</para>
+      <para id="id228844">The proof is simple, and was given in class.
+We note in passing that this bound is loose, but it is good enough for our discussion.</para>
+      <para id="id228849">Next, consider an i.i.d. source with the following prior,</para>
+      <equation id="id228852">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>Q</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:munderover>
+              <m:mo>∏</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:mi>Q</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id228907">We note in passing that i.i.d. sources are sometimes called memoryless.
+Let the entropy be</para>
+      <equation id="uid10">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>H</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>P</m:mi>
+                <m:mi>x</m:mi>
+              </m:msub>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mo>-</m:mo>
+            <m:msub>
+              <m:mi>Σ</m:mi>
+              <m:mrow>
+                <m:mi>a</m:mi>
+                <m:mo>∈</m:mo>
+                <m:mi>α</m:mi>
+              </m:mrow>
+            </m:msub>
+            <m:mfrac>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>n</m:mi>
+                  <m:mi>x</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>a</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:mfrac>
+            <m:mo form="prefix">log</m:mo>
+            <m:mfenced separators="" open="(" close=")">
+              <m:mfrac>
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>n</m:mi>
+                    <m:mi>x</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>a</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+                <m:mi>n</m:mi>
+              </m:mfrac>
+            </m:mfenced>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id229015">where we use base-two logarithms throughout.
+We are studying the entropy <m:math overflow="scroll"><m:mrow><m:mi>H</m:mi><m:mo>(</m:mo><m:msub><m:mi>P</m:mi><m:mi>x</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:math> in order to show that it is the fundamental performance limit in lossless compression.
+
+<m:math>
+ <m:mrow>
+  <m:mi>Σ</m:mi>
+ </m:mrow>
+</m:math>
+
+find me</para><para id="id229044">We also define the divergence as</para>
+      <equation id="id229048">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>D</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>P</m:mi>
+                <m:mi>x</m:mi>
+              </m:msub>
+              <m:mo>∥</m:mo>
+              <m:msub>
+                <m:mi>Q</m:mi>
+                <m:mi>x</m:mi>
+              </m:msub>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msub>
+              <m:mi>Σ</m:mi>
+              <m:mrow>
+                <m:mi>a</m:mi>
+                <m:mo>∈</m:mo>
+                <m:mi>α</m:mi>
+              </m:mrow>
+            </m:msub>
+            <m:msub>
+              <m:mi>P</m:mi>
+              <m:mi>x</m:mi>
+            </m:msub>
+            <m:mo form="prefix">log</m:mo>
+            <m:mfenced separators="" open="(" close=")">
+              <m:mfrac>
+                <m:msub>
+                  <m:mi>P</m:mi>
+                  <m:mi>x</m:mi>
+                </m:msub>
+                <m:msub>
+                  <m:mi>Q</m:mi>
+                  <m:mi>x</m:mi>
+                </m:msub>
+              </m:mfrac>
+            </m:mfenced>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id229135">It is well known that the divergence is non-negative,</para>
+      <equation id="uid11">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>D</m:mi>
+            <m:mo>(</m:mo>
+            <m:msub>
+              <m:mi>P</m:mi>
+              <m:mi>x</m:mi>
+            </m:msub>
+            <m:mo>∥</m:mo>
+            <m:msub>
+              <m:mi>Q</m:mi>
+              <m:mi>x</m:mi>
+            </m:msub>
+            <m:mo>)</m:mo>
+            <m:mo>≥</m:mo>
+            <m:mn>0</m:mn>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id229186">Moreover, <m:math overflow="scroll"><m:mrow><m:mi>D</m:mi><m:mo>(</m:mo><m:mi>P</m:mi><m:mo>∥</m:mo><m:mi>Q</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> only if the
+distributions are identical.</para>
+      <para id="id229217"><emphasis effect="bold">Claim 1</emphasis> The following relation holds,</para>
+      <equation id="id229229">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>Q</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msup>
+              <m:mn>2</m:mn>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:mi>n</m:mi>
+                <m:mo>[</m:mo>
+                <m:mi>H</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>P</m:mi>
+                    <m:mi>x</m:mi>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>+</m:mo>
+                <m:mi>D</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>P</m:mi>
+                    <m:mi>x</m:mi>
+                  </m:msub>
+                  <m:mo>∥</m:mo>
+                  <m:mi>Q</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>]</m:mo>
+              </m:mrow>
+            </m:msup>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id229319">The derivation is straightforward,</para>
+      <equation id="id229323"><m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mi>Q</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:msub>
+                    <m:mo>Π</m:mo>
+                    <m:mrow>
+                      <m:mi>a</m:mi>
+                      <m:mo>∈</m:mo>
+                      <m:mi>α</m:mi>
+                    </m:mrow>
+                  </m:msub>
+                  <m:mi>Q</m:mi>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>a</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>n</m:mi>
+                        <m:mi>x</m:mi>
+                      </m:msub>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mi>a</m:mi>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:msup>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:msup>
+                  <m:mn>2</m:mn>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>Σ</m:mi>
+                      <m:mrow>
+                        <m:mi>a</m:mi>
+                        <m:mo>∈</m:mo>
+                        <m:mi>α</m:mi>
+                      </m:mrow>
+                    </m:msub>
+                    <m:msub>
+                      <m:mi>n</m:mi>
+                      <m:mi>x</m:mi>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>a</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo form="prefix">log</m:mo>
+                    <m:mi>Q</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>a</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mrow>
+                </m:msup>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:msup>
+                  <m:mn>2</m:mn>
+                  <m:mrow>
+                    <m:mi>n</m:mi>
+                    <m:mi>Σ</m:mi>
+                    <m:msub>
+                      <m:mi>P</m:mi>
+                      <m:mi>x</m:mi>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>a</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mo form="prefix">log</m:mo>
+                      <m:mfrac>
+                        <m:mi>Q</m:mi>
+                        <m:mi>P</m:mi>
+                      </m:mfrac>
+                      <m:mo>+</m:mo>
+                      <m:mo form="prefix">log</m:mo>
+                      <m:mi>P</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mrow>
+                </m:msup>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:msup>
+                    <m:mn>2</m:mn>
+                    <m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mi>n</m:mi>
+                      <m:mo>[</m:mo>
+                      <m:mi>H</m:mi>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:msub>
+                          <m:mi>P</m:mi>
+                          <m:mi>x</m:mi>
+                        </m:msub>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:mo>+</m:mo>
+                      <m:mi>D</m:mi>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:msub>
+                          <m:mi>P</m:mi>
+                          <m:mi>x</m:mi>
+                        </m:msub>
+                        <m:mo>∥</m:mo>
+                        <m:mi>Q</m:mi>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:mi>x</m:mi>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:mo>]</m:mo>
+                    </m:mrow>
+                  </m:msup>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation><para id="id229587">Seeing that the divergence is non-negative <link target-id="uid11"/>,
+and zero only if the distributions are equal,
+we have <m:math overflow="scroll"><m:mrow><m:mi>Q</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>≤</m:mo><m:msub><m:mi>P</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>.
+When <m:math overflow="scroll"><m:mrow><m:msub><m:mi>P</m:mi><m:mi>x</m:mi></m:msub><m:mo>=</m:mo><m:mi>Q</m:mi></m:mrow></m:math> the divergence between them is zero, and we have that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>P</m:mi><m:mi>x</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mi>Q</m:mi><m:mi>x</m:mi></m:msub><m:mo>=</m:mo><m:msup><m:mn>2</m:mn><m:mrow><m:mo>-</m:mo><m:mi>n</m:mi><m:mi>H</m:mi><m:mo>(</m:mo><m:msub><m:mi>P</m:mi><m:mi>x</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:msup></m:mrow></m:math>.</para>
+      <para id="id229709">The proof of the following theorem was discussed in class.</para>
+      <para id="id229713"><emphasis effect="bold">Theorem 2</emphasis> The cardinality of the type class <m:math overflow="scroll"><m:mrow><m:mi>T</m:mi><m:mo>(</m:mo><m:msub><m:mi>P</m:mi><m:mi>x</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:math> obeys,</para>
+      <equation id="id229747">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msup>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>n</m:mi>
+                <m:mo>+</m:mo>
+                <m:mn>1</m:mn>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:mo>(</m:mo>
+                <m:mi>r</m:mi>
+                <m:mo>-</m:mo>
+                <m:mn>1</m:mn>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:msup>
+            <m:mo>·</m:mo>
+            <m:msup>
+              <m:mn>2</m:mn>
+              <m:mrow>
+                <m:mi>n</m:mi>
+                <m:mi>H</m:mi>
+                <m:mo>(</m:mo>
+                <m:msub>
+                  <m:mi>P</m:mi>
+                  <m:mi>x</m:mi>
+                </m:msub>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:msup>
+            <m:mo>≤</m:mo>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mi>T</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:msub>
+                  <m:mi>P</m:mi>
+                  <m:mi>x</m:mi>
+                </m:msub>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:mo>≤</m:mo>
+            <m:msup>
+              <m:mn>2</m:mn>
+              <m:mrow>
+                <m:mi>n</m:mi>
+                <m:mi>H</m:mi>
+                <m:mo>(</m:mo>
+                <m:msub>
+                  <m:mi>P</m:mi>
+                  <m:mi>x</m:mi>
+                </m:msub>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:msup>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id229860">Having computed the probability of <m:math overflow="scroll"><m:mi>x</m:mi></m:math> and cardinality of its type class,
+we can easily compute the probability of the type class.</para>
+      <para id="id229874"><emphasis effect="bold">Claim 2</emphasis> The probability <m:math overflow="scroll"><m:mrow><m:mi>Q</m:mi><m:mo>(</m:mo><m:mi>T</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>P</m:mi><m:mi>x</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math> of the type class <m:math overflow="scroll"><m:mrow><m:mi>T</m:mi><m:mo>(</m:mo><m:msub><m:mi>P</m:mi><m:mi>x</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:math> obeys,</para>
+      <equation id="id229934">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msup>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>n</m:mi>
+                <m:mo>+</m:mo>
+                <m:mn>1</m:mn>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:mo>(</m:mo>
+                <m:mi>r</m:mi>
+                <m:mo>-</m:mo>
+                <m:mn>1</m:mn>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:msup>
+            <m:mo>·</m:mo>
+            <m:msup>
+              <m:mn>2</m:mn>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:mi>n</m:mi>
+                <m:mi>D</m:mi>
+                <m:mo>(</m:mo>
+                <m:msub>
+                  <m:mi>P</m:mi>
+                  <m:mi>x</m:mi>
+                </m:msub>
+                <m:mo>∥</m:mo>
+                <m:msub>
+                  <m:mi>Q</m:mi>
+                  <m:mi>x</m:mi>
+                </m:msub>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:msup>
+            <m:mo>≤</m:mo>
+            <m:mi>Q</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>T</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:msub>
+                  <m:mi>P</m:mi>
+                  <m:mi>x</m:mi>
+                </m:msub>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>≤</m:mo>
+            <m:msup>
+              <m:mn>2</m:mn>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:mi>n</m:mi>
+                <m:mi>D</m:mi>
+                <m:mo>(</m:mo>
+                <m:msub>
+                  <m:mi>P</m:mi>
+                  <m:mi>x</m:mi>
+                </m:msub>
+                <m:mo>∥</m:mo>
+                <m:msub>
+                  <m:mi>Q</m:mi>
+                  <m:mi>x</m:mi>
+                </m:msub>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:msup>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id230073">Consider now an event <m:math overflow="scroll"><m:mi>A</m:mi></m:math> that is a union over <m:math overflow="scroll"><m:mrow><m:mi>T</m:mi><m:mo>(</m:mo><m:msub><m:mi>P</m:mi><m:mi>x</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:math>.
+Suppose <m:math overflow="scroll"><m:mrow><m:mi>T</m:mi><m:mo>(</m:mo><m:mi>Q</m:mi><m:mo>)</m:mo><m:mo>⊈</m:mo><m:mi>A</m:mi></m:mrow></m:math>, then <m:math overflow="scroll"><m:mi>A</m:mi></m:math> is rare with respect to (w.r.t) the prior <m:math overflow="scroll"><m:mi>Q</m:mi></m:math>.
+and we have <m:math overflow="scroll"><m:mrow><m:msub><m:mo movablelimits="true" form="prefix">lim</m:mo><m:mrow><m:mi>n</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:msub><m:mi>Q</m:mi><m:mrow><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. That is, the probability is
+concentrated around <m:math overflow="scroll"><m:mi>Q</m:mi></m:math>. In general, the probability assigned by the prior <m:math overflow="scroll"><m:mi>Q</m:mi></m:math>
+to an event <m:math overflow="scroll"><m:mi>A</m:mi></m:math> satisfies</para>
+      <equation id="id230213"><m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mi>Q</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>A</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:msub>
+                    <m:mo>Σ</m:mo>
+                    <m:mrow>
+                      <m:mi>x</m:mi>
+                      <m:mo>∈</m:mo>
+                      <m:mi>A</m:mi>
+                    </m:mrow>
+                  </m:msub>
+                  <m:mi>Q</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:msub>
+                    <m:mo>Σ</m:mo>
+                    <m:mrow>
+                      <m:mi>T</m:mi>
+                      <m:mo>(</m:mo>
+                      <m:msub>
+                        <m:mi>P</m:mi>
+                        <m:mi>x</m:mi>
+                      </m:msub>
+                      <m:mo>)</m:mo>
+                      <m:mo>⊆</m:mo>
+                      <m:mi>A</m:mi>
+                    </m:mrow>
+                  </m:msub>
+                  <m:mi>Q</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>T</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:msub>
+                        <m:mi>P</m:mi>
+                        <m:mi>x</m:mi>
+                      </m:msub>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mover accent="true">
+                  <m:mo>=</m:mo>
+                  <m:mo>˙</m:mo>
+                </m:mover>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:msub>
+                    <m:mo>Σ</m:mo>
+                    <m:mrow>
+                      <m:mi>T</m:mi>
+                      <m:mo>(</m:mo>
+                      <m:msub>
+                        <m:mi>P</m:mi>
+                        <m:mi>x</m:mi>
+                      </m:msub>
+                      <m:mo>)</m:mo>
+                      <m:mo>⊆</m:mo>
+                      <m:mi>A</m:mi>
+                    </m:mrow>
+                  </m:msub>
+                  <m:msup>
+                    <m:mn>2</m:mn>
+                    <m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mi>n</m:mi>
+                      <m:mi>D</m:mi>
+                      <m:mo>(</m:mo>
+                      <m:msub>
+                        <m:mi>P</m:mi>
+                        <m:mi>x</m:mi>
+                      </m:msub>
+                      <m:mo>∥</m:mo>
+                      <m:mi>Q</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:msup>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mover accent="true">
+                  <m:mo>=</m:mo>
+                  <m:mo>˙</m:mo>
+                </m:mover>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:msup>
+                    <m:mn>2</m:mn>
+                    <m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mi>n</m:mi>
+                      <m:mo>·</m:mo>
+                      <m:msub>
+                        <m:mo movablelimits="true" form="prefix">min</m:mo>
+                        <m:mrow>
+                          <m:mi>p</m:mi>
+                          <m:mo>∈</m:mo>
+                          <m:mi>A</m:mi>
+                        </m:mrow>
+                      </m:msub>
+                      <m:mi>D</m:mi>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mi>P</m:mi>
+                        <m:mo>∥</m:mo>
+                        <m:mi>Q</m:mi>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:msup>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation><para id="id230452">where we denote <m:math overflow="scroll"><m:mrow><m:msub><m:mi>a</m:mi><m:mi>n</m:mi></m:msub><m:mover accent="true"><m:mo>=</m:mo><m:mo>˙</m:mo></m:mover><m:msub><m:mi>b</m:mi><m:mi>n</m:mi></m:msub></m:mrow></m:math> when <m:math overflow="scroll"><m:mrow><m:mfrac><m:mn>1</m:mn><m:mi>n</m:mi></m:mfrac><m:mo form="prefix">log</m:mo><m:mrow><m:mo>(</m:mo><m:mfrac><m:msub><m:mi>a</m:mi><m:mi>n</m:mi></m:msub><m:msub><m:mi>b</m:mi><m:mi>n</m:mi></m:msub></m:mfrac><m:mo>)</m:mo></m:mrow><m:mo>→</m:mo><m:mn>0</m:mn></m:mrow></m:math>.</para>
+    </section>
+    <section id="cid3">
+      <title>Fixed and Variable Length Coding</title>
+      <para id="id230545"><emphasis effect="bold">Fixed to fixed length source coding</emphasis>: As before, we have a sequence <m:math overflow="scroll"><m:mi>x</m:mi></m:math> of length <m:math overflow="scroll"><m:mi>n</m:mi></m:math>, and each element of <m:math overflow="scroll"><m:mi>x</m:mi></m:math> is from the alphabet <m:math overflow="scroll"><m:mi>α</m:mi></m:math>.
+A <emphasis effect="italics">source code</emphasis> maps the input <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mi>n</m:mi></m:msup><m:mo>∈</m:mo><m:msup><m:mi>r</m:mi><m:mi>n</m:mi></m:msup></m:mrow></m:math> to a set of <m:math overflow="scroll"><m:msup><m:mn>2</m:mn><m:mrow><m:mi>R</m:mi><m:mi>n</m:mi></m:mrow></m:msup></m:math> bit vectors, each of length <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mi>n</m:mi></m:mrow></m:math>.
+The rate <m:math overflow="scroll"><m:mi>R</m:mi></m:math> quantifies the number of output bits of the code per input element of <m:math overflow="scroll"><m:mi>x</m:mi></m:math>.<footnote id="uid15">We assume without loss of generality that <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mi>n</m:mi><m:mo>∈</m:mo><m:mi mathvariant="double-struck">Z</m:mi></m:mrow></m:math>. If not, then we can round <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mi>n</m:mi></m:mrow></m:math>
+up to <m:math overflow="scroll"><m:mrow><m:mo>⌈</m:mo><m:mi>R</m:mi><m:mi>n</m:mi><m:mo>⌉</m:mo></m:mrow></m:math>, where <m:math overflow="scroll"><m:mrow><m:mo>⌈</m:mo><m:mo>·</m:mo><m:mo>⌉</m:mo></m:mrow></m:math> denotes rounding up.</footnote>
+That is, the output
+of the code consists of <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mi>R</m:mi></m:mrow></m:math> bits. If <m:math overflow="scroll"><m:mi>n</m:mi></m:math> and <m:math overflow="scroll"><m:mi>R</m:mi></m:math> is fixed, then we call this a <emphasis effect="italics">fixed to fixed</emphasis> length source code.</para>
+      <para id="id230776">The decoder processes the <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mi>R</m:mi></m:mrow></m:math> bits and yields <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>x</m:mi><m:mo>ˆ</m:mo></m:mover><m:mo>∈</m:mo><m:msup><m:mi>α</m:mi><m:mi>n</m:mi></m:msup></m:mrow></m:math>. Ideally we have that <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>x</m:mi><m:mo>ˆ</m:mo></m:mover><m:mo>=</m:mo><m:mi>x</m:mi></m:mrow></m:math>,
+but if <m:math overflow="scroll"><m:mrow><m:msup><m:mn>2</m:mn><m:mrow><m:mi>n</m:mi><m:mi>R</m:mi></m:mrow></m:msup><m:mo>&lt;</m:mo><m:msup><m:mi>r</m:mi><m:mi>n</m:mi></m:msup></m:mrow></m:math> then
+there are inputs that are not mapped to any output, and <m:math overflow="scroll"><m:mover accent="true"><m:mi>x</m:mi><m:mo>ˆ</m:mo></m:mover></m:math> may differ from <m:math overflow="scroll"><m:mi>x</m:mi></m:math>.
+Therefore, we want <m:math overflow="scroll"><m:mrow><m:mo form="prefix">Pr</m:mo><m:mo>(</m:mo><m:mover accent="true"><m:mi>x</m:mi><m:mo>ˆ</m:mo></m:mover><m:mo>≠</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> to be small.
+If <m:math overflow="scroll"><m:mi>R</m:mi></m:math> is too small, then the error probability will go to 1. On the other hand, sufficiently large <m:math overflow="scroll"><m:mi>R</m:mi></m:math> will drive
+this error probability to 0 as <m:math overflow="scroll"><m:mi>n</m:mi></m:math> is increased.</para><para id="id230950">If <m:math overflow="scroll"><m:mrow><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>r</m:mi><m:mo>)</m:mo><m:mo>&gt;</m:mo><m:mi>R</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mo form="prefix">Pr</m:mo><m:mo>(</m:mo><m:mover accent="true"><m:mi>x</m:mi><m:mo>ˆ</m:mo></m:mover><m:mo>≠</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> is vanishing as <m:math overflow="scroll"><m:mi>n</m:mi></m:math> is increased, then we are compressing, because
+<m:math overflow="scroll"><m:mrow><m:msup><m:mn>2</m:mn><m:mrow><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>r</m:mi><m:mo>)</m:mo><m:mi>n</m:mi></m:mrow></m:msup><m:mo>=</m:mo><m:msup><m:mi>r</m:mi><m:mi>n</m:mi></m:msup><m:mo>&gt;</m:mo><m:msup><m:mn>2</m:mn><m:mrow><m:mi>R</m:mi><m:mi>n</m:mi></m:mrow></m:msup></m:mrow></m:math>, where <m:math overflow="scroll"><m:msup><m:mi>r</m:mi><m:mi>n</m:mi></m:msup></m:math> is the number of possible inputs <m:math overflow="scroll"><m:mi>x</m:mi></m:math>
+and there are <m:math overflow="scroll"><m:msup><m:mn>2</m:mn><m:mrow><m:mi>R</m:mi><m:mi>n</m:mi></m:mrow></m:msup></m:math> possible outputs.</para>
+      <para id="id231106">What is a good fixed to fixed length source code? One option is to map <m:math overflow="scroll"><m:mrow><m:msup><m:mn>2</m:mn><m:mrow><m:mi>R</m:mi><m:mi>n</m:mi></m:mrow></m:msup><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:math> outputs to inputs
+with high probabilities, and the last output can be mapped to a “don't care" input.
+We will discuss the performance of this style of code.</para>
+      <para id="id231135">An input <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:msup><m:mi>r</m:mi><m:mi>n</m:mi></m:msup></m:mrow></m:math> is called <m:math overflow="scroll"><m:mi>δ</m:mi></m:math>-typical if <m:math overflow="scroll"><m:mrow><m:mi>Q</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>&gt;</m:mo><m:msup><m:mn>2</m:mn><m:mrow><m:mo>-</m:mo><m:mo>(</m:mo><m:mi>H</m:mi><m:mo>+</m:mo><m:mi>δ</m:mi><m:mo>)</m:mo><m:mi>n</m:mi></m:mrow></m:msup></m:mrow></m:math>. We denote the set of <m:math overflow="scroll"><m:mi>δ</m:mi></m:math>-typical
+inputs by <m:math overflow="scroll"><m:mrow><m:msub><m:mi>T</m:mi><m:mi>Q</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>δ</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, this set includes
+the type classes whose empirical probabilities are equal (or closest) to the true prior <m:math overflow="scroll"><m:mrow><m:mi>Q</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math>.
+Note that for each type class <m:math overflow="scroll"><m:msub><m:mi>T</m:mi><m:mi>x</m:mi></m:msub></m:math>, all inputs <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mo>'</m:mo></m:msup><m:mo>∈</m:mo><m:msub><m:mi>T</m:mi><m:mi>x</m:mi></m:msub></m:mrow></m:math> in the type class have the same probability, i.e., <m:math overflow="scroll"><m:mrow><m:mi>Q</m:mi><m:mrow><m:mo>(</m:mo><m:msup><m:mi>x</m:mi><m:mo>'</m:mo></m:msup><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mi>Q</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>.
+Therefore, the set <m:math overflow="scroll"><m:mrow><m:msub><m:mi>T</m:mi><m:mi>Q</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>δ</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> is a union of type classes, and can be thought of as an event <m:math overflow="scroll"><m:mi>A</m:mi></m:math>
+(<link target-id="cid2"/>) that contains type classes consisting of high-probability sequences.
+It is easily seen that the event <m:math overflow="scroll"><m:mi>A</m:mi></m:math> contains the true i.i.d. distribution <m:math overflow="scroll"><m:mi>Q</m:mi></m:math>, because sequences whose empirical probabilities
+satisfy <m:math overflow="scroll"><m:mrow><m:msub><m:mi>P</m:mi><m:mi>x</m:mi></m:msub><m:mo>=</m:mo><m:mi>Q</m:mi></m:mrow></m:math> also satisfy</para><equation id="id231407">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>Q</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msup>
+              <m:mn>2</m:mn>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:mi>H</m:mi>
+                <m:mi>n</m:mi>
+              </m:mrow>
+            </m:msup>
+            <m:mo>&gt;</m:mo>
+            <m:msup>
+              <m:mn>2</m:mn>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:mo>(</m:mo>
+                <m:mi>H</m:mi>
+                <m:mo>+</m:mo>
+                <m:mi>δ</m:mi>
+                <m:mo>)</m:mo>
+                <m:mi>n</m:mi>
+              </m:mrow>
+            </m:msup>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id231467">Using the principles discussed in <link target-id="cid2"/>, it is readily seen that
+the probability under the prior <m:math overflow="scroll"><m:mi>Q</m:mi></m:math> of the inputs in <m:math overflow="scroll"><m:mrow><m:msub><m:mi>T</m:mi><m:mi>Q</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>δ</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> satisfies
+<m:math overflow="scroll"><m:mrow><m:mi>Q</m:mi><m:mo>(</m:mo><m:msub><m:mi>T</m:mi><m:mi>p</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>δ</m:mi><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>Q</m:mi><m:mrow><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow><m:mo>→</m:mo><m:mn>1</m:mn></m:mrow></m:math> when <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:math>.
+Therefore, a code <m:math overflow="scroll"><m:mi mathvariant="script">C</m:mi></m:math> that enumerates <m:math overflow="scroll"><m:mrow><m:msub><m:mi>T</m:mi><m:mi>Q</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>δ</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> will encode <m:math overflow="scroll"><m:mi>x</m:mi></m:math> correctly with high probability.</para><para id="id231614">The key question is the size of <m:math overflow="scroll"><m:mi mathvariant="script">C</m:mi></m:math>, or the cardinality of <m:math overflow="scroll"><m:mrow><m:msub><m:mi>T</m:mi><m:mi>Q</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>δ</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>.
+Because each <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:msub><m:mi>T</m:mi><m:mi>Q</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>δ</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> satisfies <m:math overflow="scroll"><m:mrow><m:mi>Q</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>&gt;</m:mo><m:msup><m:mn>2</m:mn><m:mrow><m:mo>(</m:mo><m:mo>-</m:mo><m:mi>H</m:mi><m:mo>+</m:mo><m:mi>δ</m:mi><m:mo>)</m:mo><m:mi>n</m:mi></m:mrow></m:msup></m:mrow></m:math>, and
+<m:math overflow="scroll"><m:mrow><m:msub><m:mo>∑</m:mo><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:msub><m:mi>T</m:mi><m:mi>Q</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>δ</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:msub><m:mi>Q</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>≤</m:mo><m:mn>1</m:mn></m:mrow></m:math>, we have <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>|</m:mo></m:mrow><m:msub><m:mi>T</m:mi><m:mi>Q</m:mi></m:msub><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>δ</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo><m:mo>&lt;</m:mo></m:mrow><m:msup><m:mn>2</m:mn><m:mrow><m:mo>(</m:mo><m:mi>H</m:mi><m:mo>+</m:mo><m:mi>δ</m:mi><m:mo>)</m:mo><m:mi>n</m:mi></m:mrow></m:msup></m:mrow></m:math>.
+Therefore, a rate <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mo>≥</m:mo><m:mi>H</m:mi><m:mo>+</m:mo><m:mi>δ</m:mi></m:mrow></m:math> allows <emphasis effect="italics">near-lossless coding</emphasis>,
+because the probability of error vanishes
+(recall that <m:math overflow="scroll"><m:mrow><m:mi>Q</m:mi><m:mo>(</m:mo><m:msup><m:mrow><m:mo>(</m:mo><m:msub><m:mi>T</m:mi><m:mi>p</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>δ</m:mi><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mi>C</m:mi></m:msup><m:mo>)</m:mo><m:mo>→</m:mo><m:mn>0</m:mn></m:mrow></m:math>, where <m:math overflow="scroll"><m:msup><m:mrow><m:mo>(</m:mo><m:mo>·</m:mo><m:mo>)</m:mo></m:mrow><m:mi>C</m:mi></m:msup></m:math> denotes the complement).</para>
+      <para id="id231910">On the other hand, a rate <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mo>≤</m:mo><m:mi>H</m:mi><m:mo>-</m:mo><m:mi>δ</m:mi></m:mrow></m:math> will not allow lossless coding, and the probability of error will go to 1.
+We will see this intuitively. Because the type class whose empirical probability is <m:math overflow="scroll"><m:mi>Q</m:mi></m:math> dominates,
+a type class <m:math overflow="scroll"><m:msub><m:mi>T</m:mi><m:mi>x</m:mi></m:msub></m:math> whose sequences have larger probability, e.g., <m:math overflow="scroll"><m:mrow><m:mi>Q</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>&gt;</m:mo><m:msup><m:mn>2</m:mn><m:mrow><m:mo>-</m:mo><m:mo>(</m:mo><m:mi>H</m:mi><m:mo>-</m:mo><m:mi>δ</m:mi><m:mo>)</m:mo><m:mi>n</m:mi></m:mrow></m:msup></m:mrow></m:math>,
+will have small probability in aggregate. That is,</para>
+      <equation id="id231998">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:munder>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>x</m:mi>
+                <m:mo>:</m:mo>
+                <m:mi>Q</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>&gt;</m:mo>
+                <m:msup>
+                  <m:mn>2</m:mn>
+                  <m:mrow>
+                    <m:mo>-</m:mo>
+                    <m:mi>n</m:mi>
+                    <m:mo>(</m:mo>
+                    <m:mi>H</m:mi>
+                    <m:mo>-</m:mo>
+                    <m:mi>δ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:msup>
+              </m:mrow>
+            </m:munder>
+            <m:mi>Q</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mover>
+              <m:mo>→</m:mo>
+              <m:mrow>
+                <m:mi>n</m:mi>
+                <m:mo>→</m:mo>
+                <m:mi>∞</m:mi>
+              </m:mrow>
+            </m:mover>
+            <m:mn>0</m:mn>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id232078">In words, choosing a code <m:math overflow="scroll"><m:mi mathvariant="script">C</m:mi></m:math> with rate <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mo>=</m:mo><m:mi>H</m:mi><m:mo>-</m:mo><m:mi>δ</m:mi></m:mrow></m:math> that contains the words <m:math overflow="scroll"><m:mi>x</m:mi></m:math> with highest probability will fail,
+it will not cover enough probabilistic mass.
+We conclude that near-lossless coding is possible at rates above H and impossible below H.</para>
+      <para id="id232125">To see things from a more intuitive angle, consider the definition of entropy,
+<m:math overflow="scroll"><m:mrow><m:mi>H</m:mi><m:mrow><m:mo>(</m:mo><m:mi>Q</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mo>-</m:mo><m:msub><m:mo>∑</m:mo><m:mrow><m:mi>a</m:mi><m:mo>∈</m:mo><m:mi>α</m:mi></m:mrow></m:msub><m:mi>Q</m:mi><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>)</m:mo></m:mrow><m:mo form="prefix">log</m:mo><m:mrow><m:mo>(</m:mo><m:mi>Q</m:mi><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow></m:mrow></m:math>.
+If we consider each bit as reducing uncertainty by a factor of 2,
+then the average log-likelihood of a length-<m:math overflow="scroll"><m:mi>n</m:mi></m:math> input <m:math overflow="scroll"><m:mi>x</m:mi></m:math> generated by <m:math overflow="scroll"><m:mi>Q</m:mi></m:math> satisfies</para>
+      <equation id="id232220">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mi>E</m:mi>
+                  <m:mo>[</m:mo>
+                  <m:mo>-</m:mo>
+                  <m:mo form="prefix">log</m:mo>
+                  <m:mo>(</m:mo>
+                  <m:mo form="prefix">Pr</m:mo>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                  <m:mo>)</m:mo>
+                  <m:mo>]</m:mo>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mi>E</m:mi>
+                  <m:mo>[</m:mo>
+                  <m:mo>-</m:mo>
+                  <m:mo form="prefix">log</m:mo>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:munderover>
+                      <m:mo>∏</m:mo>
+                      <m:mrow>
+                        <m:mi>i</m:mi>
+                        <m:mo>=</m:mo>
+                        <m:mn>1</m:mn>
+                      </m:mrow>
+                      <m:mi>n</m:mi>
+                    </m:munderover>
+                    <m:mi>P</m:mi>
+                    <m:mi>r</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:msub>
+                        <m:mi>x</m:mi>
+                        <m:mi>i</m:mi>
+                      </m:msub>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>]</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>-</m:mo>
+                  <m:munderover>
+                    <m:mo>∑</m:mo>
+                    <m:mrow>
+                      <m:mi>i</m:mi>
+                      <m:mo>=</m:mo>
+                      <m:mn>1</m:mn>
+                    </m:mrow>
+                    <m:mi>n</m:mi>
+                  </m:munderover>
+                  <m:mi>E</m:mi>
+                  <m:mrow>
+                    <m:mo>[</m:mo>
+                    <m:mo form="prefix">log</m:mo>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>Q</m:mi>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:msub>
+                          <m:mi>x</m:mi>
+                          <m:mi>i</m:mi>
+                        </m:msub>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>]</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>-</m:mo>
+                  <m:munderover>
+                    <m:mo>∑</m:mo>
+                    <m:mrow>
+                      <m:mi>i</m:mi>
+                      <m:mo>=</m:mo>
+                      <m:mn>1</m:mn>
+                    </m:mrow>
+                    <m:mi>n</m:mi>
+                  </m:munderover>
+                  <m:munder>
+                    <m:mo>∑</m:mo>
+                    <m:mrow>
+                      <m:mi>a</m:mi>
+                      <m:mo>∈</m:mo>
+                      <m:mi>α</m:mi>
+                    </m:mrow>
+                  </m:munder>
+                  <m:mi>Q</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>a</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>·</m:mo>
+                  <m:mo form="prefix">log</m:mo>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>Q</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>a</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mi>n</m:mi>
+                  <m:mi>H</m:mi>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id232473">Because the expected log-likelihood of <m:math overflow="scroll"><m:mi>x</m:mi></m:math> is <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mi>H</m:mi></m:mrow></m:math>, it will take <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mi>H</m:mi></m:mrow></m:math> bits to
+reduce the uncertainty by this factor.</para>
+      <para id="id232513"><emphasis effect="bold">Fixed to variable length source coding</emphasis>: The near-lossless coding above relies on enumerating a collection of
+high-probability codewords <m:math overflow="scroll"><m:mrow><m:msub><m:mi>T</m:mi><m:mi>Q</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>δ</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>. However, this approach suffers from a
+troubling failure for <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∉</m:mo><m:msub><m:mi>T</m:mi><m:mi>Q</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>δ</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>. To solve this problem, we incorporate a
+code that maps <m:math overflow="scroll"><m:mi>x</m:mi></m:math> to an output consisting of a <emphasis effect="italics">variable</emphasis> number of bits.
+That is, the length of the code will be approximately <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mi>H</m:mi></m:mrow></m:math> on average,
+but could be greater or lesser.</para>
+      <para id="id232601">One possible variable length code is due to Shannon. Consider all possible
+<m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:msup><m:mi>α</m:mi><m:mi>n</m:mi></m:msup></m:mrow></m:math>. For each <m:math overflow="scroll"><m:mi>x</m:mi></m:math>, allocate <m:math overflow="scroll"><m:mrow><m:mo>⌈</m:mo><m:mo>-</m:mo><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>Q</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>)</m:mo><m:mo>⌉</m:mo></m:mrow></m:math> bits to <m:math overflow="scroll"><m:mi>x</m:mi></m:math>.
+It can be shown that it is possible to construct an invertible (uniquely decodable)
+code as long as the length of the code <m:math overflow="scroll"><m:mrow><m:mi>l</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> in bits allocated to each <m:math overflow="scroll"><m:mi>x</m:mi></m:math>
+satisfies</para>
+      <equation id="id232700">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:munder>
+              <m:mo>∑</m:mo>
+              <m:mi>x</m:mi>
+            </m:munder>
+            <m:msup>
+              <m:mn>2</m:mn>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:mi>l</m:mi>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:msup>
+            <m:mo>≤</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id232741">This result is known as the Kraft Inequality. Seeing that</para>
+      <equation id="id232747">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:munder>
+                    <m:mo>∑</m:mo>
+                    <m:mi>x</m:mi>
+                  </m:munder>
+                  <m:msup>
+                    <m:mn>2</m:mn>
+                    <m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mi>l</m:mi>
+                      <m:mo>(</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:msup>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:munder>
+                    <m:mo>∑</m:mo>
+                    <m:mi>x</m:mi>
+                  </m:munder>
+                  <m:msup>
+                    <m:mn>2</m:mn>
+                    <m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mo>⌈</m:mo>
+                      <m:mo>-</m:mo>
+                      <m:mo form="prefix">log</m:mo>
+                      <m:mo>(</m:mo>
+                      <m:mi>Q</m:mi>
+                      <m:mo>(</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>)</m:mo>
+                      <m:mo>)</m:mo>
+                      <m:mo>⌉</m:mo>
+                    </m:mrow>
+                  </m:msup>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>≤</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:munder>
+                    <m:mo>∑</m:mo>
+                    <m:mi>x</m:mi>
+                  </m:munder>
+                  <m:msup>
+                    <m:mn>2</m:mn>
+                    <m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mo>(</m:mo>
+                      <m:mo>-</m:mo>
+                      <m:mo form="prefix">log</m:mo>
+                      <m:mo>(</m:mo>
+                      <m:mi>Q</m:mi>
+                      <m:mo>(</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>)</m:mo>
+                      <m:mo>)</m:mo>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:msup>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:munder>
+                    <m:mo>∑</m:mo>
+                    <m:mi>x</m:mi>
+                  </m:munder>
+                  <m:mi>Q</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id232920">we see that the length allocation we suggested satisfies the Kraft Inequality.
+Therefore, it is possible to construct an invertible (and hence lossless) code
+with lengths upper bounded by</para>
+      <equation id="id232928">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>l</m:mi>
+              <m:mi>x</m:mi>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo>⌈</m:mo>
+              <m:mo>-</m:mo>
+              <m:mo form="prefix">log</m:mo>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>Q</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>⌉</m:mo>
+            </m:mrow>
+            <m:mo>≤</m:mo>
+            <m:mo>-</m:mo>
+            <m:mo form="prefix">log</m:mo>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>Q</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>+</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id233004">and we have</para>
+      <equation id="id233010">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>E</m:mi>
+            <m:mo>[</m:mo>
+            <m:mi>l</m:mi>
+            <m:mo>(</m:mo>
+            <m:mi>x</m:mi>
+            <m:mo>)</m:mo>
+            <m:mo>]</m:mo>
+            <m:mo>≤</m:mo>
+            <m:mi>E</m:mi>
+            <m:mo>[</m:mo>
+            <m:mo>-</m:mo>
+            <m:mo form="prefix">log</m:mo>
+            <m:mo>(</m:mo>
+            <m:mi>Q</m:mi>
+            <m:mo>(</m:mo>
+            <m:mi>x</m:mi>
+            <m:mo>)</m:mo>
+            <m:mo>)</m:mo>
+            <m:mo>]</m:mo>
+            <m:mo>+</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>=</m:mo>
+            <m:mi>n</m:mi>
+            <m:mi>H</m:mi>
+            <m:mo>+</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id233080">This simple construction approaches the entropy up to 1 bit.</para>
+      <para id="id233086">Unfortunately, a Shannon code is impractical, because it requires to construct a code book of exponential size <m:math overflow="scroll"><m:msup><m:mrow><m:mo>|</m:mo><m:mi>α</m:mi><m:mo>|</m:mo></m:mrow><m:mi>n</m:mi></m:msup></m:math>.
+Instead, arithmetic codes <link target-id="bid1"/> are used; we discussed arithmetic codes in detail
+in class, but they appear in all standard text books and so we do not describe them here.</para>
+    </section>
+  </content>
+  <bib:file>
+    <bib:entry id="bid0">
+      <bib:book>
+        <!--required fields-->
+        <bib:author>Cover, T. M. and Thomas, J. A.</bib:author>
+        <bib:title>Elements of Information Theory</bib:title>
+        <bib:publisher>Wiley-Interscience</bib:publisher>
+        <bib:year>2006</bib:year>
+        <!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address/>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note/>
+      </bib:book>
+    </bib:entry>
+    <bib:entry id="bid1">
+      <bib:article>
+        <!--required fields-->
+        <bib:author>Rissanen, J. and Langdon, G. G.</bib:author>
+        <bib:title>Arithmetic coding</bib:title>
+        <bib:journal>IBM J. Res. Dev.</bib:journal>
+        <bib:year>1979</bib:year>
+        <!--optional fields-->
+        <bib:volume>23</bib:volume>
+        <bib:number>2</bib:number>
+        <bib:pages>149–162</bib:pages>
+        <bib:month/>
+        <bib:note/>
+      </bib:article>
+    </bib:entry>
+  </bib:file>
+</document>
